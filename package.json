@@ -1,0 +1,28 @@
+{
+  "name": "hatenablogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./dist/css/*",
+    "min": "npm-run-all clean min:*",
+    "min:corredor": "cleancss -c ie7 -f 'breaks:afterComment=on' -d -o dist/css/Corredor.min.css src/css/Corredor.css",
+    "min:murga": "cleancss -c ie7 -f 'breaks:afterComment=on' -d -o dist/css/Murga.min.css src/css/Murga.css",
+    "min:elmylar": "cleancss -c ie7 -f 'breaks:afterComment=on' -d -o dist/css/ElMylar.min.css src/css/ElMylar.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neos21GitHub/HatenaBlogs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neos21GitHub/HatenaBlogs/issues"
+  },
+  "homepage": "https://github.com/Neos21GitHub/HatenaBlogs#readme",
+  "devDependencies": {
+    "clean-css-cli": "^4.0.0",
+    "npm-run-all": "^4.0.1",
+    "rimraf": "^2.5.4"
+  }
+}
