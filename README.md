@@ -12,3 +12,11 @@
 Clean CSS CLI で CSS を圧縮しています。
 
 npm-scripts での実行の際は、`rimraf` で `dist/css` ディレクトリ配下のファイルを削除し、`npm-run-all` で一括で `cleancss` を実行しています。
+
+
+## Copyright
+
+Created by Neo.
+
+- [Neo's World](http://neo.s21.xrea.com/)
+- [Twitter - @Neos21](https://twitter.com/Neos21)
