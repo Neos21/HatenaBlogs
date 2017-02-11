@@ -1,5 +1,5 @@
 /*!
- * Neo's World - Murga - 2017-01-30
+ * Neo's World - Murga - 2017-02-11
  * http://neo.s21.xrea.com/
  * http://neos21.hatenablog.jp/
  */
@@ -667,6 +667,11 @@ a:hover {
   line-height:1.4;
 }
 
+/* この商品を含むブログリンク */
+a[href^="http://d.hatena.ne.jp/asin/"] {
+  display:none;
+}
+
 /* ==================================================
  * Entry Footer
  * ================================================== */
@@ -951,7 +956,7 @@ a:hover {
 }
 
 .archive-entry:first-child {
-  margin:0 20px;
+  margin-top:0;
 }
 
 .page-archive .entry-title {
@@ -961,6 +966,15 @@ a:hover {
 .page-archive .entry-description {
   margin:5px 0 10px;
   line-height:1.5em;
+}
+
+/* 検索結果 */
+.search-result {
+  margin:0 20px 30px;
+}
+
+.search-result h2 {
+  margin-top:0;
 }
 
 
@@ -1071,6 +1085,12 @@ a:hover {
   .entry-header-menu a {
     top:-40px;
     left:20px;
+  }
+  
+  .archive-entry,
+  .search-result {
+    margin-right:0;
+    margin-left:0;
   }
   
   #bottom-editarea {
