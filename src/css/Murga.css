@@ -1,5 +1,5 @@
 /*!
- * Neo's World - Murga - 2017-02-11
+ * Neo's World - Murga - 2017-02-12
  * http://neo.s21.xrea.com/
  * http://neos21.hatenablog.jp/
  */
@@ -296,12 +296,14 @@ a:hover {
 }
 
 /* Clearfix */
-#content:after,     /* 全体 */
-.categories:after,  /* 記事ヘッダカテゴリ */
-.pager:after,       /* ページャ */
-.neos21-follow:before,  /* フォロー */
+#content:after,          /* 全体 */
+.categories:after,       /* 記事ヘッダカテゴリ */
+.pager:after,            /* ページャ */
+.neos21-follow:before,   /* フォロー */
 .neos21-follow:after,
-.neos21-share:after {   /* シェア */
+.social-buttons:before,  /* はてなスター */
+.neos21-share:before,    /* シェア */
+.neos21-share:after {
   display:block;
   visibility:hidden;
   clear:both;
@@ -416,6 +418,11 @@ a:hover {
 .neos21-share-twitter  { background:#55acee; }
 .neos21-share-facebook { background:#3a5795; }
 .neos21-share-pocket   { background:#ed4055; }
+
+/* テンプレート格納用 */
+#neos21-template {
+  display:none;
+}
 
 /* ==================================================
  * Container
@@ -966,6 +973,12 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 .page-archive .entry-description {
   margin:5px 0 10px;
   line-height:1.5em;
+}
+
+/* はてなスター : これを囲む .social-buttons:before で Clearfix している */
+.page-archive .star-container {
+  display:block;
+  margin-top:10px;
 }
 
 /* 検索結果 */
