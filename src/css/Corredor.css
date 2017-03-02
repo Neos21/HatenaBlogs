@@ -1,5 +1,5 @@
 /*!
- * Neo's World - Corredor - 2017-02-12
+ * Neo's World - Corredor - 2017-03-03
  * http://neo.s21.xrea.com/
  * http://neos21.hatenablog.com/
  */
@@ -782,7 +782,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 }
 
 .hatena-module {
-  margin:0 0 30px;
+  margin:0 0 25px;
 }
 
 .hatena-module:last-child {
@@ -790,7 +790,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 }
 
 .hatena-module-title {
-  margin:0 0 10px;
+  margin:0 0 5px;
   color:#333;
   font-size:120%;
   font-weight:bold;
@@ -859,6 +859,11 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 .urllist-categories {
   margin:3px 0 0;
   font-size:105%;
+}
+
+/* カテゴリのリンクのみ詰める */
+.hatena-module-category .hatena-urllist li {
+  padding:4px 0;
 }
 
 /* ==================================================
