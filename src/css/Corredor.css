@@ -825,6 +825,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 .hatena-id-link {
   display:inline-block;
   margin:0 0 5px;
+  font-size:110%;
   font-weight:bold;
 }
 

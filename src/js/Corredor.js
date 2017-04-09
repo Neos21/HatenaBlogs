@@ -1,8 +1,7 @@
-/**
- * Corredor - Footer
- *
- * - 記事ごとにシェアリンクを追加する
- * - Footer の AdSense を1つ目の記事の末尾に追加する
+/*!
+ * Neo's World - Corredor - 2017-04-09
+ * http://neo.s21.xrea.com/
+ * http://neos21.hatenablog.com/
  */
 (function(d, c, i, s) {
   // Body 要素に任意のクラス名が存在するか確認する
