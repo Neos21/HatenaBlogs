@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf ./dist/css/*",
-    "min": "npm-run-all clean min:*",
-    "min:corredor": "cleancss -c ie7 -f 'breaks:afterComment=on' -d -o dist/css/Corredor.min.css src/css/Corredor.css",
-    "min:murga": "cleancss -c ie7 -f 'breaks:afterComment=on' -d -o dist/css/Murga.min.css src/css/Murga.css",
-    "min:elmylar": "cleancss -c ie7 -f 'breaks:afterComment=on' -d -o dist/css/ElMylar.min.css src/css/ElMylar.css"
+    "min-css": "gulp min-css",
+    "min-css-corredor": "gulp min-css-corredor",
+    "min-css-murga": "gulp min-css-murga",
+    "min-css-elmylar": "gulp min-css-elmylar",
+    "min-js": "gulp min-js",
+    "min-js-corredor": "gulp min-js-corredor",
+    "min-js-murga": "gulp min-js-murga",
+    "min-js-elmylar": "gulp min-js-elmylar"
   },
   "repository": {
     "type": "git",
@@ -21,8 +24,10 @@
   },
   "homepage": "https://github.com/Neos21GitHub/HatenaBlogs#readme",
   "devDependencies": {
-    "clean-css-cli": "^4.0.0",
-    "npm-run-all": "^4.0.1",
-    "rimraf": "^2.5.4"
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^2.1.2"
   }
 }

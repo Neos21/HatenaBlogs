@@ -7,12 +7,13 @@
 - [El Mylar](http://neos21.hateblo.jp/)
 
 
-## CSS Minify
+## gulp-clean-css
 
-Clean CSS CLI で CSS を圧縮しています。
+Clean-CSS CLI をラップしている Gulp プラグインで、CSS を圧縮しています。
 
-npm-scripts での実行の際は、`rimraf` で `dist/css` ディレクトリ配下のファイルを削除し、`npm-run-all` で一括で `cleancss` を実行しています。
+## gulp-uglify
 
+Uglify をラップしている Gulp プラグインで、JavaScript を圧縮しています。
 
 ## Copyright
 
