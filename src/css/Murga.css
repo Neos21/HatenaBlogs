@@ -807,6 +807,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 
 .hatena-module:last-child {
   margin:0;
+  padding-bottom:30px;
 }
 
 .hatena-module-title {
@@ -884,6 +885,11 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 .urllist-categories {
   margin:3px 0 0;
   font-size:105%;
+}
+
+/* カテゴリのリンクのみ詰める */
+.hatena-module-category .hatena-urllist li {
+  padding:3px 0;
 }
 
 /* ==================================================
