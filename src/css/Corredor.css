@@ -1,5 +1,5 @@
 /*!
- * Neo's World - Corredor - 2017-03-03
+ * Neo's World - Corredor - 2017-04-09
  * http://neo.s21.xrea.com/
  * http://neos21.hatenablog.com/
  */
@@ -822,8 +822,8 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   background-clip:padding-box;
 }
 
-.id {
-  display:block;
+.hatena-id-link {
+  display:inline-block;
   margin:0 0 5px;
   font-weight:bold;
 }
