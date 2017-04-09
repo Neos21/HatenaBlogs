@@ -1,5 +1,5 @@
 /*!
- * Neo's World - El Mylar - 2017-02-12
+ * Neo's World - El Mylar - 2017-04-09
  * http://neo.s21.xrea.com/
  * http://neos21.hateblo.jp/
  */
@@ -288,7 +288,8 @@ a {
 .entry-content a,
 #comment-box a,
 .pager a,
-.hatena-id-link {   /* ID */
+.hatena-id-link,  /* ID */
+#neos21-footer-link {
   color:#06f;
 }
 
@@ -328,6 +329,14 @@ a:hover {
 #bottom-editarea {
   overflow:hidden;  /* ウィンドウ幅を縮めた時に広告が突っ張り棒にならないようにする */
   margin:20px auto;
+  text-align:center;
+}
+
+/* フッタ AdSense */
+.neos21-adsense-footer {
+  overflow:hidden;
+  margin:20px auto;
+  width:300px;
   text-align:center;
 }
 
@@ -821,9 +830,10 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   background-clip:padding-box;
 }
 
-.id {
-  display:block;
+.hatena-id-link {
+  display:inline-block;
   margin:0 0 5px;
+  font-size:110%;
   font-weight:bold;
 }
 
@@ -936,6 +946,22 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
  * ================================================== */
 
 /* #bottom-editarea : ヘッダと同じ */
+
+/* フッタリンク */
+#neos21-footer-link {
+  text-align:center;
+  list-style:none;
+}
+
+#neos21-footer-link li {
+  padding:0 5px;
+  border-left:1px solid #ddd;
+  display:inline-block;
+}
+
+#neos21-footer-link li:first-child {
+  border-left:0;
+}
 
 
 /* --------------------------------------------------

@@ -1,5 +1,5 @@
 /*!
- * Neo's World - Murga - 2017-02-12
+ * Neo's World - Murga - 2017-04-09
  * http://neo.s21.xrea.com/
  * http://neos21.hatenablog.jp/
  */
@@ -286,7 +286,8 @@ td, th {
 #comment-box a,
 .pager a,
 .hatena-urllist a,  /* Side Module */
-.hatena-id-link {   /* ID */
+.hatena-id-link,    /* ID */
+#neos21-footer-link {
   color:#c00;
 }
 
@@ -326,6 +327,14 @@ a:hover {
   overflow:hidden;  /* ウィンドウ幅を縮めた時に広告が突っ張り棒にならないようにする */
   margin:20px auto;
   padding:0 20px;
+  text-align:center;
+}
+
+/* フッタ AdSense */
+.neos21-adsense-footer {
+  overflow:hidden;
+  margin:20px auto;
+  width:300px;
   text-align:center;
 }
 
@@ -826,9 +835,10 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   background-clip:padding-box;
 }
 
-.id {
-  display:block;
+.hatena-id-link {
+  display:inline-block;
   margin:0 0 5px;
+  font-size:110%;
   font-weight:bold;
 }
 
@@ -929,6 +939,22 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   padding:20px 20px 40px;
   text-align:center;
   background:#3d3d3d;
+}
+
+/* フッタリンク */
+#neos21-footer-link {
+  text-align:center;
+  list-style:none;
+}
+
+#neos21-footer-link li {
+  padding:0 5px;
+  border-left:1px solid #ddd;
+  display:inline-block;
+}
+
+#neos21-footer-link li:first-child {
+  border-left:0;
 }
 
 
@@ -1043,8 +1069,14 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   .breadcrumb,
   #content {
     width:94%;
-    margin-right:auto;
-    margin-left:auto;
+    margin-right:auto !important;
+    margin-left:auto !important;
+  }
+  
+  .breadcrumb {
+    padding-right:0;
+    padding-left:0;
+    border-top:0;
   }
   
   #top-editarea,

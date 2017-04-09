@@ -322,10 +322,17 @@ a:hover {
 
 /* ヘッダ・フッタ・自由欄 (AdSense) */
 #top-editarea,
-#bottom-editarea,
-.neos21-adsense-footer /* 記事下に移動する */ {
+#bottom-editarea {
   overflow:hidden;  /* ウィンドウ幅を縮めた時に広告が突っ張り棒にならないようにする */
   margin:20px auto;
+  text-align:center;
+}
+
+/* フッタ AdSense */
+.neos21-adsense-footer {
+  overflow:hidden;
+  margin:20px auto;
+  width:300px;
   text-align:center;
 }
 
@@ -443,11 +450,6 @@ a:hover {
 /* Main */
 #main {
   float:left;
-  width:650px;
-}
-
-/* フッタ Adsense (記事下に移動する) */
-.neos21-adsense-footer {
   width:650px;
 }
 
@@ -922,12 +924,12 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 
 /* #bottom-editarea : ヘッダと同じ */
 
+/* フッタリンク */
 #neos21-footer-link {
   text-align:center;
   list-style:none;
 }
 
-/* フッタリンク */
 #neos21-footer-link li {
   padding:0 5px;
   border-left:1px solid #ddd;
@@ -989,6 +991,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 }
 
 
+
 /* --------------------------------------------------
  * Media Queries
  * -------------------------------------------------- */
@@ -1017,8 +1020,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
     width:724px;
   }
   
-  #main,
-  .neos21-adsense-footer {
+  #main {
     width:460px;
   }
   
@@ -1064,7 +1066,6 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   }
   
   #main,
-  .neos21-adsense-footer,
   #box2 {
     float:none;
     width:100%;
