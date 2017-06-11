@@ -6,8 +6,8 @@
 (function(d, c, i, s) {
   // Body 要素に任意のクラス名が存在するか確認する
   var hasClass = function(className) {
-    return (s + d.body.className + s).replace(/[\n\t]/g, s).indexOf(s + className + s) !== -1;
-  }
+    return ~(s + d.body.className + s).replace(/[\n\t]/g, s).indexOf(s + className + s);
+  };
   
   // 記事ごとにシェアリンクを追加する
   var appendShareLinks = function(articlesClassName, destClassName) {
