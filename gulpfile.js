@@ -1,8 +1,7 @@
-'use strict';
-
-var gulp = require('gulp');
-var gulpLoadPlugins = require('gulp-load-plugins');
-var $ = gulpLoadPlugins();  // Gulp プラグインを一括で読み込む
+const gulp = require('gulp');
+// Gulp プラグインを一括で読み込む
+const gulpLoadPlugins = require('gulp-load-plugins');
+const $ = gulpLoadPlugins();
 
 /* ================================================================================
  * 関数定義
@@ -11,12 +10,12 @@ var $ = gulpLoadPlugins();  // Gulp プラグインを一括で読み込む
 /**
  * CSS を圧縮する Function
  * 
- * @param {string} 圧縮するファイル名。"*" を渡せば src/css/ 配下の全ファイルが対象となる
- * @return {Stream}
+ * @param {String} 圧縮するファイル名。'*' を渡せば src/css/ 配下の全ファイルが対象となる
+ * @returns {Stream}
  */
 function minCss(fileName) {
   return gulp
-    .src("src/css/" + fileName + ".css")  // src/css/ 配下の指定ファイルを対象に圧縮する
+    .src(`src/css/${fileName}.css`)  // src/css/ 配下の指定ファイルを対象に圧縮する
     .pipe($.cleanCss(
       {
         compatibility: 'ie7',   // 互換性の設定
@@ -25,9 +24,9 @@ function minCss(fileName) {
             afterComment: true  // コメントの後ろに改行を入れる
           }
         }
-      }, function(details) {
+      }, (details) => {
         // 圧縮結果をログ出力する
-        console.log(details.name + ': ' + details.stats.originalSize + ' -> ' + details.stats.minifiedSize);
+        console.log(`${details.name} : ${details.stats.originalSize} -> ${details.stats.minifiedSize}`);
       }
     ))
     .pipe(gulp.dest('dist/css/'));  // dist/css/ 配下に出力する (対象ディレクトリがなくても OK・ファイルは上書き)
@@ -36,12 +35,12 @@ function minCss(fileName) {
 /**
  * JavaScript を圧縮する Function
  * 
- * @param {string} 圧縮するファイル名。"*" を渡せば src/css/ 配下の全ファイルが対象となる
- * @return {Stream}
+ * @param {String} 圧縮するファイル名。'*' を渡せば src/js/ 配下の全ファイルが対象となる
+ * @returns {Stream}
  */
 function minJs(fileName) {
   return gulp
-    .src("src/js/" + fileName + ".js")  // src/js/ 配下の指定ファイルを対象に圧縮する
+    .src(`src/js/${fileName}.js`)  // src/js/ 配下の指定ファイルを対象に圧縮する
     .pipe($.plumber())  // エラー時にプロセスが落ちないようにするプラグイン
     .pipe($.uglify({
       compress: true,  // 圧縮する 
@@ -58,71 +57,71 @@ function minJs(fileName) {
 /**
  * CSS 圧縮 … 全ファイル
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-css', function() {
-  return minCss("*");
+gulp.task('min-css', () => {
+  return minCss('*');
 });
 
 /**
  * CSS 圧縮 … Corredor
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-css-corredor', function() {
-  return minCss("Corredor");
+gulp.task('min-css-corredor', () => {
+  return minCss('Corredor');
 });
 
 /**
  * CSS 圧縮 … Murga
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-css-murga', function() {
-  return minCss("Murga");
+gulp.task('min-css-murga', () => {
+  return minCss('Murga');
 });
 
 /**
  * CSS 圧縮 … El Mylar
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-css-elmylar', function() {
-  return minCss("ElMylar");
+gulp.task('min-css-elmylar', () => {
+  return minCss('ElMylar');
 });
 
 /**
  * JavaScript 圧縮 … 全ファイル
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-js', function() {
-  return minJs("*");
+gulp.task('min-js', () => {
+  return minJs('*');
 });
 
 /**
  * JavaScript 圧縮 … Corredor
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-js-corredor', function() {
-  return minJs("Corredor");
+gulp.task('min-js-corredor', () => {
+  return minJs('Corredor');
 });
 
 /**
  * JavaScript 圧縮 … Murga
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-js-murga', function() {
-  return minJs("Murga");
+gulp.task('min-js-murga', () => {
+  return minJs('Murga');
 });
 
 /**
  * JavaScript 圧縮 … El Mylar
  * 
- * @return {Stream}
+ * @returns {Stream}
  */
-gulp.task('min-js-elmylar', function() {
-  return minJs("ElMylar");
+gulp.task('min-js-elmylar', () => {
+  return minJs('ElMylar');
 });
