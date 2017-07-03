@@ -94,6 +94,10 @@ strong, strong * {
 .neos21-follow-facebook  a:hover { background:#3a5795; }
 .neos21-follow-instagram a:hover { background:#3f729b; }
 
+.neos21-share {
+  margin-top:.5em;
+}
+
 .neos21-share li {
   float:left;
   width:25%;
