@@ -1,0 +1,6 @@
+/*!
+ * Neo's World - Bit-Archer - 2017-07-04
+ * http://neo.s21.xrea.com/
+ * http://bit-archer.hatenablog.com/
+ */
+!function(e,t,n,o){var r=function(t){return~(o+e.body.className+o).replace(/[\n\t]/g,o).indexOf(o+t+o)},a=function(o,r){var a=e[n]("neos21-share-template");a.removeAttribute("id"),Array.prototype.forEach.call(e[t](o),function(e){var n=e[t]("entry-title-link")[0],o=encodeURIComponent(n.innerText),i=n.getAttribute("href"),c=a.cloneNode(!0),p=function(e,n){c[t]("neos21-share-"+e+"-link")[0].setAttribute("href",n)};p("hatebu","http://b.hatena.ne.jp/entry/"+i),p("twitter","https://twitter.com/share?url="+i+"&amp;text="+o),p("facebook","http://www.facebook.com/share.php?u="+i),p("pocket","http://getpocket.com/edit?url="+i+"&amp;title="+o),e[t](r)[0].appendChild(c)}),e[n]("neos21-template").removeChild(a)};e.addEventListener("DOMContentLoaded",function(){r("page-index")?a("hentry","customized-footer"):r("page-archive")&&a("archive-entry","archive-entry-body")},!1)}(document,"getElementsByClassName","getElementById"," ");

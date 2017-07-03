@@ -3,11 +3,36 @@
 /* </system> */
 
 /*!
- * Neo's World - Bit-Archer - 2017-04-26
+ * Neo's World - Bit-Archer - 2017-07-04
  * http://neo.s21.xrea.com/
  * http://bit-archer.hatenablog.com/
  */
 
+
+/* --------------------------------------------------
+ * Normalize
+ * -------------------------------------------------- */
+
+
+/* ==================================================
+ * Text-level Semantics
+ * ================================================== */
+
+em, em * {
+  color:#090;
+  font-weight:bold;
+  font-style:normal;
+}
+
+strong, strong * {
+  color:#f00;
+  font-weight:bold;
+}
+
+
+/* --------------------------------------------------
+ * Page Design
+ * -------------------------------------------------- */
 
 
 /* フォローリンク・シェアリンク */
@@ -111,6 +136,11 @@
 .neos21-share-facebook { background:#3a5795; }
 .neos21-share-pocket   { background:#ed4055; }
 
+/* テンプレート格納用 */
+#neos21-template {
+  display:none;
+}
+
 /* Amazon など */
 .hatena-asin-detail li {
   line-height:1.4;
@@ -119,4 +149,73 @@
 /* この商品を含むブログリンク */
 a[href^="http://d.hatena.ne.jp/asin/"] {
   display:none;
+}
+
+/* ==================================================
+ * Container
+ * ================================================== */
+
+#content {
+  margin-top:1em;
+  margin-bottom:1em;
+  padding-top:0;
+  padding-bottom:0;
+}
+
+/* ==================================================
+ * Entry Content
+ * ================================================== */
+
+.entry-content p {
+  margin:1.5em 0;
+}
+
+/* List */
+.entry-content > ul {
+  list-style-type:disc;
+}
+
+.entry-content li ul {
+  list-style-type:circle !important;
+}
+
+.entry-content li li > ul {
+  list-style-type:square !important;
+}
+
+/* Banners */
+.banner {
+  overflow:hidden;
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
+}
+
+.banner-header,
+.banner-footer {
+  margin:1em auto;
+}
+
+.banner-side > div {
+  margin:5px auto;
+}
+
+/* ==================================================
+ * Footer
+ * ================================================== */
+
+/* フッタリンク */
+#neos21-footer-link {
+  text-align:center;
+  list-style:none;
+}
+
+#neos21-footer-link li {
+  padding:0 5px;
+  border-left:1px solid #ddd;
+  display:inline-block;
+}
+
+#neos21-footer-link li:first-child {
+  border-left:0;
 }

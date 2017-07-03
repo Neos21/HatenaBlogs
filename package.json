@@ -8,10 +8,12 @@
     "min-css-corredor": "gulp min-css-corredor",
     "min-css-murga": "gulp min-css-murga",
     "min-css-elmylar": "gulp min-css-elmylar",
+    "min-css-bitarcher": "gulp min-css-bitarcher",
     "min-js": "gulp min-js",
     "min-js-corredor": "gulp min-js-corredor",
     "min-js-murga": "gulp min-js-murga",
-    "min-js-elmylar": "gulp min-js-elmylar"
+    "min-js-elmylar": "gulp min-js-elmylar",
+    "min-js-bitarcher": "gulp min-js-bitarcher"
   },
   "repository": {
     "type": "git",

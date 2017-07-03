@@ -1,5 +1,5 @@
 /*!
- * Neo's World - Murga - 2017-04-09
+ * Neo's World - Murga - 2017-07-04
  * http://neo.s21.xrea.com/
  * http://neos21.hatenablog.jp/
  */
@@ -990,6 +990,14 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 
 
 /* body.page-archive */
+.archive-header-category {
+  margin-bottom:30px;
+}
+
+.archive-header-category .archive-heading {
+  margin:0 20px;
+}
+
 .archive-entry {
   margin:30px 20px;
 }
@@ -1138,6 +1146,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
     left:20px;
   }
   
+  .archive-heading,
   .archive-entry,
   .search-result {
     margin-right:0;

@@ -43,8 +43,8 @@ function minJs(fileName) {
     .src(`src/js/${fileName}.js`)  // src/js/ 配下の指定ファイルを対象に圧縮する
     .pipe($.plumber())  // エラー時にプロセスが落ちないようにするプラグイン
     .pipe($.uglify({
-      compress: true,  // 圧縮する 
-      mangle: true,    // 変数の難読化を行う
+      compress: true,   // 圧縮する 
+      mangle: true,     // 変数の難読化を行う
       preserveComments: 'some'  // 「*!」で始まるブロックコメントを残す
     }))
     .pipe(gulp.dest('dist/js/'));  // dist/js/ 配下に出力する (対象ディレクトリがなくても OK・ファイルは上書き)
@@ -91,6 +91,15 @@ gulp.task('min-css-elmylar', () => {
 });
 
 /**
+ * CSS 圧縮 … Bit-Archer
+ * 
+ * @returns {Stream}
+ */
+gulp.task('min-css-bitarcher', () => {
+  return minCss('BitArcher');
+});
+
+/**
  * JavaScript 圧縮 … 全ファイル
  * 
  * @returns {Stream}
@@ -124,4 +133,13 @@ gulp.task('min-js-murga', () => {
  */
 gulp.task('min-js-elmylar', () => {
   return minJs('ElMylar');
+});
+
+/**
+ * JavaScript 圧縮 … Bit-Archer
+ * 
+ * @returns {Stream}
+ */
+gulp.task('min-js-bitarcher', () => {
+  return minJs('BitArcher');
 });
