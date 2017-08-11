@@ -472,7 +472,7 @@ a:hover {
 #blog-title-inner {
   background-color:#000;
   background-position:left -25px !important;
-  background-size:cover
+  background-size:cover;
   height:175px !important;
 }
 
