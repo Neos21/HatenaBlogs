@@ -21,16 +21,19 @@ html {
   font-family:sans-serif;
       -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
+  -webkit-overflow-scrolling:touch;
+  scroll-behavior: smooth;  /* ページ内リンクのスムーズスクロール・現時点で Firefox のみ */
 }
 
 body {
   margin:0;
   color:#000;
-  font-family:"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight:500;  /* Windows の 游ゴシック Light が細いため指定・ヒラギノ・メイリオの場合は normal と同様の表示 */
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  /* Windows の「游ゴシック」は Medium を指定することで font-weight: 500; 指定をしないようにする。これより後ろに「"游ゴシック", "Yu Gothic"」があると Light が使用されてしまう (「"游ゴシック体", YuGothic」は Mac 用で Windows は認識しない) */
   word-wrap:break-word;  /* 長い英単語も折り返す */
   background:#fff;
   cursor:default;
+  -webkit-overflow-scrolling:touch;
 }
 
 /* ==================================================
@@ -434,6 +437,7 @@ a:hover {
  * ================================================== */
 
 #container {
+  position:relative;  /* ヘッダに配置するメニュー用 */
   width:1040px;
   margin:0 auto;
 }
@@ -505,6 +509,16 @@ a:hover {
               rgba(0, 0, 0, 0.9) -2px  2px 1px,
               rgba(0, 0, 0, 0.9)  2px -2px 1px,
               rgba(0, 0, 0, 0.9) -2px -2px 1px !important;
+}
+
+/* #top-editarea 内 メニュー部分に移動するリンク*/
+#go-to-menu {
+  position:absolute;
+  top:8px;
+  right:3%;
+  color:#fff;
+  font-size:120%;
+  display:none;  /* 1カラムの時のみ表示 */
 }
 
 /* ==================================================
@@ -1053,6 +1067,11 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
     width:245px;
   }
   
+  /* このサイズで cover にすると下に黒い余白ができるため解除 */
+  #blog-title-inner {
+    background-size:auto;
+  }
+  
 }
 
 /* ==================================================
@@ -1090,6 +1109,11 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
     text-align:center;
   }
   
+  /* メニューに移動するリンク */
+  #go-to-menu {
+    display:block;
+  }
+  
   #main,
   #box2 {
     float:none;
@@ -1109,6 +1133,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   .hatena-module-category .hatena-module-body {
     overflow-y:scroll;
     height:295px;
+    -webkit-overflow-scrolling:touch;
   }
   
 }
