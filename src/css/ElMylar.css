@@ -659,7 +659,7 @@ a:hover {
   padding:10px;
   border:1px solid #ddd;
   border-radius:3px;
-  font-family:"Ricty Diminished", MeiryoKe_Gothic, Monaco, Consolas, "Courier New", Courier, monospace;
+  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, monospace;
   white-space:pre;
   background:#f3f3f3;
 }
@@ -670,7 +670,7 @@ a:hover {
   border:1px solid #ddd;
   border-radius:3px;
   font-size:95%;
-  font-family:"Ricty Diminished", MeiryoKe_Gothic, Monaco, Consolas, "Courier New", Courier, monospace;
+  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, monospace;
   background:#f3f3f3;
 }
 
