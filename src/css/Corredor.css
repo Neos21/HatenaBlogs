@@ -22,7 +22,6 @@ html {
       -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
   -webkit-overflow-scrolling:touch;
-  scroll-behavior:smooth;  /* ページ内リンクのスムーズスクロール・現時点で Firefox のみ */
 }
 
 body {
@@ -33,7 +32,6 @@ body {
   word-wrap:break-word;  /* 長い英単語も折り返す */
   background:#fff;
   cursor:default;
-  -webkit-overflow-scrolling:touch;
 }
 
 /* ==================================================
@@ -1137,6 +1135,17 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
     -webkit-overflow-scrolling:touch;
   }
   
+  /* Category iOS 用スクロールバー : スクロールバー全体の幅 */
+  .hatena-module-category .hatena-module-body::-webkit-scrollbar {
+    width:10px;
+  }
+  
+  /* Category iOS 用スクロールバー : スクロールバーのスタイル */
+  .hatena-module-category .hatena-module-body::-webkit-scrollbar-thumb {
+    background:#ddd;
+    border-radius:10px;
+  }
+   
 }
 
 /* ==================================================

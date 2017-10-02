@@ -24,7 +24,6 @@ html {
       -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
   -webkit-overflow-scrolling:touch;
-  scroll-behavior:smooth;  /* ページ内リンクのスムーズスクロール・現時点で Firefox のみ */
 }
 
 body {
@@ -32,7 +31,6 @@ body {
   /* Windows の「游ゴシック」は Medium を指定することで font-weight: 500; 指定をしないようにする。これより後ろに「"游ゴシック", "Yu Gothic"」があると Light が使用されてしまう (「"游ゴシック体", YuGothic」は Mac 用で Windows は認識しない) */
   word-wrap:break-word;  /* 長い英単語も折り返す */
   cursor:default;
-  -webkit-overflow-scrolling:touch;
 }
 
 /* ==================================================
