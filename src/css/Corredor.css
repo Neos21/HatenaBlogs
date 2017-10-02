@@ -913,6 +913,12 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   padding:4px 0;
 }
 
+/* Category : スクロール時の指定をココでしておく */
+.hatena-module-category .hatena-module-body {
+  overflow-y:scroll;
+  -webkit-overflow-scrolling:touch;
+}
+
 /* Category iOS 用スクロールバー : スクロールバー全体の幅 */
 .hatena-module-category .hatena-module-body::-webkit-scrollbar {
   width:10px;
@@ -1141,9 +1147,7 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   
   /* Category が長いのでスクロールできるようにする */
   .hatena-module-category .hatena-module-body {
-    overflow-y:scroll;
     height:295px;
-    -webkit-overflow-scrolling:touch;
   }
   
 }
