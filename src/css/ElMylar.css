@@ -1,5 +1,5 @@
 /*!
- * Neo's World - El Mylar - 2017-04-09
+ * Neo's World - El Mylar - 2017-10-02
  * http://neo.s21.xrea.com/
  * http://neos21.hateblo.jp/
  */
@@ -21,16 +21,19 @@ html {
   font-family:sans-serif;
       -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
+  -webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;  /* ページ内リンクのスムーズスクロール・現時点で Firefox のみ */
 }
 
 body {
   margin:0;
   color:#000;
-  font-family:"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight:500;  /* Windows の 游ゴシック Light が細いため指定・ヒラギノ・メイリオの場合は normal と同様の表示 */
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  /* Windows の「游ゴシック」は Medium を指定することで font-weight: 500; 指定をしないようにする。これより後ろに「"游ゴシック", "Yu Gothic"」があると Light が使用されてしまう (「"游ゴシック体", YuGothic」は Mac 用で Windows は認識しない) */
   word-wrap:break-word;  /* 長い英単語も折り返す */
   background:#fff;
   cursor:default;
+  -webkit-overflow-scrolling:touch;
 }
 
 /* ==================================================
@@ -604,7 +607,7 @@ a:hover {
 .entry-content h5,
 .entry-content h6 {
   margin:1.3em 0 0.8em;
-  border-bottom: 1px solid #ddd;
+  border-bottom:1px solid #ddd;
   line-height:1.5;
 }
 
