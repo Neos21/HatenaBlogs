@@ -3,7 +3,7 @@
 /* </system> */
 
 /*!
- * Neo's World - Bit-Archer - 2017-10-02
+ * Neo's World - Bit-Archer - 2017-10-28
  * http://neo.s21.xrea.com/
  * http://bit-archer.hatenablog.com/
  */
@@ -18,6 +18,19 @@
  * Base
  * ================================================== */
 
+/* Windows 用 Medium 指定の游ゴシック */
+@font-face {
+  font-family:"Yu Gothic M";
+  src:local("Yu Gothic Medium");
+}
+
+/* font-weight: bold の時は通常どおり Bold 書体を使わせる */
+@font-face {
+  font-family:"Yu Gothic M";
+  src:local("Yu Gothic Bold");
+  font-weight:bold;
+}
+
 /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html {
   font-family:sans-serif;
@@ -27,8 +40,7 @@ html {
 }
 
 body {
-  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  /* Windows の「游ゴシック」は Medium を指定することで font-weight: 500; 指定をしないようにする。これより後ろに「"游ゴシック", "Yu Gothic"」があると Light が使用されてしまう (「"游ゴシック体", YuGothic」は Mac 用で Windows は認識しない) */
+  font-family:-apple-system, BlinkMacSystemFont, HelveticaNeue, "Helvetica Neue", "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   word-wrap:break-word;  /* 長い英単語も折り返す */
   cursor:default;
 }
@@ -48,8 +60,8 @@ strong, strong * {
   font-weight:bold;
 }
 
-pre, code {
-  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, monospace;
+pre, code, kbd, samp, var {
+  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
 }
 
 
@@ -168,16 +180,6 @@ pre, code {
   display:none;
 }
 
-/* Amazon など */
-.hatena-asin-detail li {
-  line-height:1.4;
-}
-
-/* この商品を含むブログリンク */
-a[href^="http://d.hatena.ne.jp/asin/"] {
-  display:none;
-}
-
 /* ==================================================
  * Container
  * ================================================== */
@@ -226,6 +228,13 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 .banner-side > div {
   margin:5px auto;
 }
+
+/* ==================================================
+ * Pager
+ * ================================================== */
+
+.pager-prev:before { content:"新しい記事"; }
+.pager-next:before { content:"古い記事"; }
 
 /* ==================================================
  * Profile Module

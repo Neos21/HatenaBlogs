@@ -1,5 +1,5 @@
 /*!
- * Neo's World - Corredor - 2017-10-02
+ * Neo's World - Corredor - 2017-10-28
  * http://neo.s21.xrea.com/
  * http://neos21.hatenablog.com/
  */
@@ -16,6 +16,19 @@
  * Base
  * ================================================== */
 
+/* Windows 用 Medium 指定の游ゴシック */
+@font-face {
+  font-family:"Yu Gothic M";
+  src:local("Yu Gothic Medium");
+}
+
+/* font-weight: bold の時は通常どおり Bold 書体を使わせる */
+@font-face {
+  font-family:"Yu Gothic M";
+  src:local("Yu Gothic Bold");
+  font-weight:bold;
+}
+
 /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html {
   font-family:sans-serif;
@@ -27,8 +40,7 @@ html {
 body {
   margin:0;
   color:#000;
-  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  /* Windows の「游ゴシック」は Medium を指定することで font-weight: 500; 指定をしないようにする。これより後ろに「"游ゴシック", "Yu Gothic"」があると Light が使用されてしまう (「"游ゴシック体", YuGothic」は Mac 用で Windows は認識しない) */
+  font-family:-apple-system, BlinkMacSystemFont, HelveticaNeue, "Helvetica Neue", "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   word-wrap:break-word;  /* 長い英単語も折り返す */
   background:#fff;
   cursor:default;
@@ -292,7 +304,7 @@ td, th {
 }
 
 a:hover {
-  color:#08f !important;
+  color:#07f !important;
 }
 
 /* Clearfix */
@@ -486,7 +498,7 @@ a:hover {
 
 /* ヘッダ画像があるときの #title a は color:#fff; 指定がある */
 #title a {
-  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing:0.1em;
   text-transform:uppercase;
   text-shadow:rgba(0, 0, 0, 0.9)  2px  2px 1px,
@@ -665,7 +677,7 @@ a:hover {
   padding:10px;
   border:1px solid #ddd;
   border-radius:3px;
-  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, monospace;
+  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
   white-space:pre;
   background:#f3f3f3;
 }
@@ -676,7 +688,7 @@ a:hover {
   border:1px solid #ddd;
   border-radius:3px;
   font-size:95%;
-  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, monospace;
+  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
   background:#f3f3f3;
 }
 
@@ -706,6 +718,32 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   display:none;
 }
 
+/* 目次記法 */
+.table-of-contents {
+  display:inline-block;
+  margin:1em 0;
+  padding:1em 1.5em 1em 2em;
+  border:1px solid #ccc;
+  background:#f3f3f3;
+}
+
+.table-of-contents:before {
+  display:block;
+  content:"目次";
+  margin-bottom:1em;
+  font-weight:bold;
+  text-align:center;
+}
+
+.table-of-contents a {
+  color:#07f;
+  text-decoration:underline;
+}
+
+.table-of-contents a:hover {
+  color:#f09 !important;
+}
+
 /* Banners */
 .banner {
   overflow:hidden;
@@ -720,6 +758,11 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
 
 .entry-footer {
   margin:10px 0 0;
+}
+
+/* 関連記事 : 上の「はてなスター」と下の「SNS ボタン」との間を開ける */
+.entry-footer .hatena-module-related-entries {
+  margin:1.5em 0;
 }
 
 /* ==================================================
@@ -811,8 +854,8 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
   font-size:80%;
 }
 
-.pager-prev:before { content:"Prev"; }
-.pager-next:before { content:"Next"; }
+.pager-prev:before { content:"新しい記事"; }
+.pager-next:before { content:"古い記事"; }
 
 .pager-arrow {
   display:none;
