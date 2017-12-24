@@ -1,8 +1,7 @@
 {
   "name": "hatenablogs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Hatena Blogs",
   "scripts": {
     "min-css": "gulp min-css",
     "min-css-corredor": "gulp min-css-corredor",
@@ -19,8 +18,8 @@
     "type": "git",
     "url": "git+https://github.com/Neos21GitHub/HatenaBlogs.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Neos21GitHub/HatenaBlogs/issues"
   },
