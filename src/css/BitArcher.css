@@ -3,7 +3,7 @@
 /* </system> */
 
 /*!
- * Neo's World - Bit-Archer - 2017-10-28
+ * Neo's World - Bit-Archer - 2018-01-04
  * http://neo.s21.xrea.com/
  * http://bit-archer.hatenablog.com/
  */
@@ -61,7 +61,7 @@ strong, strong * {
 }
 
 pre, code, kbd, samp, var {
-  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Courier New", Courier, Consolas, Monaco, Menlo, "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
+  font-family:MeiryoKe_Gothic, "Ricty Diminished", "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", "Courier New", Courier, Monaco, Menlo, Consolas, monospace !important;
 }
 
 
