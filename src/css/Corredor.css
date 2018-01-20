@@ -532,8 +532,7 @@ a:hover {
   top:8px;
   right:3%;
   color:#fff;
-  font-size:130%;
-  display:none;  /* 1カラムの時のみ表示 */
+  font-size:150%;
 }
 
 /* ==================================================
@@ -1149,11 +1148,6 @@ a[href^="http://d.hatena.ne.jp/asin/"] {
     margin:-10px 0 0;
     padding:0;
     text-align:center;
-  }
-  
-  /* メニューに移動するリンク */
-  #go-to-menu {
-    display:block;
   }
   
   #main,
