@@ -384,13 +384,13 @@ a {
   
   #blog-title-inner {
     margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する
-    height: $header-height-min;  // $breakpoint-md 未満時の高さ・背景位置にする
+    height: $header-height-min !important;  // $breakpoint-md 未満時の高さ・背景位置にする
     background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black !important;
     transition: height .2s, background-position .2s;
     
     // $breakpoint-md 以上の高さ設定
     @media (min-width: $breakpoint-md) {
-      height: $header-height-max;
+      height: $header-height-max !important;
       background-position: left 10px !important;  // 背景画像に関する指定はインラインで追加されるので !important が必要
     }  
     
@@ -409,7 +409,7 @@ a {
     #blog-title-content {
       z-index: 10;  // #blog-title-inner::after が被らないようにフロートさせる
       position: absolute;
-      top: 0;
+      top: $header-margin-top;
       left: 0;
       width: 100%;
       line-height: 1;
@@ -418,7 +418,7 @@ a {
         @include responsive-width();
         @include english-font-family();
         
-        padding-top: 10px;
+        padding-top: 1rem;
         text-transform: uppercase;
         letter-spacing: .1em;
         transition: padding-top .2s;
