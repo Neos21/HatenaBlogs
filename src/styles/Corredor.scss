@@ -1,0 +1,1002 @@
+/*! Corredor : Neo (@Neos21) http://neos21.hatenablog.com/ */
+/*! Responsive: yes */
+
+// Neo's Normalize
+@import '../../node_modules/@neos21/neos-normalize/neos-normalize';
+
+/*! Corredor [Styles] : Neo (@Neos21) http://neos21.hatenablog.com/ */
+
+
+/* ==================================================
+ * 変数定義
+ * ================================================== */
+
+// メディアクエリ用
+$breakpoint-xs:  575.98px;  // @media (max-width: $breakpoint-xs)
+$breakpoint-sm:  576px   ;  // @media (min-width: $breakpoint-sm)
+$breakpoint-md:  768px   ;  // @media (min-width: $breakpoint-md)
+$breakpoint-lg:  992px   ;  // @media (min-width: $breakpoint-lg)
+$breakpoint-xl: 1200px   ;  // @media (min-width: $breakpoint-xl)
+
+// テーマカラー
+$colour-white        : #ffffff;
+$colour-black        : #000000;
+
+$colour-grey-hatena  : #dddddd;  // blog.css で使用されるカラー
+$colour-grey-darken  : #72767a;  // 主に文字色
+
+$colour-blue         : #0070ff;
+$colour-pink         : #ff0088;
+
+$colour-heading-blue          : #039be5;  // 見出しなどで使用
+$colour-heading-skyblue       : #f5fbfd;
+$colour-heading-skyblue-darken: #a9ddfb;
+$colour-heading-grey          : #959799;
+
+
+/* ==================================================
+ * ミックスイン定義
+ * ================================================== */
+
+// Clear Fix
+@mixin clearfix() {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// 中央揃え・はみ出し無視
+@mixin center() {
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+// 英文のみの要素用のフォント指定
+@mixin english-font-family() {
+  font-family: Verdana, "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+// li 要素をリセットする
+@mixin reset-list {
+  margin-left: 0;
+  list-style: none;
+}
+
+// レスポンシブルにボックス幅を変更する
+@mixin responsive-width() {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @media (min-width: $breakpoint-md) {
+    width: 85vw;
+    min-width: calc(#{$breakpoint-md} - 20px);
+  }
+  
+  @media (min-width: $breakpoint-xl) {
+    min-width: auto;
+  }
+}
+
+/* 
+ * レスポンシブルにフォントサイズを変更する
+ * 
+ * - calc(XX + ((1vw - YY) * ZZ))
+ *   - XX = 最小サイズを Rem で指定する
+ *          ex. 通常 1rem (= 16px) で良い
+ *   - YY = 拡大を始めるビューポート幅 / 100 (px)
+ *          ex. 992px から拡大するなら 9.92px
+ *   - ZZ = 100 * 可変させるフォントサイズの差 / 可変させるビューポート幅の差
+ *          ex. 100 * (20px - 16px) / (1200px - 992px) = 100 * 4px / 208px = 1.92307...
+ * - 参考 : https://websemantics.uk/tools/responsive-font-calculator/
+ */
+@mixin responsive-font-size() {
+  // 最小サイズ (基準)
+  font-size: 16px;
+  
+  // 可変
+  @media (min-width: $breakpoint-lg) {
+    font-size: calc(1rem + ((1vw - 9.92px) * 1.92307));
+  }
+  
+  // 最大サイズ
+  @media (min-width: $breakpoint-xl) {
+    font-size: 20px;
+  }
+}
+
+
+/* ==================================================
+ * 要素全般
+ * ================================================== */
+
+body {
+  color: $colour-black;
+  font-size: 16px;  // レスポンシブフォントサイズの最小サイズに合わせる
+  background: $colour-white;
+  
+  // 幅が狭い場合は改行処理を追加する
+  @media (max-width: $breakpoint-xs) {
+    word-break: break-all;
+  }
+}
+
+a {
+  color: $colour-pink;
+  text-decoration: none;
+  
+  &:hover {
+    color: $colour-blue !important;
+  }
+}
+
+
+/* ==================================================
+ * 自前のクラス
+ * ================================================== */
+
+// follow : プロフィール欄のフォローリンク
+.n-f {
+  // 各リンク用のミックスイン
+  @mixin n-f($n-f-colour) {
+    a {
+      border: 1px solid $n-f-colour;
+      color: $n-f-colour;
+      
+      &:hover {
+        background: $n-f-colour;
+      }
+    }
+  }
+  
+  // 2列・3列で2行作る : 各アイテムの grid-column で結合利用するセルを指定する
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: .7rem;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 30% 14% 14% 30%;
+    grid-gap: .7rem 4%;
+  }
+  
+  li {
+    line-height: 1;
+    
+    &.n-f-ha { @include n-f(#3d3f44); }
+    &.n-f-fe { @include n-f(#67c150); }
+    &.n-f-tw { @include n-f(#55acee); }
+    &.n-f-fb { @include n-f(#3a5795); }
+    &.n-f-ig { @include n-f(#3f729b); }
+    
+    @media (min-width: $breakpoint-md) {
+      &.n-f-ha { grid-column: 1 / 3; }
+      &.n-f-fe { grid-column: 3 / 5; }
+      &.n-f-tw { grid-column: 1 / 2; }
+      &.n-f-fb { grid-column: 2 / 4; }
+      &.n-f-ig { grid-column: 4 / 5; }
+    }
+  
+    a {
+      display: block;
+      border-radius: 4px;
+      padding: .4rem 0;
+      text-align: center;
+      overflow: hidden;
+      transition: color .2s, background-color .2s;
+      
+      &:hover {
+        color: $colour-white !important;
+      }
+      
+      i {
+        display: block;
+        padding-bottom: .15rem;  // アイコンの垂直中央を揃える
+        font-size: 1.75rem;
+      }
+      
+      span {
+        display: none;  // 幅が狭い時は非表示にする
+        font-size: .8rem;
+        white-space: nowrap;
+        
+        @media (min-width: $breakpoint-md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// share : 記事下部のシェアリンク
+.n-s {  // ul
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+  li {
+    @include reset-list();
+    
+    text-align: center;
+    overflow: hidden;
+    
+    &.n-s-ha { background:#006fbb; }
+    &.n-s-tw { background:#55acee; }
+    &.n-s-fb { background:#3a5795; }
+    &.n-s-po { background:#ed4055; }
+    
+    &:first-child { border-radius: 4px 0   0   4px; }
+    &:last-child  { border-radius: 0   4px 4px 0  ; }
+    
+    a {
+      display: block;
+      padding: .6rem 0;
+      color: $colour-white !important;
+      line-height: 1;
+      transition: background-color .2s;
+      
+      &:hover {
+        background:rgba(255, 255, 255, .2);
+      }
+      
+      i {
+        display: block;
+        margin-bottom: .4rem;
+        font-size: 1.5rem;
+      }
+      
+      span {
+        display: block;
+        font-size: .9rem;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+// google-adsense : サイドバー・フッタ (記事下部) の AdSense 用
+.n-ga {
+  @include center();
+}
+
+// バナー貼付用 : 中央寄せ・はみ出し禁止
+.banner {
+  @include center();
+}
+
+
+/* ==================================================
+ * 2カラムレイアウト調整
+ * ================================================== */
+
+#content {
+  @include responsive-width();
+  
+  #content-inner {
+    @media (min-width: $breakpoint-md) {
+      display: grid;
+      // #wrapper (#main) … 440px ～ ・ #box2 … 250px ～ 350px
+      grid-template-columns: minmax(440px, auto) minmax(250px, 350px);
+      grid-column-gap: 1.5rem;
+    }
+    
+    #wrapper {
+      @include responsive-font-size();
+      
+      // #content-inner の grid-template-columns と同値を入れておき突っ張り棒にする
+      @media (min-width: $breakpoint-md) {
+        min-width: 440px;
+      }
+    }
+    
+    #box2 {
+      margin-top: 4rem;  // 1カラムの時はメインコンテンツとの間隔を開ける
+      
+      // #content-inner の grid-template-columns と同値を入れておき突っ張り棒にする
+      @media (min-width: $breakpoint-md) {
+        margin-top: 0;
+        min-width: 250px;
+      }
+    }
+  }
+}
+
+
+/* ==================================================
+ * はてなブログのクラス
+ * ================================================== */
+
+// 日付 : 灰色
+.date,
+.date a,
+.urllist-date-link a {
+  @include english-font-family();
+  
+  color: $colour-grey-darken;
+}
+
+// サイドバーなどで使用するモジュール
+.hatena-module {
+  position: relative;
+  margin: 1.25rem 0 3.5rem;
+  border-top: 1px solid $colour-heading-skyblue-darken;
+  padding-top: 1.5rem;
+  
+  // タイトル
+  .hatena-module-title {
+    display: inline-block;
+    position: absolute;
+    top: -.6em;
+    left: 50%;
+    padding: 0 .8em;
+    color: $colour-black;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    line-height: 1;
+    background: $colour-white;
+    transform: translateX(-50%);
+    
+    a {
+      color: inherit;
+    }
+  }
+  
+  // .hatena-module-body
+  
+  // URL リスト
+  .hatena-urllist {  // ul
+    li {
+      padding: .5rem 0;
+      border-bottom: 1px solid $colour-grey-hatena;
+      
+      // カテゴリ (Latests・Hot Entries など)
+      .urllist-categories {
+        &::after {
+          @include clearfix();
+        }
+        
+        .urllist-category-link {
+          font-size: .8em;
+        }
+      }
+    }
+  }
+}
+
+
+/* ==================================================
+ * ヘッダ
+ * ================================================== */
+
+#blog-title {  // header
+  // 背景画像の位置調整用のオフセット
+  $header-margin-top: 15px;
+  $header-height-min: calc( 80px + #{$header-margin-top});
+  $header-height-max: calc(175px + #{$header-margin-top});
+  
+  position: relative;
+  overflow: hidden;  // 黒いボカシによる横スクロール発生をなくす
+  
+  #blog-title-inner {
+    margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する
+    height: $header-height-min;  // $breakpoint-md 未満時の高さ・背景位置にする
+    background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black;
+    transition: height .2s, background-position .2s;
+    
+    // $breakpoint-md 以上の高さ設定
+    @media (min-width: $breakpoint-md) {
+      height: $header-height-max;
+      background-position: left 10px;
+    }  
+    
+    // 画像右端に黒いボカシを付ける (主に md 以上の時用)
+    &::after {
+      content: "";
+      z-index: 1;  // 最下層にする
+      position: absolute;
+      top: -$header-margin-top;
+      left: 0;
+      width: 900px;  // $header-height-max で縮小表示した時の幅に合わせて設定
+      height: $header-height-max;
+      box-shadow: inset -30px 0 30px -15px $colour-black;
+    }
+    
+    #blog-title-content {
+      z-index: 10;  // #blog-title-inner::after が被らないようにフロートさせる
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      line-height: 1;
+      
+      #title {  // h1
+        @include responsive-width();
+        @include english-font-family();
+        
+        padding-top: 10px;
+        text-shadow: $colour-black  2px  2px 1px,
+                     $colour-black -2px  2px 1px,
+                     $colour-black  2px -2px 1px,
+                     $colour-black -2px -2px 1px;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        transition: padding-top .2s;
+        
+        @media (min-width: $breakpoint-md) {
+          padding-top: 60px;
+        }
+        
+        a {
+          color: $colour-white;
+          
+          &:hover {
+            color: #fde !important;
+          }
+        }
+      }
+      
+      #blog-description {  // h2
+        @include responsive-width();
+        
+        padding-top: 5px;
+        color: $colour-white;
+        font-size: 1em;
+        text-shadow: $colour-black  2px  2px 1px,
+                     $colour-black -2px  2px 1px,
+                     $colour-black  2px -2px 1px,
+                     $colour-black -2px -2px 1px;
+        letter-spacing: .2em;
+        transition: padding-top .2s;
+        
+        @media (min-width: $breakpoint-md) {
+          padding-top: 40px;
+        }
+      }
+    }
+  }
+}
+
+
+/* ==================================================
+ * ヘッダ・タイトル下 自由編集欄
+ * ================================================== */
+
+#top-editarea {
+  @include responsive-width();
+  @include center();
+  
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+  // 独自ハンバーガーメニュー
+  #n-hm {
+    z-index: 10;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.8em;
+    line-height: 1;
+    
+    a {
+      display: inline-block;
+      border: 1px solid $colour-white;
+      padding: 2px 10px 4px 8px;  // i.blogicon-reorder のサイズに合わせる
+      color: $colour-white;
+      background: rgba(255, 255, 255, .15);
+      
+      &:hover {
+        color: $colour-pink !important;
+      }
+    }
+  }
+}
+
+
+/* ==================================================
+ * パンくずリスト
+ * ================================================== */
+
+#top-box {
+  @include responsive-width();
+  
+  .breadcrumb {
+    border: 1px solid $colour-grey-hatena;
+    border-radius: 4px;
+    padding: .5rem 1rem;
+  }
+}
+
+
+/* ==================================================
+ * エントリ
+ * 
+ * #content > #content-inner > #wrapper > #main > #main-inner > .entry
+ * ================================================== */
+
+.entry {  // article
+  margin-bottom: 3rem;
+  
+  // .entry-inner
+  
+  // エントリ ヘッダ
+  // --------------------------------------------------
+  .entry-header {  // header
+    position: relative;  // 「編集」ボタン用
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $colour-grey-hatena;
+    
+    // 記事タイトル
+    .entry-title { // h1
+      margin-bottom: .25rem;
+      
+      a {
+        color: $colour-black;
+      }
+    }
+    
+    // カテゴリ
+    .entry-categories {
+      padding-bottom: .5em;  // .entry-category-link の margin-bottom と合わせて 1em にする
+      overflow: hidden;
+      
+      &::after {
+        @include clearfix();
+      }
+      
+      // カテゴリ一項目 : 幅が狭い時は折り返させないようにする
+      .entry-category-link {
+        float: left;
+        display: block;
+        height: 2.4em;
+        margin: 0 .5em .5em 0;
+        padding: 0 .6em;
+        border: 1px solid $colour-grey-hatena;
+        border-radius: 4px;
+        color: $colour-black;
+        font-size: .8em;
+        line-height: 2.4em;
+        
+        @media (max-width: $breakpoint-xs) {
+          white-space: nowrap;
+        }
+      }
+    }
+    
+    // 「編集」ボタン
+    .entry-header-menu {
+      position: absolute;
+      top: -2em;
+      left: 0;
+      
+      @media (min-width: $breakpoint-lg) {
+        top: auto;
+        left: -4em;
+      }
+      
+      a {
+        border: 1px solid $colour-grey-hatena;
+        padding: .5em;
+        background: $colour-white;
+      }
+    }
+  }
+  
+  // エントリ メイン
+  // --------------------------------------------------
+  .entry-content {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $colour-grey-hatena;
+    padding-bottom: 1rem;
+    
+    // ブロック要素
+    // --------------------------------------------------
+    
+    h1 {
+      margin-top: 2.5rem;
+      border-top: 2px solid $colour-heading-blue;
+      border-bottom: 1px solid $colour-heading-blue;
+      padding: 0 1rem;
+      background: $colour-heading-skyblue;
+    }
+    
+    h2 {
+      margin-top: 2rem;
+      border-left: 1em solid $colour-heading-blue;
+      border-radius: 0 6px 6px 0;
+      padding: 0 1rem;
+      color: $colour-heading-blue;
+      background: $colour-heading-skyblue;
+    }
+    
+    h3 {
+      margin-top: 1.75rem;
+      border-bottom: 1px solid $colour-heading-skyblue-darken;
+      border-radius: 6px 6px 0 0;
+      padding: 0 1rem;
+      background: $colour-heading-skyblue;
+    }
+    
+    h4 {
+      border-bottom: 1px dotted $colour-heading-grey;
+      padding: .5rem 1rem;
+    }
+    
+    pre {
+      overflow-x: scroll;
+    }
+    
+    blockquote {
+      margin-left: 1rem;
+    }
+    
+    // インライン要素
+    // --------------------------------------------------
+    
+    // コード : Neo's Normalize のスタイルで上書き
+    :not(pre) > code,
+    :not(pre) > var,
+    :not(pre) > samp,
+    :not(pre) > kbd {
+      margin: 0 .25em;
+      border: 1px solid var(--nn-grey-border);
+      border-radius: 4px;
+      padding: .1em .4em;
+      font-family: var(--nn-monospace) !important;
+      background: var(--nn-grey-bg);
+    }
+    
+    // 個別
+    // --------------------------------------------------
+    
+    // Amazon・楽天商品リンク
+    // --------------------------------------------------
+    .hatena-asin-detail {
+      border-radius: 4px;
+      // Amazon 商品リンク : 背景アイコン
+      background: linear-gradient(to right, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)),
+                  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACkElEQVRoge2YybGjMBCGOwRCIARdbHHUxRYn6BAcgjMgBEJwCFRZfmdCIARCIISeg9ozeJEMBci8GrqqTyD4P/WiBWCzzTbb7G5CYbQ/ZoXU+UXqvJY6b6TOO6nzVuq8ss/wLBRG39b6YEmKSuqsZLE00KtVgEiN5xGin71LUlS/VXwfIv6t4u/efgEgb2YEoKBRsEXrFVTvDiiEwihJMR4Srf0xK4IBcJt0iMlKB/TpU1cKCdCOLUihMFpNHeyPiPLfYtWHufjGecBJ6rwLpf+tCYXRp4Vp1QBDbNUAdh+EyFuKmttsy971fF0AtjhH74PWAcD9farw7wDMvJUIC8Bt1DfzrdRZmaR42h1QJCnGA9aBcABcpC4htaudrgKAZ98lwntIWQUAd5y3IvZHRNe43QHFSgDyyiXCtyUeUvShANqxAFzAvrr5OAFzAjiFuPb0vrR7dDwHAPgkxl6bCIWRzfuh4m0dLB6FBRawlza8KMCAbjLZA0TBd6T0pwjf3Pne8R6KZjHuKs5u5BZv1wn3+Tgrg93WMcTQSNS7A4r+ePm4nnRBOtA7ezofs5i8kzpv9seseBbeNx7TJSmeAkpe1qiCiAwUZKAhAx0ZILpBSwaG3xuRgZpu8PZ+Z2mjG1zYS7pBSQaqO8TYD5U88CsgD1psNJrxA69wIgPEXpEB525zLiMDqpdCDQDA6BR6+OAPCP4Y/XUbHUUVTG55nPPYE33/T00/IPj/RD/gbAbDfnSFE88EPXnH0Sk4YorhYvaIKohZCPI7BRmoXybGetOPNBkoZk1jusLZATLVa7rC+TmqdIPLHJF+BbmHfRpMQwaKyekxGaaCmCNz4dSoe2Ade0MGKq4fXGRWN9vsP7Q/PeTs283e6DMAAAAASUVORK5CYII=") no-repeat right 10px bottom 10px / 48px 48px;
+                  
+      // 楽天商品リンク : 背景アイコン
+      .hatena-rakuten-detail {
+        background: linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)),
+                    url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MC41OCA1MS4wNiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNiZjAwMDA7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT7jgqLjg7zjg4jjg5zjg7zjg4kgMTwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTAuNTgsMjUuNzhBMjUuMjksMjUuMjksMCwxLDEsMjUuMjkuNDgsMjUuMjksMjUuMjksMCwwLDEsNTAuNTgsMjUuNzhaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjEuOTQsMzkuMzZWMzAuOTNIMjUuNmw2LjMyLDguNDNoNi40N0wzMC43NSwyOS4xOWE5LjM3LDkuMzcsMCwwLDAtNS40My0xN0gxNi43OFYzOS4zNmg1LjE2Wm0wLTIyaDMuMzdhNC4yMSw0LjIxLDAsMSwxLDAsOC40M0gyMS45NFoiLz48L3N2Zz4=") no-repeat right 10px bottom 10px / 48px 48px;
+      }
+      
+      li {
+        line-height: 1.4;
+      }
+      
+      // 「この商品を含むブログ」リンク : 非表示にする
+      a[href^="http://d.hatena.ne.jp/asin/"] {
+        display: none;
+      }
+    }
+    
+    // 目次記法
+    // --------------------------------------------------
+    .table-of-contents {  // ul
+      display: inline-block;
+      border: 1px solid var(--nn-grey-border);
+      border-radius: 4px;
+      padding: .5rem 2.5rem;
+      background: var(--nn-grey-bg);
+      
+      &::before {
+        content: "目次";
+        display: block;
+        margin-bottom: 1em;
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      // 1階層目の余白を調整する
+      & > li {
+        margin-left: .5em !important;
+      }
+      
+      li {
+        margin-left: 1.5em;
+        
+        a {
+          color: $colour-blue;
+          
+          &:hover {
+            color: $colour-pink !important;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  
+  // エントリ フッタ
+  // --------------------------------------------------
+  .entry-footer {  // footer
+    // 投稿者・投稿日
+    .entry-footer-section {  // p
+      color: $colour-grey-darken;
+      font-size: .9em;
+      line-height: 1;
+      
+      a {
+        color: $colour-grey-darken;
+      }
+    }
+    
+    // はてなスター
+    .hatena-star-container {
+      margin-bottom: 1rem;
+      line-height: 1;
+      
+      // はてなスタートボタンの位置を揃える
+      .hatena-star-add-button {  // img
+        vertical-align: top !important;
+      }
+    }
+    
+    // コメント欄
+    .comment-box {
+      .comment {  // ul
+        border-bottom: 1px solid $colour-grey-hatena;
+        
+        // コメント1件
+        .entry-comment {  // li
+          @include reset-list();
+          
+          border-top: 1px solid $colour-grey-hatena;
+          padding-top: 1rem;
+          padding-left: calc(50px + 1rem);  // img.hatena-id-icon 分
+          
+          // 投稿者名
+          .comment-user-name {  // p
+            color: $colour-black;
+            
+            .hatena-id-icon {  // img
+              position: absolute;  // blog.css で .entry-comment に position: relative が指定されている
+              top: 1rem;  // li.entry-comment の padding-top　分
+              left: 0;
+              width: 50px;
+              height: 50px;
+              border-radius: 4px;
+            }
+            
+            a {
+              color: inherit;
+            }
+          }
+          
+          // p.comment-content
+          
+          // 投稿日・はてなスター
+          .comment-metadata {  // p
+            color: $colour-grey-darken;
+            font-size: .9em;
+          }
+        }
+      }
+      
+      // 「コメントを書く」リンク
+      .leave-comment-title {  // a
+        display: inline-block;
+        border: 1px solid $colour-grey-hatena;
+        border-radius: 4px;
+        padding: .8em 1em;
+        color: $colour-black;
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+
+/* ==================================================
+ * ページャ
+ * 
+ * .entry と同じ #main-inner 直下
+ * ================================================== */
+
+.pager {
+  &::after {
+    @include clearfix();
+  }
+  
+  & > span {
+    display: block;
+    width: 45%;
+    
+    &::before {
+      display: block;
+      color: $colour-grey-darken;
+      font-size: .9em;
+    }
+    
+    // 左側 : 新しい記事
+    &.pager-prev {
+      float: left;
+      
+      &::before {
+        content: "新しい記事";
+      }
+    }
+    
+    // 右側 : 古い記事
+    &.pager-next {
+      float: right;
+      text-align: right;
+      
+      &::before {
+        content: "古い記事";
+      }
+    }
+  }
+}
+
+
+/* ==================================================
+ * サイドバー
+ * ================================================== */
+
+#box2 {  // aside
+  // #blog-inner
+  
+  // リストをリセットしておく
+  li {
+    @include reset-list();
+  }
+  
+  // プロフィール
+  // --------------------------------------------------
+  .hatena-module-profile {
+    .profile-icon {
+      float: left;
+      margin: 0 .5rem .5rem 0;
+      border-radius: 4px;
+    }
+    
+    // デフォルトの ID 表示を消す
+    .id {
+      display: none;
+    }
+    
+    .hatena-id-link {
+      font-weight: bold;
+    }
+    
+    // プロフィール自由追加欄を本文にする
+    .profile-description > p:first-child::after {
+      @include clearfix();
+    }
+  }
+  
+  // 検索
+  // --------------------------------------------------
+  .hatena-module-search-box {
+    .search-form {  // form
+      position: relative;
+      border: 1px solid $colour-grey-hatena;
+      padding-right: calc(20px + 1rem);  // .search-module-button 分の余白を右に開けておく
+      border-radius: 4px;
+      
+      .search-module-input {  // input[type="text"]
+        width: 100%;
+        padding: .5rem 0 .5rem .5rem;  // .search-module-button と隣接する余白をなくしておく
+        border: 0;
+        background: transparent;
+        outline: 0;
+      }
+      
+      .search-module-button {  // input[type="submit"]
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+        width: calc(20px + 1rem);  // アイコン 20px + 左右余白
+        height: 100%;
+        text-indent: -9999px;
+        background: url("http://blog.hatena.ne.jp/images/theme/search.png") no-repeat center center;
+        outline: 0;
+        opacity: .5;
+        cursor: pointer;
+        
+        &:hover {
+         opacity: .85;
+        }
+      }
+    }
+  }
+  
+  // アーカイブ
+  // --------------------------------------------------
+  .hatena-module-archive {
+    // .hatena-module-body > ul.hatena-urllist > li.archive-module-year > ul.archive-module-months
+    
+    // 月
+    .archive-module-month {  // li
+      margin-left: 2.5em;
+    }
+  }
+  
+  // カテゴリ
+  // --------------------------------------------------
+  .hatena-module-category {
+    .hatena-module-body {
+      // スクロールできるようにする
+      height: calc(calc(2.2rem + 1px) * 10);  // 10件見えるようにしておく
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      
+      // iOS 用スクロールバー : スクロールバー全体の幅
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      // iOS 用スクロールバー : スクロールバーのスタイル
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $colour-grey-hatena;
+      }
+      
+      // 通常
+      @media (min-width: $breakpoint-md) {
+        height: auto;
+        overflow-y: visible;
+      }
+      
+      // リストを縮める
+      .hatena-urllist {  // ul
+        li {
+          padding: .25rem 0;
+          font-size: .9em;
+        }
+      }
+    }
+  }
+  
+  // サイドバー広告
+  // #n-gas
+}
+
+
+
+/* ==================================================
+ * フッタ 自由編集欄
+ * ================================================== */
+
+#bottom-editarea {
+  @include responsive-width();
+  @include center();
+  
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+  // footer-link : 他サイト・他ブログへのリンク
+  #n-fl {  // ul
+    font-size: 0;
+    
+    li {
+      @include reset-list();
+      
+      display: inline-block;
+      border-left: 1px solid $colour-grey-hatena;
+      font-size: 1rem;
+      
+      &:first-child {
+        border-left: 0;
+      }
+      
+      a {
+        display: inline-block;
+        padding: 0 .5rem;
+      }
+    }
+  }
+  
+  // google-adsense-footer : JavaScript で記事下に移動する AdSense バナー
+  // #n-gaf.n-ga
+  
+  // share-template-wrapper : JavaScript で Clone して記事下にシェアリンクを配置するための雛形
+  #n-stw {
+    display: none;
+  }
+}

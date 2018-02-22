@@ -1,8 +1,10 @@
 {
   "name": "hatenablogs",
   "version": "1.0.0",
-  "description": "Hatena Blogs",
+  "description": "Neo's Hatena Blogs",
+  "private": true,
   "scripts": {
+    "css-corredor": "node-sass -w ./src/styles/Corredor.scss -r --output-style compressed -o ./dist/styles/",
     "min-css": "gulp min-css",
     "min-css-corredor": "gulp min-css-corredor",
     "min-css-murga": "gulp min-css-murga",
@@ -25,10 +27,12 @@
   },
   "homepage": "https://github.com/Neos21GitHub/HatenaBlogs#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.0.4",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-uglify": "^2.1.2"
+    "@neos21/neos-normalize": "1.0.1",
+    "gulp": "3.9.1",
+    "gulp-clean-css": "3.0.4",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-uglify": "2.1.2",
+    "node-sass": "4.7.2"
   }
 }
