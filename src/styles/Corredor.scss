@@ -529,7 +529,7 @@ a {
   
   // カテゴリ一項目 : 幅が狭い時は折り返させないようにする
   .entry-category-link,
-  .arhive-category-link {  // a
+  .archive-category-link {  // a
     float: left;
     display: block;
     height: 2.4em;
@@ -895,6 +895,9 @@ a {
       // p.entry-description
       
       .social-buttons {  // span
+        display: inline-block;
+        margin: 1rem 0;
+        
         // はてなスターのスター
         .hatena-star-star {  // img
           vertical-align: middle;
