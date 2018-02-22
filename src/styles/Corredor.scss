@@ -442,7 +442,7 @@ a {
         @include responsive-width();
         @include english-font-family();
         
-        padding-top: 1rem;
+        padding-top: .7rem;
         text-transform: uppercase;
         letter-spacing: .1em;
         transition: padding-top .2s;
@@ -903,7 +903,8 @@ a {
 
 .archive-header-category {  // header
   margin: 1rem 0;
-  h2 {
+  
+  .archive-heading {  // h2
     font-size: 1.7em;
   }
 }
