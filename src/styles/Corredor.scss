@@ -518,14 +518,45 @@ a {
  * #content > #content-inner > #wrapper > #main > #main-inner > .entry
  * ================================================== */
 
-.entry {  // article
-  margin-bottom: 3rem;
+// プレースホルダーセレクタ
+%categories {
+  padding-bottom: .5em;  // .entry-category-link の margin-bottom と合わせて 1em にする
+  overflow: hidden;
+  
+  &::after {
+    @include clearfix();
+  }
+  
+  // カテゴリ一項目 : 幅が狭い時は折り返させないようにする
+  .entry-category-link,
+  .arhive-category-link {  // a
+    float: left;
+    display: block;
+    height: 2.4em;
+    margin: 0 .5em .5em 0;
+    padding: 0 .6em;
+    border: 1px solid $colour-grey-hatena;
+    border-radius: 4px;
+    color: $colour-black;
+    font-size: .8em;
+    line-height: 2.4em;
+    
+    @media (max-width: $breakpoint-xs) {
+      white-space: nowrap;
+    }
+  }
+}
+
+.entry,  // article
+.archive-entry {  // section
+  margin-bottom: 4rem;
   
   // .entry-inner
   
   // エントリ ヘッダ
   // --------------------------------------------------
-  .entry-header {  // header
+  .entry-header,  // header
+  .archive-entry-header {
     position: relative;  // 「編集」ボタン用
     margin-bottom: 2rem;
     border-bottom: 1px solid $colour-grey-hatena;
@@ -542,30 +573,7 @@ a {
     
     // カテゴリ
     .entry-categories {
-      padding-bottom: .5em;  // .entry-category-link の margin-bottom と合わせて 1em にする
-      overflow: hidden;
-      
-      &::after {
-        @include clearfix();
-      }
-      
-      // カテゴリ一項目 : 幅が狭い時は折り返させないようにする
-      .entry-category-link {
-        float: left;
-        display: block;
-        height: 2.4em;
-        margin: 0 .5em .5em 0;
-        padding: 0 .6em;
-        border: 1px solid $colour-grey-hatena;
-        border-radius: 4px;
-        color: $colour-black;
-        font-size: .8em;
-        line-height: 2.4em;
-        
-        @media (max-width: $breakpoint-xs) {
-          white-space: nowrap;
-        }
-      }
+      @extend %categories;
     }
     
     // 「編集」ボタン
@@ -603,6 +611,7 @@ a {
       border-top: 2px solid $colour-heading-blue;
       border-bottom: 1px solid $colour-heading-blue;
       padding: .25em 1rem;
+      font-size: 1.7em;
       line-height: 1.4;
       background: $colour-heading-skyblue;
     }
@@ -613,6 +622,7 @@ a {
       border-radius: 0 6px 6px 0;
       padding: 0 1rem;
       color: $colour-heading-blue;
+      font-size: 1.5em;
       background: $colour-heading-skyblue;
     }
     
@@ -853,6 +863,42 @@ a {
       
       &::before {
         content: "古い記事";
+      }
+    }
+  }
+}
+
+
+/* ==================================================
+ * アーカイブ・記事一覧ページ
+ * 
+ * .entry に似た構造で .archive-entry になる
+ * ================================================== */
+
+.archive-header-category {  // header
+  margin: 1rem 0;
+  h2 {
+    font-size: 1.7em;
+  }
+}
+
+.archive-entries {
+  .archive-entry {  // section
+    margin-bottom: 4rem;
+    
+    // .archive-entry-header
+    .categories {
+      @extend %categories;
+    }
+    
+    .archive-entry-body {
+      // p.entry-description
+      
+      .social-buttons {  // span
+        // はてなスターのスター
+        .hatena-star-star {  // img
+          vertical-align: middle;
+        }
       }
     }
   }
