@@ -89,7 +89,7 @@ $colour-heading-grey          : #959799;
  *   - YY = 拡大を始めるビューポート幅 / 100 (px)
  *          ex. 992px から拡大するなら 9.92px
  *   - ZZ = 100 * 可変させるフォントサイズの差 / 可変させるビューポート幅の差
- *          ex. 100 * (20px - 16px) / (1200px - 992px) = 100 * 4px / 208px = 1.92307...
+ *          ex. 100 * (18px - 16px) / (1200px - 992px) = 100 * 2px / 208px = 0.96153...
  * - 参考 : https://websemantics.uk/tools/responsive-font-calculator/
  */
 @mixin responsive-font-size() {
@@ -98,12 +98,12 @@ $colour-heading-grey          : #959799;
   
   // 可変
   @media (min-width: $breakpoint-lg) {
-    font-size: calc(1rem + ((1vw - 9.92px) * 1.92307));
+    font-size: calc(1rem + ((1vw - 9.92px) * .96153));
   }
   
   // 最大サイズ
   @media (min-width: $breakpoint-xl) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -315,6 +315,13 @@ a {
   color: $colour-grey-darken;
 }
 
+// はてブ数表示
+.bookmark-widget-counter {  // a
+  img {
+    vertical-align: middle;
+  }
+}
+
 // サイドバーなどで使用するモジュール
 .hatena-module {
   // リストをリセットしておく
@@ -351,7 +358,7 @@ a {
   // URL リスト
   .hatena-urllist {  // ul
     li {
-      padding: .5rem 0;
+      padding: .8rem 0;
       border-bottom: 1px solid $colour-grey-hatena;
       
       // カテゴリ (Latests・Hot Entries など)
@@ -363,6 +370,11 @@ a {
         .urllist-category-link {
           font-size: .8em;
         }
+      }
+      
+      // サムネイル
+      .urllist-image {  // img
+        margin-top: .4em;
       }
     }
   }
@@ -563,7 +575,8 @@ a {
     
     // 記事タイトル
     .entry-title { // h1
-      margin-bottom: .25rem;
+      margin-bottom: 1rem;
+      font-size: 1.7em;
       line-height: 1.2;
       
       a {
@@ -641,8 +654,9 @@ a {
     
     pre {
       overflow-x: scroll;
-      // word-break: keep-all;
-      white-space: nowrap;  // iPhone で折り返しが発生するため指定する
+      word-break: keep-all;
+      word-wrap: normal;  // iPhone で折り返しが発生するため指定する
+      white-space: pre;
     }
     
     blockquote {
