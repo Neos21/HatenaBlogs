@@ -59,7 +59,7 @@ $colour-heading-grey          : #959799;
 }
 
 // li 要素をリセットする
-@mixin reset-list {
+@mixin reset-list() {
   margin-left: 0;
   list-style: none;
 }
@@ -68,7 +68,7 @@ $colour-heading-grey          : #959799;
 @mixin responsive-width() {
   width: auto;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 .8rem;
   
   @media (min-width: $breakpoint-md) {
     width: 85vw;
@@ -317,6 +317,11 @@ a {
 
 // サイドバーなどで使用するモジュール
 .hatena-module {
+  // リストをリセットしておく
+  li {
+    @include reset-list();
+  }
+  
   position: relative;
   margin: 1.25rem 0 3.5rem;
   border-top: 1px solid $colour-heading-skyblue-darken;
@@ -380,13 +385,13 @@ a {
   #blog-title-inner {
     margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する
     height: $header-height-min;  // $breakpoint-md 未満時の高さ・背景位置にする
-    background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black;
+    background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black !important;
     transition: height .2s, background-position .2s;
     
     // $breakpoint-md 以上の高さ設定
     @media (min-width: $breakpoint-md) {
       height: $header-height-max;
-      background-position: left 10px;
+      background-position: left 10px !important;  // 背景画像に関する指定はインラインで追加されるので !important が必要
     }  
     
     // 画像右端に黒いボカシを付ける (主に md 以上の時用)
@@ -414,10 +419,6 @@ a {
         @include english-font-family();
         
         padding-top: 10px;
-        text-shadow: $colour-black  2px  2px 1px,
-                     $colour-black -2px  2px 1px,
-                     $colour-black  2px -2px 1px,
-                     $colour-black -2px -2px 1px;
         text-transform: uppercase;
         letter-spacing: .1em;
         transition: padding-top .2s;
@@ -428,6 +429,10 @@ a {
         
         a {
           color: $colour-white;
+          text-shadow: $colour-black  2px  2px 1px,
+                       $colour-black -2px  2px 1px,
+                       $colour-black  2px -2px 1px,
+                       $colour-black -2px -2px 1px;  // blog.css を上書きするためココで指定する
           
           &:hover {
             color: #fde !important;
@@ -528,6 +533,7 @@ a {
     // 記事タイトル
     .entry-title { // h1
       margin-bottom: .25rem;
+      line-height: 1.2;
       
       a {
         color: $colour-black;
@@ -593,9 +599,11 @@ a {
     
     h1 {
       margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
       border-top: 2px solid $colour-heading-blue;
       border-bottom: 1px solid $colour-heading-blue;
-      padding: 0 1rem;
+      padding: .25em 1rem;
+      line-height: 1.4;
       background: $colour-heading-skyblue;
     }
     
@@ -623,10 +631,16 @@ a {
     
     pre {
       overflow-x: scroll;
+      // word-break: keep-all;
+      white-space: nowrap;  // iPhone で折り返しが発生するため指定する
     }
     
     blockquote {
       margin-left: 1rem;
+    }
+    
+    dd, li {
+      margin-left: 2rem;
     }
     
     // インライン要素
@@ -643,6 +657,16 @@ a {
       padding: .1em .4em;
       font-family: var(--nn-monospace) !important;
       background: var(--nn-grey-bg);
+    }
+    
+    em,
+    em * {
+      color: #090;
+    }
+    
+    strong,
+    strong * {
+      color: #f00;
     }
     
     // 個別
@@ -678,7 +702,7 @@ a {
       display: inline-block;
       border: 1px solid var(--nn-grey-border);
       border-radius: 4px;
-      padding: .5rem 2.5rem;
+      padding: 1rem 2.5rem;
       background: var(--nn-grey-bg);
       
       &::before {
@@ -736,6 +760,8 @@ a {
     
     // コメント欄
     .comment-box {
+      margin-bottom: 1rem;
+      
       .comment {  // ul
         border-bottom: 1px solid $colour-grey-hatena;
         
@@ -839,11 +865,6 @@ a {
 
 #box2 {  // aside
   // #blog-inner
-  
-  // リストをリセットしておく
-  li {
-    @include reset-list();
-  }
   
   // プロフィール
   // --------------------------------------------------
