@@ -11,6 +11,14 @@
  * 変数定義
  * ================================================== */
 
+// Neo's Normalize と同値の変数
+$nn-grey-bg     : #f2f4f6;
+$nn-grey-border : #d2d4d6;
+$nn-green-bg    : #ddffee;
+$nn-green-border: #00ddaa;
+$nn-sans-serif  : -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;  /* 英字フォントを挟まず和英混在フォントのみを使用する */
+$nn-monospace   : MeiryoKe_Gothic, "Ricty Diminished", "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", "Courier New", Courier, Monaco, Menlo, Consolas, "Lucida Console", monospace;
+
 // メディアクエリ用
 $breakpoint-xs:  575.98px;  // @media (max-width: $breakpoint-xs)
 $breakpoint-sm:  576px   ;  // @media (min-width: $breakpoint-sm)
@@ -112,6 +120,13 @@ $colour-heading-grey          : #959799;
  * 要素全般
  * ================================================== */
 
+html {
+  // IE11 で横スクロールが発生するタイミングがあるので無視する
+  @media all and (-ms-high-contrast: none) {
+    overflow-x: hidden;
+  }
+}
+
 body {
   color: $colour-black;
   font-size: 16px;  // レスポンシブフォントサイズの最小サイズに合わせる
@@ -207,12 +222,44 @@ a {
       }
     }
   }
+  
+  // IE11 だけ Grid を修正する : アイコンのみ5列1行表示に統一する
+  @media all and (-ms-high-contrast: none) {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+    
+    li {
+      margin: 0 .1rem;  // grid-gap の代わり
+      
+      &.n-f-ha { -ms-grid-column: 1; }
+      &.n-f-fe { -ms-grid-column: 2; }
+      &.n-f-tw { -ms-grid-column: 3; }
+      &.n-f-fb { -ms-grid-column: 4; }
+      &.n-f-ig { -ms-grid-column: 5; }
+      
+      // 幅が広がってもテキストを見せない
+      span {
+        display: none !important;
+      }
+    }
+  }
 }
 
 // share : 記事下部のシェアリンク
 .n-s {  // ul
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  
+  // IE11 だけ Grid を修正する
+  @media all and (-ms-high-contrast: none) {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    
+    .n-s-ha { -ms-grid-column: 1; }
+    .n-s-tw { -ms-grid-column: 2; }
+    .n-s-fb { -ms-grid-column: 3; }
+    .n-s-po { -ms-grid-column: 4; }
+  }
   
   li {
     @include reset-list();
@@ -287,9 +334,14 @@ a {
   #content-inner {
     @media (min-width: $breakpoint-md) {
       display: grid;
-      // #wrapper (#main) … 440px ～ ・ #box2 … 250px ～ 350px
-      grid-template-columns: minmax(440px, auto) minmax(250px, 350px);
+      grid-template-columns: minmax(440px, auto) minmax(250px, 350px);  // #wrapper (#main) … 440px ～ ・ #box2 … 250px ～ 350px
       grid-column-gap: 1.5rem;
+      
+      // IE11 だけ Grid を修正する
+      @media all and (-ms-high-contrast: none) {
+        display: -ms-grid;
+        -ms-grid-columns: calc(100% - 250px) 250px;  // minmax() が効かないようなので最小幅のままにする
+      }
     }
     
     #wrapper {
@@ -298,6 +350,12 @@ a {
       // #content-inner の grid-template-columns と同値を入れておき突っ張り棒にする
       @media (min-width: $breakpoint-md) {
         min-width: 440px;
+        
+        // IE11 だけ Grid を修正する
+        @media all and (-ms-high-contrast: none) {
+          -ms-grid-column: 1;
+          margin-right: 1.5rem;  // grid-column-gap の代用
+        }
       }
     }
     
@@ -308,6 +366,11 @@ a {
       @media (min-width: $breakpoint-md) {
         margin-top: 0;
         min-width: 250px;
+        
+        // IE11 だけ Grid を修正する
+        @media all and (-ms-high-contrast: none) {
+          -ms-grid-column: 2;
+        }
       }
     }
   }
@@ -509,6 +572,7 @@ a {
     a {
       display: inline-block;
       border: 1px solid $colour-white;
+      border-radius: 4px;
       padding: 2px 10px 4px 8px;  // i.blogicon-reorder のサイズに合わせる
       color: $colour-white;
       background: rgba(255, 255, 255, .15);
@@ -688,11 +752,11 @@ a {
     :not(pre) > samp,
     :not(pre) > kbd {
       margin: 0 .25em;
-      border: 1px solid var(--nn-grey-border);
+      border: 1px solid $nn-grey-border;
       border-radius: 4px;
       padding: .1em .4em;
-      font-family: var(--nn-monospace) !important;
-      background: var(--nn-grey-bg);
+      font-family: $nn-monospace !important;
+      background: $nn-grey-bg;
     }
     
     em,
@@ -736,10 +800,10 @@ a {
     // --------------------------------------------------
     .table-of-contents {  // ul
       display: inline-block;
-      border: 1px solid var(--nn-grey-border);
+      border: 1px solid $nn-grey-border;
       border-radius: 4px;
       padding: 1rem 2.5rem;
-      background: var(--nn-grey-bg);
+      background: $nn-grey-bg;
       
       &::before {
         content: "目次";
@@ -905,7 +969,7 @@ a {
   margin: 1rem 0;
   
   .archive-heading {  // h2
-    font-size: 1.7em;
+    font-size: 1.7em !important;
   }
 }
 
