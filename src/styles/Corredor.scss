@@ -27,15 +27,12 @@ $breakpoint-lg:  992px   ;  // @media (min-width: $breakpoint-lg)
 $breakpoint-xl: 1200px   ;  // @media (min-width: $breakpoint-xl)
 
 // テーマカラー
-$colour-white        : #ffffff;
-$colour-black        : #000000;
-
-$colour-grey-hatena  : #dddddd;  // blog.css で使用されるカラー
-$colour-grey-darken  : #72767a;  // 主に文字色
-
-$colour-blue         : #0070ff;
-$colour-pink         : #ff0088;
-
+$colour-white                 : #ffffff;
+$colour-black                 : #000000;
+$colour-grey-hatena           : #dddddd;  // blog.css で使用されるカラー
+$colour-grey-darken           : #72767a;  // 主に文字色
+$colour-blue                  : #0070ff;
+$colour-pink                  : #ff0088;
 $colour-heading-blue          : #039be5;  // 見出しなどで使用
 $colour-heading-skyblue       : #f5fbfd;
 $colour-heading-skyblue-darken: #a9ddfb;
@@ -123,6 +120,11 @@ $colour-heading-grey          : #959799;
 html {
   // IE11 で横スクロールが発生するタイミングがあるので無視する
   @media all and (-ms-high-contrast: none) {
+    overflow-x: hidden;
+  }
+  
+  // Edge で横スクロールが発生するタイミングがあるので無視する
+  @supports (-ms-ime-align: auto) {
     overflow-x: hidden;
   }
 }
