@@ -34,7 +34,7 @@ $colour-grey-darken           : #72767a;  // 主に文字色
 $colour-blue                  : #0070ff;
 $colour-pink                  : #ff0088;
 $colour-heading-blue          : #039be5;  // 見出しなどで使用
-$colour-heading-skyblue       : #f5fbfd;
+$colour-heading-skyblue       : #f4fafc;
 $colour-heading-skyblue-darken: #a9ddfb;
 $colour-heading-grey          : #959799;
 
@@ -428,8 +428,9 @@ a {
   // URL リスト
   .hatena-urllist {  // ul
     li {
-      padding: .8rem 0;
       border-bottom: 1px solid $colour-grey-hatena;
+      padding: .8rem 0;
+      line-height: 1.4;
       
       // 記事タイトル
       .urllist-title-link {  // a
@@ -699,7 +700,7 @@ a {
       margin-bottom: 1.5rem;
       border-top: 2px solid $colour-heading-blue;
       border-bottom: 1px solid $colour-heading-blue;
-      padding: .25em 1rem;
+      padding: .25em .25rem;
       font-size: 1.5em;
       line-height: 1.4;
       background: $colour-heading-skyblue;
@@ -707,9 +708,9 @@ a {
     
     h2 {
       margin-top: 2rem;
-      border-left: 1em solid $colour-heading-blue;
+      border-left: 1rem solid $colour-heading-blue;
       border-radius: 0 6px 6px 0;
-      padding: 0 1rem;
+      padding: 0 .25rem 0 .4rem;
       color: $colour-heading-blue;
       font-size: 1.4em;
       background: $colour-heading-skyblue;
@@ -719,15 +720,19 @@ a {
       margin-top: 1.75rem;
       border-bottom: 1px solid $colour-heading-skyblue-darken;
       border-radius: 6px 6px 0 0;
-      padding: 0 1rem;
+      padding: 0 .25rem;
       font-size: 1.3em;
       background: $colour-heading-skyblue;
     }
     
     h4 {
       border-bottom: 1px dotted $colour-heading-grey;
-      padding: .5rem 1rem;
+      padding: 0 .25rem;
       font-size: 1.2em;
+    }
+    
+    h5, h6 {
+      border-bottom: 1px solid $colour-grey-hatena;
     }
     
     pre {
@@ -1062,11 +1067,18 @@ a {
   // アーカイブ
   // --------------------------------------------------
   .hatena-module-archive {
-    // .hatena-module-body > ul.hatena-urllist > li.archive-module-year > ul.archive-module-months
+    // .hatena-module-body > ul.hatena-urllist
     
-    // 月
-    .archive-module-month {  // li
-      margin-left: 2.5em;
+    // 年
+    .archive-module-year {  // li
+      padding-left: .25rem !important;
+      
+      // ul.archive-module-months
+      
+      // 月
+      .archive-module-month {  // li
+        margin-left: 2.5em;
+      }
     }
   }
   
