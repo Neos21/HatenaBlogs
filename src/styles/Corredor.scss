@@ -276,7 +276,7 @@ a {
     transition: background-color .2s;
     
     &:hover {
-      background:rgba(0, 0, 0, .1);
+      background:rgba(255, 255, 255, .2);
     }
     
     i {
@@ -510,7 +510,7 @@ a {
       text-shadow: $colour-black  2px  2px 1px,
                    $colour-black -2px  2px 1px,
                    $colour-black  2px -2px 1px,
-                   $colour-black -2px -2px 1px;  // blog.css を上書きするためココで指定する
+                   $colour-black -2px -2px 1px !important;
       
       &:hover {
         color: #fde !important;
@@ -527,7 +527,7 @@ a {
     text-shadow: $colour-black  2px  2px 1px,
                  $colour-black -2px  2px 1px,
                  $colour-black  2px -2px 1px,
-                 $colour-black -2px -2px 1px;
+                 $colour-black -2px -2px 1px !important;
     letter-spacing: .2em;
     transition: padding-top .2s;
     
@@ -682,7 +682,7 @@ a {
     margin-bottom: 1.5rem;
     border-top: 2px solid $colour-heading-blue;
     border-bottom: 1px solid $colour-heading-blue;
-    padding: .25em .4rem;
+    padding: .25em .5rem;
     font-size: 1.5em;
     line-height: 1.4;
     background: $colour-heading-skyblue;
@@ -692,7 +692,7 @@ a {
     margin-top: 2rem;
     border-left: 1rem solid $colour-heading-blue;
     border-radius: 0 6px 6px 0;
-    padding: 0 .4rem;
+    padding: 0 .5rem;
     color: $colour-heading-blue;
     font-size: 1.4em;
     background: $colour-heading-skyblue;
@@ -702,20 +702,20 @@ a {
     margin-top: 1.75rem;
     border-bottom: 1px solid $colour-heading-skyblue-darken;
     border-radius: 6px 6px 0 0;
-    padding: 0 .4rem;
+    padding: 0 .5rem;
     font-size: 1.3em;
     background: $colour-heading-skyblue;
   }
   
   h4 {
     border-bottom: 1px dotted $colour-heading-grey;
-    padding: 0 .4rem;
+    padding: 0 .5rem;
     font-size: 1.2em;
   }
   
   h5, h6 {
     border-bottom: 1px solid $colour-grey-hatena;
-    padding: 0 .4rem;
+    padding: 0 .5rem;
   }
   
   pre {
@@ -841,6 +841,15 @@ a {
   .hatena-star-container {
     margin-bottom: 1rem;
     line-height: 1;
+  }
+  
+  // 「関連記事」が入るフッタ領域
+  .customized-footer {
+    margin-top: 2.5rem;
+    
+    .hatena-module-related-entries {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -1008,7 +1017,7 @@ a {
     
     .social-buttons {  // span
       display: inline-block;
-      margin: 1rem 0;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -1088,7 +1097,7 @@ a {
   
   // 年
   .archive-module-year {  // li
-    padding-left: .25rem !important;
+    padding-left: .3rem !important;
   }
   
   // ul.archive-module-months
