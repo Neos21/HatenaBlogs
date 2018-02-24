@@ -700,7 +700,7 @@ a {
       margin-bottom: 1.5rem;
       border-top: 2px solid $colour-heading-blue;
       border-bottom: 1px solid $colour-heading-blue;
-      padding: .25em .25rem;
+      padding: .25em .4rem;
       font-size: 1.5em;
       line-height: 1.4;
       background: $colour-heading-skyblue;
@@ -710,7 +710,7 @@ a {
       margin-top: 2rem;
       border-left: 1rem solid $colour-heading-blue;
       border-radius: 0 6px 6px 0;
-      padding: 0 .25rem 0 .4rem;
+      padding: 0 .4rem;
       color: $colour-heading-blue;
       font-size: 1.4em;
       background: $colour-heading-skyblue;
@@ -720,19 +720,20 @@ a {
       margin-top: 1.75rem;
       border-bottom: 1px solid $colour-heading-skyblue-darken;
       border-radius: 6px 6px 0 0;
-      padding: 0 .25rem;
+      padding: 0 .4rem;
       font-size: 1.3em;
       background: $colour-heading-skyblue;
     }
     
     h4 {
       border-bottom: 1px dotted $colour-heading-grey;
-      padding: 0 .25rem;
+      padding: 0 .4rem;
       font-size: 1.2em;
     }
     
     h5, h6 {
       border-bottom: 1px solid $colour-grey-hatena;
+      padding: 0 .4rem;
     }
     
     pre {
