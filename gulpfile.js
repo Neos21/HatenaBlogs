@@ -11,7 +11,7 @@ const $ = gulpLoadPlugins();
  * CSS を圧縮する Function
  * 
  * @param {String} 圧縮するファイル名。'*' を渡せば src/css/ 配下の全ファイルが対象となる
- * @returns {Stream}
+ * @return {Stream}
  */
 function minCss(fileName) {
   return gulp
@@ -36,7 +36,7 @@ function minCss(fileName) {
  * JavaScript を圧縮する Function
  * 
  * @param {String} 圧縮するファイル名。'*' を渡せば src/js/ 配下の全ファイルが対象となる
- * @returns {Stream}
+ * @return {Stream}
  */
 function minJs(fileName) {
   return gulp
@@ -57,25 +57,16 @@ function minJs(fileName) {
 /**
  * CSS 圧縮 … 全ファイル
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-css', () => {
   return minCss('*');
 });
 
 /**
- * CSS 圧縮 … Corredor
- * 
- * @returns {Stream}
- */
-gulp.task('min-css-corredor', () => {
-  return minCss('Corredor');
-});
-
-/**
  * CSS 圧縮 … Murga
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-css-murga', () => {
   return minCss('Murga');
@@ -84,7 +75,7 @@ gulp.task('min-css-murga', () => {
 /**
  * CSS 圧縮 … El Mylar
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-css-elmylar', () => {
   return minCss('ElMylar');
@@ -93,7 +84,7 @@ gulp.task('min-css-elmylar', () => {
 /**
  * CSS 圧縮 … Bit-Archer
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-css-bitarcher', () => {
   return minCss('BitArcher');
@@ -102,7 +93,7 @@ gulp.task('min-css-bitarcher', () => {
 /**
  * JavaScript 圧縮 … 全ファイル
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-js', () => {
   return minJs('*');
@@ -111,7 +102,7 @@ gulp.task('min-js', () => {
 /**
  * JavaScript 圧縮 … Corredor
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-js-corredor', () => {
   return minJs('Corredor');
@@ -120,7 +111,7 @@ gulp.task('min-js-corredor', () => {
 /**
  * JavaScript 圧縮 … Murga
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-js-murga', () => {
   return minJs('Murga');
@@ -129,7 +120,7 @@ gulp.task('min-js-murga', () => {
 /**
  * JavaScript 圧縮 … El Mylar
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-js-elmylar', () => {
   return minJs('ElMylar');
@@ -138,7 +129,7 @@ gulp.task('min-js-elmylar', () => {
 /**
  * JavaScript 圧縮 … Bit-Archer
  * 
- * @returns {Stream}
+ * @return {Stream}
  */
 gulp.task('min-js-bitarcher', () => {
   return minJs('BitArcher');

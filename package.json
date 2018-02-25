@@ -7,7 +7,6 @@
     "css-corredor": "npm run css-corredor-build && npm run css-corredor-build -- -w",
     "css-corredor-build": "node-sass ./src/styles/Corredor.scss -r --output-style compressed -o ./dist/styles/",
     "min-css": "gulp min-css",
-    "min-css-corredor": "gulp min-css-corredor",
     "min-css-murga": "gulp min-css-murga",
     "min-css-elmylar": "gulp min-css-elmylar",
     "min-css-bitarcher": "gulp min-css-bitarcher",

@@ -18,6 +18,11 @@ Clean-CSS CLI をラップしている Gulp プラグインで、CSS を圧縮�
 Uglify をラップしている Gulp プラグインで、JavaScript を圧縮しています。
 
 
+## node-sass
+
+SCSS を圧縮しています。
+
+
 ## Author
 
 [Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
