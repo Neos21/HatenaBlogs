@@ -719,6 +719,7 @@ a {
   }
   
   pre {
+    font-family: $nn-monospace !important;
     overflow-x: scroll;
     word-break: keep-all;
     word-wrap: normal;  // iPhone で折り返しが発生するため指定する
