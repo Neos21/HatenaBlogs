@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neos21GitHub/HatenaBlogs.git"
+    "url": "git+https://github.com/Neos21/HatenaBlogs.git"
   },
   "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Neos21GitHub/HatenaBlogs/issues"
+    "url": "https://github.com/Neos21/HatenaBlogs/issues"
   },
-  "homepage": "https://github.com/Neos21GitHub/HatenaBlogs#readme",
+  "homepage": "https://github.com/Neos21/HatenaBlogs#readme",
   "devDependencies": {
     "@neos21/neos-normalize": "1.0.2",
     "gulp": "3.9.1",

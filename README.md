@@ -27,7 +27,7 @@ SCSS を圧縮しています。
 
 [Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
 
-- [GitHub Pages - Hatena Blogs](https://neos21github.github.io/HatenaBlogs/)
+- [GitHub Pages - Hatena Blogs](https://neos21.github.io/HatenaBlogs/)
 
 
 ## Links
@@ -37,4 +37,4 @@ SCSS を圧縮しています。
 - [Murga](http://neos21.hatenablog.jp/)
 - [El Mylar](http://neos21.hateblo.jp/)
 - [Bit-Archer](http://bit-archer.hatenablog.com/)
-- [GitHub - Neos21GitHub](https://github.com/Neos21GitHub/)
+- [GitHub - Neos21](https://github.com/Neos21/)
