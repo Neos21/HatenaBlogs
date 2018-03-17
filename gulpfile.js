@@ -8,46 +8,42 @@ const $ = gulpLoadPlugins();
  * ================================================================================ */
 
 /**
- * CSS を圧縮する Function
+ * SCSS をビルドする Function
  * 
- * @param {String} 圧縮するファイル名。'*' を渡せば src/css/ 配下の全ファイルが対象となる
+ * @param {String} ビルドするファイル名。'*' を渡せば src/styles/ 配下の全ファイルが対象となる
  * @return {Stream}
  */
-function minCss(fileName) {
+function buildCss(fileName) {
   return gulp
-    .src(`src/css/${fileName}.css`)  // src/css/ 配下の指定ファイルを対象に圧縮する
-    .pipe($.cleanCss(
-      {
-        compatibility: 'ie7',   // 互換性の設定
-        format: {
-          breaks: {
-            afterComment: true  // コメントの後ろに改行を入れる
-          }
-        }
-      }, (details) => {
-        // 圧縮結果をログ出力する
-        console.log(`${details.name} : ${details.stats.originalSize} -> ${details.stats.minifiedSize}`);
-      }
-    ))
-    .pipe(gulp.dest('dist/css/'));  // dist/css/ 配下に出力する (対象ディレクトリがなくても OK・ファイルは上書き)
+    .src([`./src/styles/${fileName}.scss`])  // エントリポイント
+    .pipe($.plumber(function(error) {
+      return this.emit('end');
+    }))
+    .pipe(
+      $.sass({
+        outputStyle: 'compressed'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe(gulp.dest('./dist/styles'));      // ./dist/styles/ 配下に出力する
 }
 
 /**
- * JavaScript を圧縮する Function
+ * JavaScript をビルドする Function
  * 
- * @param {String} 圧縮するファイル名。'*' を渡せば src/js/ 配下の全ファイルが対象となる
+ * @param {String} ビルドするファイル名。'*' を渡せば src/scripts/ 配下の全ファイルが対象となる
  * @return {Stream}
  */
-function minJs(fileName) {
+function buildJs(fileName) {
   return gulp
-    .src(`src/js/${fileName}.js`)  // src/js/ 配下の指定ファイルを対象に圧縮する
+    .src(`src/scripts/${fileName}.js`)  // src/scripts/ 配下の指定ファイルを対象にビルドする
     .pipe($.plumber())  // エラー時にプロセスが落ちないようにするプラグイン
     .pipe($.uglify({
-      compress: true,   // 圧縮する 
+      compress: true,   // ビルドする 
       mangle: true,     // 変数の難読化を行う
       preserveComments: 'some'  // 「*!」で始まるブロックコメントを残す
     }))
-    .pipe(gulp.dest('dist/js/'));  // dist/js/ 配下に出力する (対象ディレクトリがなくても OK・ファイルは上書き)
+    .pipe(gulp.dest('dist/scripts/'));  // dist/scripts/ 配下に出力する (対象ディレクトリがなくても OK・ファイルは上書き)
 }
 
 /* ================================================================================
@@ -55,82 +51,91 @@ function minJs(fileName) {
  * ================================================================================ */
 
 /**
- * CSS 圧縮 … 全ファイル
+ * CSS ビルド … 全ファイル
  * 
  * @return {Stream}
  */
-gulp.task('min-css', () => {
-  return minCss('*');
+gulp.task('build-css', () => {
+  return buildCss('*');
 });
 
 /**
- * CSS 圧縮 … Murga
+ * CSS ビルド … Corredor
  * 
  * @return {Stream}
  */
-gulp.task('min-css-murga', () => {
-  return minCss('Murga');
+gulp.task('build-css-corredor', () => {
+  return buildCss('Corredor');
 });
 
 /**
- * CSS 圧縮 … El Mylar
+ * CSS ビルド … Murga
  * 
  * @return {Stream}
  */
-gulp.task('min-css-elmylar', () => {
-  return minCss('ElMylar');
+gulp.task('build-css-murga', () => {
+  return buildCss('Murga');
 });
 
 /**
- * CSS 圧縮 … Bit-Archer
+ * CSS ビルド … El Mylar
  * 
  * @return {Stream}
  */
-gulp.task('min-css-bitarcher', () => {
-  return minCss('BitArcher');
+gulp.task('build-css-elmylar', () => {
+  return buildCss('ElMylar');
 });
 
 /**
- * JavaScript 圧縮 … 全ファイル
+ * CSS ビルド … Bit-Archer
  * 
  * @return {Stream}
  */
-gulp.task('min-js', () => {
-  return minJs('*');
+gulp.task('build-css-bitarcher', () => {
+  return buildCss('BitArcher');
 });
 
 /**
- * JavaScript 圧縮 … Corredor
+ * JavaScript ビルド … 全ファイル
  * 
  * @return {Stream}
  */
-gulp.task('min-js-corredor', () => {
-  return minJs('Corredor');
+gulp.task('build-js', () => {
+  return buildJs('*');
 });
 
 /**
- * JavaScript 圧縮 … Murga
+ * JavaScript ビルド … Corredor
  * 
  * @return {Stream}
  */
-gulp.task('min-js-murga', () => {
-  return minJs('Murga');
+gulp.task('build-js-corredor', () => {
+  return buildJs('Corredor');
 });
 
 /**
- * JavaScript 圧縮 … El Mylar
+ * JavaScript ビルド … Murga
  * 
  * @return {Stream}
  */
-gulp.task('min-js-elmylar', () => {
-  return minJs('ElMylar');
+gulp.task('build-js-murga', () => {
+  return buildJs('Murga');
 });
 
 /**
- * JavaScript 圧縮 … Bit-Archer
+ * JavaScript ビルド … El Mylar
  * 
  * @return {Stream}
  */
-gulp.task('min-js-bitarcher', () => {
-  return minJs('BitArcher');
+gulp.task('build-js-elmylar', () => {
+  return buildJs('ElMylar');
+});
+
+/**
+ * JavaScript ビルド … Bit-Archer
+ * 
+ * @return {Stream}
+ */
+gulp.task('build-js-bitarcher', () => {
+  return buildJs('BitArcher');
 });

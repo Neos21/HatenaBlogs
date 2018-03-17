@@ -4,17 +4,16 @@
   "description": "Neo's Hatena Blogs",
   "private": true,
   "scripts": {
-    "css-corredor": "npm run css-corredor-build && npm run css-corredor-build -- -w",
-    "css-corredor-build": "node-sass ./src/styles/Corredor.scss -r --output-style compressed -o ./dist/styles/",
-    "min-css": "gulp min-css",
-    "min-css-murga": "gulp min-css-murga",
-    "min-css-elmylar": "gulp min-css-elmylar",
-    "min-css-bitarcher": "gulp min-css-bitarcher",
-    "min-js": "gulp min-js",
-    "min-js-corredor": "gulp min-js-corredor",
-    "min-js-murga": "gulp min-js-murga",
-    "min-js-elmylar": "gulp min-js-elmylar",
-    "min-js-bitarcher": "gulp min-js-bitarcher"
+    "css": "gulp build-css",
+    "css-corredor": "gulp build-css-corredor",
+    "css-murga": "gulp build-css-murga",
+    "css-elmylar": "gulp build-css-elmylar",
+    "css-bitarcher": "gulp build-css-bitarcher",
+    "js": "gulp build-js",
+    "js-corredor": "gulp build-js-corredor",
+    "js-murga": "gulp build-js-murga",
+    "js-elmylar": "gulp build-js-elmylar",
+    "js-bitarcher": "gulp build-js-bitarcher"
   },
   "repository": {
     "type": "git",
@@ -27,12 +26,11 @@
   },
   "homepage": "https://github.com/Neos21/HatenaBlogs#readme",
   "devDependencies": {
-    "@neos21/neos-normalize": "1.0.2",
+    "@neos21/neos-normalize": "1.0.3",
     "gulp": "3.9.1",
-    "gulp-clean-css": "3.0.4",
     "gulp-load-plugins": "1.5.0",
     "gulp-plumber": "1.1.0",
-    "gulp-uglify": "2.1.2",
-    "node-sass": "4.7.2"
+    "gulp-sass": "3.1.0",
+    "gulp-uglify": "2.1.2"
   }
 }
