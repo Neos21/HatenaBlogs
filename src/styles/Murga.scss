@@ -926,6 +926,8 @@ a {
 
 // アーカイブタイトル
 .archive-header-category {  // header
+  @include white-box();
+  
   margin: 0 0 1rem;
   
   .archive-heading {  // h2
@@ -936,6 +938,8 @@ a {
 // .archive-entries
 
 .archive-entry {  // section
+  @include white-box();
+  
   margin-bottom: 4rem;
   
   // エントリ ヘッダ
@@ -943,7 +947,6 @@ a {
   
   // カテゴリ
   .categories {
-    overflow: hidden;
     
     // .entry-header・.entry-categories と構成が違うためココで余白と下線を付ける
     &::after {
@@ -951,25 +954,13 @@ a {
       
       margin-bottom: 1rem;
       border-bottom: 1px solid $colour-grey-hatena;
-      padding-bottom: .5em;  // .archive-category-link の margin-bottom と合わせて 1em にする
+      padding-bottom: .5em;
     }
     
-    // カテゴリ一項目 : 幅が狭い時は折り返させないようにする
+    // カテゴリ一項目
     .archive-category-link {  // a
-      float: left;
-      display: block;
-      height: 2.4em;
-      margin: 0 .5em .5em 0;
-      padding: 0 .6em;
-      border: 1px solid $colour-grey-hatena;
-      border-radius: 4px;
-      color: $colour-black;
+      color: $colour-grey-darken;
       font-size: .8em;
-      line-height: 2.4em;
-      
-      @media (max-width: $breakpoint-xs) {
-        white-space: nowrap;
-      }
     }
   }
   
@@ -1058,7 +1049,7 @@ a {
 
 // アーカイブ
 // --------------------------------------------------
-.hatena-module-archive {
+:not(.entry-footer-secondary-modules) .hatena-module-archive {
   // .hatena-module-body > ul.hatena-urllist
   
   // 年
@@ -1076,7 +1067,7 @@ a {
 
 // カテゴリ
 // --------------------------------------------------
-.hatena-module-category {
+:not(.entry-footer-secondary-modules) .hatena-module-category {
   // リストを縮める
   .hatena-urllist {  // ul
     li {
