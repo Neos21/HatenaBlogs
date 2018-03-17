@@ -389,8 +389,8 @@ a {
   color: $colour-grey-darken;
 }
 
-// サイドバーなどで使用するモジュール (記事下部の「関連記事」は除く)
-:not(#entry-footer-secondary-modules) .hatena-module {
+// サイドバーなどで使用するモジュール
+.hatena-module {
   @include white-box();
   
   margin-bottom: 3rem;
@@ -809,8 +809,10 @@ a {
   .customized-footer {
     margin-top: 2.5rem;
     
+    // .hatena-module に付いた white-box スタイルを無効化する
     .hatena-module-related-entries {
-      margin-bottom: 1rem;
+      margin-bottom: 1rem !important;
+      padding: 0;
     }
   }
 }
@@ -929,8 +931,11 @@ a {
   @include white-box();
   
   margin: 0 0 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   
   .archive-heading {  // h2
+    margin: 0;
     font-size: 1.7em !important;
   }
 }
@@ -1049,7 +1054,7 @@ a {
 
 // アーカイブ
 // --------------------------------------------------
-:not(#entry-footer-secondary-modules) .hatena-module-archive {
+.hatena-module-archive {
   // .hatena-module-body > ul.hatena-urllist
   
   // 年
@@ -1067,7 +1072,7 @@ a {
 
 // カテゴリ
 // --------------------------------------------------
-:not(#entry-footer-secondary-modules) .hatena-module-category {
+.hatena-module-category {
   // リストを縮める
   .hatena-urllist {  // ul
     li {
