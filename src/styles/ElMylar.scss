@@ -1,10 +1,10 @@
-/*! Corredor : Neo (@Neos21) http://neos21.hatenablog.com/ */
+/*! El Mylar : Neo (@Neos21) http://neos21.hateblo.jp/ */
 /*! Responsive: yes */
 
 // Neo's Normalize
 @import '../../node_modules/@neos21/neos-normalize/neos-normalize';
 
-/*! Corredor [Styles] : Neo (@Neos21) http://neos21.hatenablog.com/ */
+/*! El Mylar [Styles] : Neo (@Neos21) http://neos21.hateblo.jp/ */
 
 
 /* ==================================================
@@ -32,10 +32,11 @@ $colour-black                 : #000000;
 $colour-grey-hatena           : #dddddd;  // blog.css で使用されるカラー
 $colour-grey-darken           : #72767a;  // 主に文字色
 $colour-blue                  : #0070ff;
-$colour-pink                  : #ff0088;
-$colour-heading-blue          : #039be5;  // 見出しなどで使用
-$colour-heading-skyblue       : #f4fafc;
-$colour-heading-skyblue-darken: #a9ddfb;
+$colour-blue-lighten          : #5588ff;  // リンクホバー時の色
+$colour-heading-blue          : #3e8ac0;
+$colour-heading-blue-darken   : #2e7ab0;
+$colour-heading-grey-bg       : #fcfcfc;
+$colour-heading-grey-bg-darken: #f0f0f0;
 $colour-heading-grey          : #959799;
 
 
@@ -128,11 +129,11 @@ body {
 }
 
 a {
-  color: $colour-pink;
+  color: $colour-blue;
   text-decoration: none;
   
   &:hover {
-    color: $colour-blue !important;
+    color: $colour-blue-lighten !important;
   }
 }
 
@@ -324,7 +325,6 @@ a {
     @media (min-width: $breakpoint-md) {
       display: grid;
       grid-template-columns: minmax(440px, auto) minmax(250px, 350px);  // #wrapper (#main) … 440px ～ ・ #box2 … 250px ～ 350px
-      grid-column-gap: 1.5rem;
       
       // IE11 だけ Grid を修正する
       @media all and (-ms-high-contrast: none) {
@@ -338,12 +338,13 @@ a {
       
       // #content-inner の grid-template-columns と同値を入れておき突っ張り棒にする
       @media (min-width: $breakpoint-md) {
+        border-right: 1px solid $colour-grey-hatena;
+        padding-right: 1rem;
         min-width: 440px;
         
         // IE11 だけ Grid を修正する
         @media all and (-ms-high-contrast: none) {
           -ms-grid-column: 1;
-          margin-right: 1.5rem;  // grid-column-gap の代用
         }
       }
     }
@@ -354,6 +355,9 @@ a {
       // #content-inner の grid-template-columns と同値を入れておき突っ張り棒にする
       @media (min-width: $breakpoint-md) {
         margin-top: 0;
+        margin-left: -1px;
+        border-left: 1px solid $colour-grey-hatena;
+        padding-left: 1rem;
         min-width: 250px;
         
         // IE11 だけ Grid を修正する
@@ -381,10 +385,7 @@ a {
 
 // サイドバーなどで使用するモジュール
 .hatena-module {
-  position: relative;
-  margin: 1.25rem 0 3.5rem;
-  border-top: 1px solid $colour-heading-skyblue-darken;
-  padding-top: 1.5rem;
+  margin-bottom: 3.5rem;
   
   // リストをリセットしておく
   li {
@@ -393,17 +394,11 @@ a {
   
   // タイトル
   .hatena-module-title {
-    display: inline-block;
-    position: absolute;
-    top: -.6em;
-    left: 50%;
-    padding: 0 .8em;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid $colour-grey-hatena;
     color: $colour-black;
     font-size: 1.25rem;
-    white-space: nowrap;
-    line-height: 1;
-    background: $colour-white;
-    transform: translateX(-50%);
+    font-weight: bold;
     
     a {
       color: inherit;
@@ -422,6 +417,7 @@ a {
     
     // 記事タイトル
     .urllist-title-link {  // a
+      color: inherit;
       font-size: 1rem;
     }
     
@@ -433,6 +429,7 @@ a {
     }
     
     .urllist-category-link {  // a
+      color: $colour-grey-darken;
       font-size: .8em;
     }
     
@@ -461,44 +458,21 @@ a {
 
 #blog-title {  // header
   // 背景画像の位置調整用のオフセット
-  $header-margin-top: 15px;
-  $header-height-min: calc( 80px + #{$header-margin-top});
-  $header-height-max: calc(175px + #{$header-margin-top});
-  
-  position: relative;
-  overflow: hidden;  // 黒いボカシによる横スクロール発生をなくす
+  $header-height-min: 100px;
+  $header-height-max: 200px;
   
   #blog-title-inner {
-    margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する
     height: $header-height-min !important;  // $breakpoint-md 未満時の高さ・背景位置にする
-    background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black !important;
-    transition: height .2s, background-position .2s;
+    background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160522/20160522120246.jpg") no-repeat center center / cover !important;
+    transition: height .2s;
     
     // $breakpoint-md 以上の高さ設定
     @media (min-width: $breakpoint-md) {
       height: $header-height-max !important;
-      background-position: left 10px !important;  // 背景画像に関する指定はインラインで追加されるので !important が必要
-    }  
-    
-    // 画像右端に黒いボカシを付ける (主に md 以上の時用)
-    &::after {
-      content: "";
-      z-index: 1;  // 最下層にする
-      position: absolute;
-      top: -$header-margin-top;
-      left: 0;
-      width: 900px;  // $header-height-max で縮小表示した時の幅に合わせて設定
-      height: $header-height-max;
-      box-shadow: inset -30px 0 30px -15px $colour-black;
     }
   }
   
   #blog-title-content {
-    z-index: 10;  // #blog-title-inner::after が被らないようにフロートさせる
-    position: absolute;
-    top: $header-margin-top;
-    left: 0;
-    width: 100%;
     line-height: 1;
   }
   
@@ -517,13 +491,11 @@ a {
     
     a {
       color: $colour-white;
-      text-shadow: $colour-black  2px  2px 1px,
-                   $colour-black -2px  2px 1px,
-                   $colour-black  2px -2px 1px,
-                   $colour-black -2px -2px 1px !important;
+      text-shadow: $colour-black  0 0 20px !important;
       
       &:hover {
-        color: #fde !important;
+        color: $colour-white !important;
+        opacity: .7;
       }
     }
   }
@@ -534,10 +506,7 @@ a {
     padding-top: 5px;
     color: $colour-white;
     font-size: 1em;
-    text-shadow: $colour-black  2px  2px 1px,
-                 $colour-black -2px  2px 1px,
-                 $colour-black  2px -2px 1px,
-                 $colour-black -2px -2px 1px !important;
+    text-shadow: $colour-black 0 0 10px !important;
     letter-spacing: .2em;
     transition: padding-top .2s;
     
@@ -558,29 +527,6 @@ a {
   
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-// 独自ハンバーガーメニュー
-#n-hm {
-  z-index: 10;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.8em;
-  line-height: 1;
-  
-  a {
-    display: inline-block;
-    border: 1px solid $colour-white;
-    border-radius: 4px;
-    padding: 2px 10px 4px 8px;  // i.blogicon-reorder のサイズに合わせる
-    color: $colour-white;
-    background: rgba(255, 255, 255, .15);
-    
-    &:hover {
-      color: $colour-pink !important;
-    }
-  }
 }
 
 
@@ -688,37 +634,50 @@ a {
   // --------------------------------------------------
   
   h1 {
+    position: relative;
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
-    border-top: 2px solid $colour-heading-blue;
-    border-bottom: 1px solid $colour-heading-blue;
-    padding: .25em .5rem;
+    border: 1px solid $colour-grey-hatena;
+    border-radius: 4px;
+    padding: .25em .5rem .25em 1rem;
     font-size: 1.5em;
     line-height: 1.4;
-    background: $colour-heading-skyblue;
+    background: linear-gradient(to bottom, $colour-heading-grey-bg, $colour-heading-grey-bg-darken);
+    
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 4px 0 0 4px;
+      width: .5rem;
+      height: 100%;
+      background: $colour-heading-blue;
+    }
   }
   
   h2 {
     margin-top: 2rem;
-    border-left: 1rem solid $colour-heading-blue;
-    border-radius: 0 6px 6px 0;
-    padding: 0 .5rem;
-    color: $colour-heading-blue;
+    border-radius: 4px;
+    padding: .25em .5rem .25em;
+    color: $colour-white;
     font-size: 1.4em;
-    background: $colour-heading-skyblue;
+    background: linear-gradient(to bottom, $colour-heading-blue, $colour-heading-blue-darken);
   }
   
   h3 {
     margin-top: 1.75rem;
-    border-bottom: 1px solid $colour-heading-skyblue-darken;
+    border-bottom: 2px solid $colour-heading-blue;
     border-radius: 6px 6px 0 0;
-    padding: 0 .5rem;
+    padding: .25em .5rem;
     font-size: 1.3em;
-    background: $colour-heading-skyblue;
+    background: linear-gradient(to bottom, $colour-heading-grey-bg, $colour-heading-grey-bg-darken);
   }
   
   h4 {
-    border-bottom: 1px dotted $colour-heading-grey;
+    border-bottom: 1px dashed $colour-heading-grey;
+    border-left: .5rem solid $colour-heading-grey;
     padding: 0 .5rem;
     font-size: 1.2em;
   }
@@ -822,15 +781,6 @@ a {
   
   li {
     margin-left: 1.5em;
-    
-    a {
-      color: $colour-blue;
-      
-      &:hover {
-        color: $colour-pink !important;
-        text-decoration: underline;
-      }
-    }
   }
 }
 
@@ -1106,6 +1056,10 @@ a {
 .hatena-module-archive {
   // .hatena-module-body > ul.hatena-urllist
   
+  a {
+    color: inherit;
+  }
+  
   // 年
   .archive-module-year {  // li
     padding-left: .3rem !important;
@@ -1122,36 +1076,17 @@ a {
 // カテゴリ
 // --------------------------------------------------
 .hatena-module-category {
-  // スクロールできるようにする
-  .hatena-module-body {
-    height: 21rem;  // 10件程度見えるようにしておく
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    
-    // iOS 用スクロールバー : スクロールバー全体の幅
-    &::-webkit-scrollbar {
-      width: 10px;
-    }
-    
-    // iOS 用スクロールバー : スクロールバーのスタイル
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background: $colour-grey-hatena;
-    }
-    
-    // 通常
-    @media (min-width: $breakpoint-md) {
-      height: auto;
-      overflow-y: visible;
-    }
-    
-    // リストを縮める
-    .hatena-urllist {  // ul
-      li {
-        padding: .25rem 0;
-        font-size: .9em;
-      }
-    }
+  // .hatena-module-body
+  
+  // ul
+  .hatena-urllist li {
+    border-bottom: 0;
+    padding: .25rem 0;
+    font-size: .9em;
+  }
+  
+  a {
+    color: inherit;
   }
 }
 

@@ -448,6 +448,16 @@ a {
 
 
 /* ==================================================
+ * Google AdSense
+ * ================================================== */
+
+// 自動挿入広告
+.google-auto-placed {
+  overflow: hidden;
+}
+
+
+/* ==================================================
  * ヘッダ
  * ================================================== */
 
@@ -530,6 +540,7 @@ a {
   }
   
   #blog-description {  // h2
+    padding-top: 5px;
     color: $colour-white;
     font-size: 1em;
     text-shadow: $colour-black  2px  2px 1px,
@@ -659,7 +670,6 @@ a {
   h2 {
     margin: 2rem -1rem 1rem -1rem;
     border-left: 1rem solid $colour-red-darken;
-    border-radius: 0 6px 6px 0;
     padding: 0 .5rem;
     color: $colour-red-darken;
     font-size: 1.4em;
@@ -669,7 +679,6 @@ a {
   h3 {
     margin: 1.75rem -1rem 1rem -1rem;
     border-bottom: 1px solid $colour-red-darken;
-    border-radius: 6px 6px 0 0;
     padding: 0 1rem;
     font-size: 1.3em;
     background: $colour-red-lighten;
