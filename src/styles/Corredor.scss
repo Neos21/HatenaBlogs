@@ -738,6 +738,12 @@ a {
   
   blockquote {
     margin-left: 1rem;
+    padding: 1rem 1rem 0;
+    
+    // 引用ツールが挿入されるため余白のズレをなくす
+    & > :last-child {
+      margin-bottom: 1rem;
+    }
   }
   
   dd, li {
