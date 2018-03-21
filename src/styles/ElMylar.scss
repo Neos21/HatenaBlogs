@@ -446,6 +446,12 @@ a {
  * Google AdSense
  * ================================================== */
 
+// 通常広告 : リサイズ時に中央揃えになるよう上書き
+ins.adsbygoogle {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
 // 自動挿入広告
 .google-auto-placed {
   overflow: hidden;
