@@ -4,11 +4,17 @@
   "description": "Neo's Hatena Blogs",
   "private": true,
   "scripts": {
-    "css": "gulp build-css",
-    "css-corredor": "gulp build-css-corredor",
-    "css-murga": "gulp build-css-murga",
-    "css-elmylar": "gulp build-css-elmylar",
+    "gulp": "gulp",
+    "strip-bom": "strip-bom",
+    "css": "gulp build-css && npm run css-strip",
+    "css-corredor": "gulp build-css-corredor && npm run css-strip-corredor",
+    "css-murga": "gulp build-css-murga && npm run css-strip-murga",
+    "css-elmylar": "gulp build-css-elmylar && npm run css-strip-elmylar",
     "css-bitarcher": "gulp build-css-bitarcher",
+    "css-strip": "npm run css-strip-corredor && npm run css-strip-murga && npm run css-strip-elmylar",
+    "css-strip-corredor": "mv ./dist/styles/Corredor.css ./dist/styles/Corredor-old.css && strip-bom ./dist/styles/Corredor-old.css > ./dist/styles/Corredor.css && rm ./dist/styles/Corredor-old.css",
+    "css-strip-murga": "mv ./dist/styles/Murga.css ./dist/styles/Murga-old.css && strip-bom ./dist/styles/Murga-old.css > ./dist/styles/Murga.css && rm ./dist/styles/Murga-old.css",
+    "css-strip-elmylar": "mv ./dist/styles/ElMylar.css ./dist/styles/ElMylar-old.css && strip-bom ./dist/styles/ElMylar-old.css > ./dist/styles/ElMylar.css && rm ./dist/styles/ElMylar-old.css",
     "js": "gulp build-js",
     "js-corredor": "gulp build-js-corredor",
     "js-murga": "gulp build-js-murga",
@@ -31,6 +37,7 @@
     "gulp-load-plugins": "1.5.0",
     "gulp-plumber": "1.1.0",
     "gulp-sass": "3.1.0",
-    "gulp-uglify": "2.1.2"
+    "gulp-uglify": "2.1.2",
+    "strip-bom-cli": "1.1.0"
   }
 }
