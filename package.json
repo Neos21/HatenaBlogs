@@ -11,10 +11,10 @@
     "css-murga": "gulp build-css-murga && npm run css-strip-murga",
     "css-elmylar": "gulp build-css-elmylar && npm run css-strip-elmylar",
     "css-bitarcher": "gulp build-css-bitarcher",
-    "css-strip": "npm run css-strip-corredor && npm run css-strip-murga && npm run css-strip-elmylar",
-    "css-strip-corredor": "mv ./dist/styles/Corredor.css ./dist/styles/Corredor-old.css && strip-bom ./dist/styles/Corredor-old.css > ./dist/styles/Corredor.css && rm ./dist/styles/Corredor-old.css",
-    "css-strip-murga": "mv ./dist/styles/Murga.css ./dist/styles/Murga-old.css && strip-bom ./dist/styles/Murga-old.css > ./dist/styles/Murga.css && rm ./dist/styles/Murga-old.css",
-    "css-strip-elmylar": "mv ./dist/styles/ElMylar.css ./dist/styles/ElMylar-old.css && strip-bom ./dist/styles/ElMylar-old.css > ./dist/styles/ElMylar.css && rm ./dist/styles/ElMylar-old.css",
+    "css-strip": "node strip-bom.js ./dist/styles/*",
+    "css-strip-corredor": "node strip-bom.js ./dist/styles/Corredor.css",
+    "css-strip-murga": "node strip-bom.js ./dist/styles/Murga.css",
+    "css-strip-elmylar": "node strip-bom.js ./dist/styles/ElMylar.css",
     "js": "gulp build-js",
     "js-corredor": "gulp build-js-corredor",
     "js-murga": "gulp build-js-murga",
@@ -38,6 +38,6 @@
     "gulp-plumber": "1.1.0",
     "gulp-sass": "3.1.0",
     "gulp-uglify": "2.1.2",
-    "strip-bom-cli": "1.1.0"
+    "strip-bom": "3.0.0"
   }
 }
