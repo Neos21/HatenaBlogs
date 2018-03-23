@@ -2,25 +2,10 @@
 
 自分が運営しているはてなブログのテーマやカスタム HTML などを保存しておくリポジトリです。
 
-- [Corredor](http://neos21.hatenablog.com/)
-- [Murga](http://neos21.hatenablog.jp/)
-- [El Mylar](http://neos21.hateblo.jp/)
-- [Bit-Archer](http://bit-archer.hatenablog.com/)
-
-
-## gulp-clean-css
-
-Clean-CSS CLI をラップしている Gulp プラグインで、CSS を圧縮しています。
-
-
-## gulp-uglify
-
-Uglify をラップしている Gulp プラグインで、JavaScript を圧縮しています。
-
-
-## node-sass
-
-SCSS を圧縮しています。
+- __[Corredor](http://neos21.hatenablog.com/)__
+- __[Murga](http://neos21.hatenablog.jp/)__
+- __[El Mylar](http://neos21.hateblo.jp/)__
+- __[Bit-Archer](http://bit-archer.hatenablog.com/)__
 
 
 ## Author

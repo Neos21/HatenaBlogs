@@ -740,6 +740,7 @@ ins.adsbygoogle {
     background: $nn-grey-bg;
   }
   
+  // 強調
   em,
   em * {
     color: #296;
@@ -747,7 +748,19 @@ ins.adsbygoogle {
   
   strong,
   strong * {
-    color: #f08;
+    color: #f03;
+  }
+  
+  // リンクと強調を両指定している要素には下線を引く
+  a em, a strong,
+  em a, strong a {
+    text-decoration: underline;
+  }
+  
+  // 「em *」「strong *」が勝ってホバー時に色が変化しないので継承させる
+  a:hover em,
+  a:hover strong {
+    color: inherit;
   }
 }
 
