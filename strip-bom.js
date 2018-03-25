@@ -7,12 +7,29 @@ if(process.argv.length < 3) {
   return;
 }
 
-// 引数から指定されたファイル一覧を取得する
-const files = process.argv.slice(2, process.argv.length);
+// 引数で指定されたファイル名を取得する
+const param = process.argv[2];
+
+// 対象のファイルが存在するディレクトリを指定する
+const dirPath = './dist/styles/';
+
+if(param === '*') {
+  // 拡張子付きのファイル名を全取得してそれぞれ変換する
+  const files = fs.readdirSync(dirPath);
+  files.forEach((fileName) => {
+    stripBomFile(fileName);
+  });
+}
+else {
+  // ファイル名指定の場合は拡張子を与えて変換する
+  const fileName = `${param}.css`;
+  stripBomFile(fileName);
+}
 
 // ファイルごとに BOM を除去して上書きする
-files.forEach((file) => {
-  const text = fs.readFileSync(file, 'utf-8');
-  const stripped = stripBom(text);
-  fs.writeFileSync(file, stripped);
-});
+function stripBomFile(fileName) {
+  const filePath = `${dirPath}${fileName}`;
+  const originalText = fs.readFileSync(filePath, 'utf-8');
+  const strippedText = stripBom(originalText);
+  fs.writeFileSync(filePath, strippedText);
+}
