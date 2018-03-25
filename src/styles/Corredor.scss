@@ -809,7 +809,7 @@ ins.adsbygoogle {
   border-radius: 4px;
   
   // 右下に余白を開けコンテンツを配置する準備をしておく
-  .hatena-asin-detail::before {
+  &::before {
     position: absolute;
     right: .6rem;
     bottom: .6rem;
@@ -821,8 +821,7 @@ ins.adsbygoogle {
   // Amazon : 円形グラデーションで色を分けマスクすることで「a」部分を黒色・矢印を黄色にする
   &:not(.hatena-rakuten-detail)::before {
     content: "\f034";
-            text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
     background: radial-gradient(ellipse farthest-corner at 50% 20px, rgba(0, 0, 0, .5) 50%, rgba(255, 153, 0, .5) 50%) 50% 50% / 60px 50px no-repeat;
             background-clip: text;
     -webkit-background-clip: text;
