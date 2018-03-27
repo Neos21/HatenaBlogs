@@ -480,7 +480,7 @@ ins.adsbygoogle {
     @media (min-width: $breakpoint-md) {
       height: $header-height-max !important;
       background-position: left 10px !important;  // 背景画像に関する指定はインラインで追加されるので !important が必要
-    }  
+    }
     
     // 画像右端に黒いボカシを付ける (主に md 以上の時用)
     &::after {

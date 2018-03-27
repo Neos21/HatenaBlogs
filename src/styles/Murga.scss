@@ -129,6 +129,7 @@ html {
 }
 
 body {
+  padding: 0 !important;  // Google AdSense 自動広告の「アンカー広告」がページを押し下げるのを回避する
   color: $colour-black;
   font-size: 16px;  // レスポンシブフォントサイズの最小サイズに合わせる
   background: $colour-grey-bg;
@@ -315,13 +316,8 @@ a {
  * 全体
  * ================================================== */
 
-// 画面上部から出てくるスマホ向け AdSense 広告が画面を押し下げるので指定する
-#container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
+// #container
+
 
 /* ==================================================
  * 2カラムレイアウト調整
@@ -1227,7 +1223,7 @@ ins.adsbygoogle {
   @include center();
   
   margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 // footer-link : 他サイト・他ブログへのリンク
