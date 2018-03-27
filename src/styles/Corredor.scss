@@ -305,13 +305,8 @@ a {
  * 全体
  * ================================================== */
 
-// 画面上部から出てくるスマホ向け AdSense 広告が画面を押し下げるので指定する
-#container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
+// #container
+
 
 /* ==================================================
  * 2カラムレイアウト調整
@@ -465,36 +460,44 @@ ins.adsbygoogle {
  * ヘッダ
  * ================================================== */
 
+// 見た目上のヘッダの高さ
+$header-height-min:  80px;
+$header-height-max: 175px;
+
 #blog-title {  // header
   // 背景画像の位置調整用のオフセット
   $header-margin-top: 15px;
-  $header-height-min: calc( 80px + #{$header-margin-top});
-  $header-height-max: calc(175px + #{$header-margin-top});
-  
-  position: relative;
+  // 実際の要素の高さは見た目の高さにオフセット分を足しておく
+  $header-height-min-inner: calc(#{$header-height-min} + #{$header-margin-top});
+  $header-height-max-inner: calc(#{$header-height-max} + #{$header-margin-top});
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   overflow: hidden;  // 黒いボカシによる横スクロール発生をなくす
   
   #blog-title-inner {
     margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する
-    height: $header-height-min !important;  // $breakpoint-md 未満時の高さ・背景位置にする
-    background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black !important;
+    height: $header-height-min-inner !important;  // $breakpoint-md 未満時の高さ・背景位置にする
+    background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max-inner $colour-black !important;
     transition: height .2s, background-position .2s;
     
     // $breakpoint-md 以上の高さ設定
     @media (min-width: $breakpoint-md) {
-      height: $header-height-max !important;
+      height: $header-height-max-inner !important;
       background-position: left 10px !important;  // 背景画像に関する指定はインラインで追加されるので !important が必要
-    }  
+    }
     
     // 画像右端に黒いボカシを付ける (主に md 以上の時用)
     &::after {
       content: "";
       z-index: 1;  // 最下層にする
       position: absolute;
-      top: -$header-margin-top;
+      top: 0;
       left: 0;
-      width: 900px;  // $header-height-max で縮小表示した時の幅に合わせて設定
-      height: $header-height-max;
+      width: 900px;  // $header-height-max-inner で縮小表示した時の幅に合わせて設定
+      height: $header-height-max-inner;
       box-shadow: inset -30px 0 30px -15px $colour-black;
     }
   }
@@ -561,8 +564,13 @@ ins.adsbygoogle {
 #top-editarea {
   @include center();
   
-  margin-top: 1rem;
+  margin-top: calc(#{$header-height-min} + 1rem);
   margin-bottom: 1rem;
+  transition: margin-top .2s;
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: calc(#{$header-height-max} + 1rem);
+  }
 }
 
 // 独自ハンバーガーメニュー
