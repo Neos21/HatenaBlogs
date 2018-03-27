@@ -464,7 +464,7 @@ ins.adsbygoogle {
 #blog-title {  // header
   // 背景画像の位置調整用のオフセット
   $header-margin-top: 15px;
-  $header-height-min: calc( 80px + #{$header-margin-top});
+  $header-height-min: calc(100px + #{$header-margin-top});
   $header-height-max: calc(175px + #{$header-margin-top});
   
   position: relative;
@@ -508,7 +508,7 @@ ins.adsbygoogle {
     @include responsive-width();
     @include english-font-family();
     
-    padding-top: .7rem;
+    padding-top: 20px;
     text-transform: uppercase;
     letter-spacing: .1em;
     transition: padding-top .2s;
@@ -565,7 +565,7 @@ ins.adsbygoogle {
 #n-hm {
   z-index: 10;
   position: absolute;
-  top: 1rem;
+  top: 1.5rem;
   right: 1rem;
   font-size: 1.8em;
   line-height: 1;

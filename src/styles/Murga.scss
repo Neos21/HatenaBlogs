@@ -518,7 +518,7 @@ ins.adsbygoogle {
   #title {  // h1
     @include english-font-family();
     
-    padding-top: 1rem;
+    padding-top: 20px;
     text-transform: uppercase;
     letter-spacing: .15em;
     transition: padding-top .2s;
@@ -542,7 +542,6 @@ ins.adsbygoogle {
   }
   
   #blog-description {  // h2
-    padding-top: 5px;
     color: $colour-white;
     font-size: 1em;
     text-shadow: $colour-black  2px  2px 1px,
