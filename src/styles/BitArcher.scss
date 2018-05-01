@@ -674,6 +674,7 @@ a {
   
   pre {
     font-family: $nn-monospace !important;
+    background: transparent;
     overflow-x: scroll;
     word-break: keep-all;
     word-wrap: normal;  // iPhone で折り返しが発生するため指定する
@@ -703,17 +704,18 @@ a {
   // インライン要素
   // --------------------------------------------------
   
-  // コード : Neo's Normalize のスタイルで上書き
+  // コード : Neo's Normalize のスタイルをベースに上書き
   :not(pre) > code,
   :not(pre) > var,
   :not(pre) > samp,
   :not(pre) > kbd {
     margin: 0 .25em;
-    border: 1px solid $nn-grey-border;
+    border: 1px solid $colour-orange;
     border-radius: 4px;
     padding: .1em .4em;
+    color: $colour-orange;
     font-family: $nn-monospace !important;
-    background: $nn-grey-bg;
+    background: transparent;
   }
   
   // 強調
