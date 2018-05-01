@@ -89,20 +89,20 @@ $colour-red-lighten           : #fcf4f4;  // 見出しの背景色など
  * 
  * - calc(XX + ((1vw - YY) * ZZ))
  *   - XX = 最小サイズを Rem で指定する
- *          ex. 通常 1rem (= 16px) で良い
+ *          ex. 1rem = 16px として計算する
  *   - YY = 拡大を始めるビューポート幅 / 100 (px)
  *          ex. 992px から拡大するなら 9.92px
  *   - ZZ = 100 * 可変させるフォントサイズの差 / 可変させるビューポート幅の差
- *          ex. 100 * (18px - 16px) / (1200px - 992px) = 100 * 2px / 208px = 0.96153...
+ *          ex. 100 * (18px - 17px) / (1200px - 992px) = 100 * 1px / 208px = 0.4808...
  * - 参考 : https://websemantics.uk/tools/responsive-font-calculator/
  */
-@mixin responsive-font-size() {
+ @mixin responsive-font-size() {
   // 最小サイズ (基準)
-  font-size: 16px;
+  font-size: 17px;
   
   // 可変
   @media (min-width: $breakpoint-lg) {
-    font-size: calc(1rem + ((1vw - 9.92px) * .96153));
+    font-size: calc(1.0625rem + ((1vw - 9.92px) * .4808));
   }
   
   // 最大サイズ
@@ -114,7 +114,7 @@ $colour-red-lighten           : #fcf4f4;  // 見出しの背景色など
 // ボックスを囲む基本スタイル
 @mixin white-box() {
   border-radius: 4px;
-  padding: 1rem;
+  padding: 1em;
   background: $colour-white;
   box-shadow: 0 0 .75rem $colour-grey-box;
 }
@@ -131,7 +131,7 @@ html {
 body {
   padding: 0 !important;  // Google AdSense 自動広告の「アンカー広告」がページを押し下げるのを回避する
   color: $colour-black;
-  font-size: 16px;  // レスポンシブフォントサイズの最小サイズに合わせる
+  font-size: 17px;  // レスポンシブフォントサイズの最小サイズに合わせる
   background: $colour-grey-bg;
 }
 
@@ -518,7 +518,8 @@ ins.adsbygoogle {
   #title {  // h1
     @include english-font-family();
     
-    padding-top: 20px;
+    margin-bottom: .5rem;
+    padding-top: 25px;
     text-transform: uppercase;
     letter-spacing: .15em;
     transition: padding-top .2s;
@@ -657,19 +658,26 @@ ins.adsbygoogle {
   // ブロック要素
   // --------------------------------------------------
   
+  // 下マージンを em にする
+  h1, h2, h3, h4, h5, h6, p, hr, dl, dt, dd, ol, ul, pre, table, blockquote,
+  .hatena-asin-detail,
+  .banner {
+    margin-bottom: 1.25em;
+  }
+  
   h1 {
-    margin: 2.5rem -1rem 1.5rem -1rem;
+    margin: 2.5em -1em 1.25em -1em;
     border-top: 2px solid $colour-red-darken;
     border-bottom: 1px solid $colour-red-darken;
-    padding: .25em 1rem;
+    padding: .25em 1em;
     font-size: 1.5em;
     line-height: 1.4;
     background: $colour-red-lighten;
   }
   
   h2 {
-    margin: 2rem -1rem 1rem -1rem;
-    border-left: 1rem solid $colour-red-darken;
+    margin: 2em -1em 1.25em -1em;
+    border-left: 1em solid $colour-red-darken;
     padding: 0 .5rem;
     color: $colour-red-darken;
     font-size: 1.4em;
@@ -677,24 +685,24 @@ ins.adsbygoogle {
   }
   
   h3 {
-    margin: 1.75rem -1rem 1rem -1rem;
+    margin: 1.75em -1em 1.25em -1em;
     border-bottom: 1px solid $colour-red-darken;
-    padding: 0 1rem;
+    padding: 0 1em;
     font-size: 1.3em;
     background: $colour-red-lighten;
   }
   
   h4 {
-    margin: 1rem -1rem;
+    margin: 1.25em -1em;
     border-bottom: 1px solid $colour-grey-box;
-    padding: 0 1rem;
+    padding: 0 1em;
     font-size: 1.2em;
   }
   
   h5, h6 {
-    margin: 1rem -1rem;
+    margin: 1.25em -1em;
     border-bottom: 1px solid $colour-grey-hatena;
-    padding: 0 1rem;
+    padding: 0 1em;
   }
   
   pre {
@@ -860,6 +868,12 @@ ins.adsbygoogle {
   li {
     margin-left: 1.5em;
   }
+}
+
+// 「embed:cite」で貼り付けたサイトのドメイン : 非表示にする
+// --------------------------------------------------
+.hatena-citation {
+  display: none;
 }
 
 // エントリ フッタ

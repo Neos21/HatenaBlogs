@@ -73,7 +73,7 @@ $colour-heading-grey          : #959799;
 @mixin responsive-width() {
   width: auto;
   margin: 0 auto;
-  padding: 0 .8rem;
+  padding: 0 1rem;
   
   @media (min-width: $breakpoint-md) {
     width: 85vw;

@@ -74,7 +74,7 @@ $colour-heading-grey          : #959799;
 @mixin responsive-width() {
   width: auto;
   margin: 0 auto;
-  padding: 0 .8rem;
+  padding: 0 1rem;
   
   @media (min-width: $breakpoint-md) {
     width: 85vw;
@@ -91,20 +91,20 @@ $colour-heading-grey          : #959799;
  * 
  * - calc(XX + ((1vw - YY) * ZZ))
  *   - XX = 最小サイズを Rem で指定する
- *          ex. 通常 1rem (= 16px) で良い
+ *          ex. 1rem = 16px として計算する
  *   - YY = 拡大を始めるビューポート幅 / 100 (px)
  *          ex. 992px から拡大するなら 9.92px
  *   - ZZ = 100 * 可変させるフォントサイズの差 / 可変させるビューポート幅の差
- *          ex. 100 * (18px - 16px) / (1200px - 992px) = 100 * 2px / 208px = 0.96153...
+ *          ex. 100 * (18px - 17px) / (1200px - 992px) = 100 * 1px / 208px = 0.4808...
  * - 参考 : https://websemantics.uk/tools/responsive-font-calculator/
  */
-@mixin responsive-font-size() {
+ @mixin responsive-font-size() {
   // 最小サイズ (基準)
-  font-size: 16px;
+  font-size: 17px;
   
   // 可変
   @media (min-width: $breakpoint-lg) {
-    font-size: calc(1rem + ((1vw - 9.92px) * .96153));
+    font-size: calc(1.0625rem + ((1vw - 9.92px) * .4808));
   }
   
   // 最大サイズ
@@ -125,7 +125,7 @@ html {
 body {
   padding: 0 !important;  // Google AdSense 自動広告の「アンカー広告」がページを押し下げるのを回避する
   color: $colour-black;
-  font-size: 16px;  // レスポンシブフォントサイズの最小サイズに合わせる
+  font-size: 17px;  // レスポンシブフォントサイズの最小サイズに合わせる
   background: $colour-white;
 }
 
@@ -335,7 +335,7 @@ a {
       // #content-inner の grid-template-columns と同値を入れておき突っ張り棒にする
       @media (min-width: $breakpoint-md) {
         border-right: 1px solid $colour-grey-hatena;
-        padding-right: 1rem;
+        padding-right: 1em;
         min-width: 440px;
         
         // IE11 だけ Grid を修正する
@@ -482,7 +482,7 @@ ins.adsbygoogle {
     @include responsive-width();
     @include english-font-family();
     
-    padding-top: 20px;
+    padding-top: 25px;
     letter-spacing: .1em;
     transition: padding-top .2s;
     
@@ -504,7 +504,7 @@ ins.adsbygoogle {
   #blog-description {  // h2
     @include responsive-width();
     
-    padding-top: 5px;
+    padding-top: 10px;
     color: $colour-white;
     font-size: 1em;
     text-shadow: $colour-black 0 0 10px !important;
@@ -633,10 +633,16 @@ ins.adsbygoogle {
   // ブロック要素
   // --------------------------------------------------
   
+  // 下マージンを em にする
+  h1, h2, h3, h4, h5, h6, p, hr, dl, dt, dd, ol, ul, pre, table, blockquote,
+  .hatena-asin-detail,
+  .banner {
+    margin-bottom: 1.25em;
+  }
+  
   h1 {
     position: relative;
-    margin-top: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 2.5em;
     border: 1px solid $colour-grey-hatena;
     border-radius: 4px;
     padding: .25em .5rem .25em 1rem;
@@ -658,7 +664,7 @@ ins.adsbygoogle {
   }
   
   h2 {
-    margin-top: 2rem;
+    margin-top: 2em;
     border-radius: 4px;
     padding: .25em .5rem .25em;
     color: $colour-white;
@@ -667,7 +673,7 @@ ins.adsbygoogle {
   }
   
   h3 {
-    margin-top: 1.75rem;
+    margin-top: 1.75em;
     border-bottom: 2px solid $colour-heading-blue;
     border-radius: 6px 6px 0 0;
     padding: .25em .5rem;
@@ -850,6 +856,12 @@ ins.adsbygoogle {
   li {
     margin-left: 1.5em;
   }
+}
+
+// 「embed:cite」で貼り付けたサイトのドメイン : 非表示にする
+// --------------------------------------------------
+.hatena-citation {
+  display: none;
 }
 
 // エントリ フッタ
