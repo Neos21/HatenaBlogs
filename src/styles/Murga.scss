@@ -114,7 +114,7 @@ $colour-red-lighten           : #fcf4f4;  // 見出しの背景色など
 // ボックスを囲む基本スタイル
 @mixin white-box() {
   border-radius: 4px;
-  padding: 1em;
+  padding: 1.1rem;
   background: $colour-white;
   box-shadow: 0 0 .75rem $colour-grey-box;
 }
@@ -666,18 +666,18 @@ ins.adsbygoogle {
   }
   
   h1 {
-    margin: 2.5em -1em 1.25em -1em;
+    margin: 2.5em -1.1rem 1.25em -1.1rem;
     border-top: 2px solid $colour-red-darken;
     border-bottom: 1px solid $colour-red-darken;
-    padding: .25em 1em;
+    padding: .25em 1.1rem;
     font-size: 1.5em;
     line-height: 1.4;
     background: $colour-red-lighten;
   }
   
   h2 {
-    margin: 2em -1em 1.25em -1em;
-    border-left: 1em solid $colour-red-darken;
+    margin: 2em -1.1rem 1.25em -1.1rem;
+    border-left: 1.1rem solid $colour-red-darken;
     padding: 0 .5rem;
     color: $colour-red-darken;
     font-size: 1.4em;
@@ -685,24 +685,24 @@ ins.adsbygoogle {
   }
   
   h3 {
-    margin: 1.75em -1em 1.25em -1em;
+    margin: 1.75em -1.1rem 1.25em -1.1rem;
     border-bottom: 1px solid $colour-red-darken;
-    padding: 0 1em;
+    padding: 0 1.1rem;
     font-size: 1.3em;
     background: $colour-red-lighten;
   }
   
   h4 {
-    margin: 1.25em -1em;
+    margin: 1.25em -1.1rem;
     border-bottom: 1px solid $colour-grey-box;
-    padding: 0 1em;
+    padding: 0 1.1rem;
     font-size: 1.2em;
   }
   
   h5, h6 {
-    margin: 1.25em -1em;
+    margin: 1.25em -1.1rem;
     border-bottom: 1px solid $colour-grey-hatena;
-    padding: 0 1em;
+    padding: 0 1.1rem;
   }
   
   pre {
