@@ -1148,6 +1148,26 @@ a {
   .profile-description > p:first-child::after {
     @include clearfix();
   }
+  
+  // プロフィールに置くリンク
+  .n-pl {  // ul
+    li {
+      margin-left: 1.5em;
+      list-style-type: disc;
+      
+      strong a {
+        color: $colour-pink;
+      }
+      
+      em a {
+        color: $colour-green;
+      }
+      
+      a i {
+        color: $colour-skyblue;
+      }
+    }
+  }
 }
 
 // 検索
