@@ -1196,6 +1196,26 @@ ins.adsbygoogle {
   .profile-description > p:first-child::after {
     @include clearfix();
   }
+  
+  // プロフィールに置くリンク
+  .n-pl {  // ul
+    li {
+      margin-left: 1.5em;
+      list-style-type: disc;
+      
+      strong a {
+        color: #f03;
+      }
+      
+      em a {
+        color: #296;
+      }
+      
+      a i {
+        color: $colour-pink;
+      }
+    }
+  }
 }
 
 // 検索
