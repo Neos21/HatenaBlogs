@@ -10,7 +10,7 @@
 
 ## Author
 
-[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
+[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/Neos21))
 
 - [GitHub Pages - Hatena Blogs](https://neos21.github.io/HatenaBlogs/)
 
