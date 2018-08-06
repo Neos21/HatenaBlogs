@@ -518,8 +518,8 @@ ins.adsbygoogle {
   #title {  // h1
     @include english-font-family();
     
-    margin-bottom: .5rem;
-    padding-top: 25px;
+    margin-bottom: .75rem;
+    padding-top: 15px;
     letter-spacing: .15em;
     transition: padding-top .2s;
     
