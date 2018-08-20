@@ -508,7 +508,7 @@ ins.adsbygoogle {
     @include responsive-width();
     @include english-font-family();
     
-    padding-top: 25px;
+    padding-top: 20px;
     letter-spacing: .1em;
     transition: padding-top .2s;
     
@@ -532,7 +532,7 @@ ins.adsbygoogle {
   #blog-description {  // h2
     @include responsive-width();
     
-    padding-top: 5px;
+    padding-top: 15px;
     color: $colour-white;
     font-size: 1em;
     text-shadow: $colour-black  2px  2px 1px,
@@ -564,7 +564,7 @@ ins.adsbygoogle {
 #n-hm {
   z-index: 10;
   position: absolute;
-  top: 1.5rem;
+  top: 1.3rem;
   right: 1rem;
   font-size: 1.8em;
   line-height: 1;
