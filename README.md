@@ -2,7 +2,7 @@
 
 自分が運営しているはてなブログのテーマやカスタム HTML などを保存しておくリポジトリです。
 
-__[GitHub Pages Here](https://neos21.github.io/HatenaBlogs/)__
+__[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
 
 - __[Corredor](http://neos21.hatenablog.com/)__
   - [Corredor.css](./dist/styles/Corredor.css) (Source : [Corredor.scss](./src/styles/Corredor.scss))
