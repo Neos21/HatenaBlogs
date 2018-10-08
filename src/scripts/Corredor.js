@@ -68,6 +68,9 @@
       // 記事ページはフッタ AdSense の移動のみ
       replaceFooterAdSense('hentry');
     }
-  }, false);
+  });
+  
+  // タッチ時の反応をさせるため空の関数を設定する
+  d.addEventListener('touchstart', function() { });
   
 })(document, 'getElementsByClassName', 'getElementById', ' ');

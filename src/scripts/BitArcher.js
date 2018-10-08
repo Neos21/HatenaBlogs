@@ -56,6 +56,9 @@
       // アーカイブページ (月別・カテゴリ別・検索結果) の場合
       appendShareLinks('archive-entry', 'archive-entry-body');
     }
-  }, false);
+  });
+  
+  // タッチ時の反応をさせるため空の関数を設定する
+  d.addEventListener('touchstart', function() { });
   
 })(document, 'getElementsByClassName', 'getElementById', ' ');
