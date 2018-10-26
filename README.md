@@ -6,9 +6,10 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
 
 - __[Corredor](http://neos21.hatenablog.com/)__
   - [Corredor.css](./dist/styles/Corredor.css) (Source : [Corredor.scss](./src/styles/Corredor.scss))
-  - [Corredor.js](./dist/scripts/Corredor.css) (Source : [Corredor.js](./src/scripts/Corredor.js))
+  - [Corredor.js](./dist/scripts/Corredor.js) (Source : [Corredor.js](./src/scripts/Corredor.js))
+  - [CorredorCheck.js](./dist/scripts/CorredorCheck.js) (Source : [CorredorCheck.js](./src/scripts/Corredor.js"))
   - [Corredor.jpg](./src/images/Corredor.jpg)
-  - [CorredorHead.html](./src/html/CorredorHead.html)
+  - [CorredorHead.html](./src/html/CorredorHead.html) (Included `CorredorCheck.js`)
   - [CorredorHeader.html](./src/html/CorredorHeader.html)
   - [CorredorEntryFooter.html](./src/html/CorredorEntryFooter.html)
   - [CorredorSidebarProfile.html](./src/html/CorredorSidebarProfile.html)
@@ -16,7 +17,7 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
   - [CorredorFooter.html](./src/html/CorredorFooter.html)
 - __[Murga](http://neos21.hatenablog.jp/)__
   - [Murga.css](./dist/styles/Murga.css) (Source : [Murga.scss](./src/styles/Murga.scss))
-  - [Murga.js](./dist/scripts/Murga.css) (Source : [Murga.js](./src/scripts/Murga.js))
+  - [Murga.js](./dist/scripts/Murga.js) (Source : [Murga.js](./src/scripts/Murga.js))
   - [Murga.jpg](./src/images/Murga.jpg)
   - [MurgaHead.html](./src/html/MurgaHead.html)
   - [MurgaHeader.html](./src/html/MurgaHeader.html)
@@ -26,7 +27,7 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
   - [MurgaFooter.html](./src/html/MurgaFooter.html)
 - __[El Mylar](http://neos21.hateblo.jp/)__
   - [ElMylar.css](./dist/styles/ElMylar.css) (Source : [ElMylar.scss](./src/styles/ElMylar.scss))
-  - [ElMylar.js](./dist/scripts/ElMylar.css) (Source : [ElMylar.js](./src/scripts/ElMylar.js))
+  - [ElMylar.js](./dist/scripts/ElMylar.js) (Source : [ElMylar.js](./src/scripts/ElMylar.js))
   - [ElMylar.jpg](./src/images/ElMylar.jpg)
   - [ElMylarHead.html](./src/html/ElMylarHead.html)
   - [ElMylarHeader.html](./src/html/ElMylarHeader.html)
@@ -36,7 +37,7 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
   - [ElMylarFooter.html](./src/html/ElMylarFooter.html)
 - __[Bit-Archer](http://bit-archer.hatenablog.com/)__
   - [BitArcher.css](./dist/styles/BitArcher.css) (Source : [BitArcher.scss](./src/styles/BitArcher.scss))
-  - [BitArcher.js](./dist/scripts/BitArcher.css) (Source : [BitArcher.js](./src/scripts/BitArcher.js))
+  - [BitArcher.js](./dist/scripts/BitArcher.js) (Source : [BitArcher.js](./src/scripts/BitArcher.js))
   - [BitArcherEntryFooter.html](./src/html/BitArcherEntryFooter.html)
   - [BitArcherSidebarProfile.html](./src/html/BitArcherSidebarProfile.html)
   - [BitArcherFooter.html](./src/html/BitArcherFooter.html)
