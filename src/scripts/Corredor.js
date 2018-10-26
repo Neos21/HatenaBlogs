@@ -1,5 +1,5 @@
 /*! Corredor : Neo (@Neos21) http://neos21.hatenablog.com/ */
-(function(d, c, i, s) {
+(function(w, d, c, i, s) {
   // Body 要素に任意のクラス名が存在するか確認する
   var hasClass = function(className) {
     return ~(s + d.body.className + s).replace(/[\n\t]/g, s).indexOf(s + className + s);
@@ -53,7 +53,7 @@
   };
   
   // Body 要素のクラス名に応じて記事と挿入先のクラス名が異なるので判定する
-  d.addEventListener('DOMContentLoaded', function() {
+  var exec = function() {
     if(hasClass('page-index')) {
       // トップページの場合
       appendShareLinks('hentry', 'customized-footer');
@@ -68,9 +68,28 @@
       // 記事ページはフッタ AdSense の移動のみ
       replaceFooterAdSense('hentry');
     }
-  });
+    
+    // タッチ時の反応をさせるため空の関数を設定する
+    d.addEventListener('touchstart', function() { });
+  };
   
-  // タッチ時の反応をさせるため空の関数を設定する
-  d.addEventListener('touchstart', function() { });
+  // フォールバック読み込み時は実行タイミングが変わるので調整する
+  if(!document.readyState || document.readyState === 'interactive') {
+    window.addEventListener('load', exec);
+  }
+  else if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', exec);
+  }
+  else {
+    exec();
+  }
   
-})(document, 'getElementsByClassName', 'getElementById', ' ');
+  // 検証用オブジェクト・プロパティを定義しておく
+  if(!window.Neos21) {
+    window.Neos21 = {};
+  }
+  if(!window.Neos21.scriptLoaded) {
+    window.Neos21.scriptLoaded = true;
+  }
+  
+})(window, document, 'getElementsByClassName', 'getElementById', ' ');

@@ -39,9 +39,11 @@ function buildJs(fileName) {
     .src(`src/scripts/${fileName}.js`)  // src/scripts/ 配下の指定ファイルを対象にビルドする
     .pipe($.plumber())  // エラー時にプロセスが落ちないようにするプラグイン
     .pipe($.uglify({
-      compress: true,   // ビルドする 
-      mangle: true,     // 変数の難読化を行う
-      preserveComments: 'some'  // 「*!」で始まるブロックコメントを残す
+      compress: true,     // ビルドする 
+      mangle: true,       // 変数の難読化を行う
+      output: {
+        comments: 'some'  // 「*!」で始まるブロックコメントを残す
+      }
     }))
     .pipe(gulp.dest('dist/scripts/'));  // dist/scripts/ 配下に出力する (対象ディレクトリがなくても OK・ファイルは上書き)
 }
@@ -111,6 +113,15 @@ gulp.task('build-js', () => {
  */
 gulp.task('build-js-corredor', () => {
   return buildJs('Corredor');
+});
+
+/**
+ * JavaScript ビルド … Corredor Check
+ * 
+ * @return {Stream}
+ */
+gulp.task('build-js-corredor-check', () => {
+  return buildJs('CorredorCheck');
 });
 
 /**
