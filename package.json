@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Neos21/HatenaBlogs#readme",
   "devDependencies": {
-    "@neos21/neos-normalize": "1.0.4",
+    "@neos21/neos-normalize": "1.0.5",
     "gulp": "3.9.1",
     "gulp-load-plugins": "1.5.0",
     "gulp-plumber": "1.2.0",
