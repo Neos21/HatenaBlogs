@@ -18,6 +18,20 @@ window.Neos21 = {};
  * @param index フォールバック URL の添字
  */
 window.Neos21.styles = function(index) {
+  // 検証用要素の読み込みを待つため再呼び出しして終了する
+  if(!document.readyState || document.readyState === 'interactive') {
+    window.addEventListener('load', function() {
+      window.Neos21.styles(index);
+    });
+    return;
+  }
+  else if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      window.Neos21.styles(index);
+    });
+    return;
+  }
+  
   // 第1引数が number 型で指定されていること
   if(index === null || index === undefined || typeof index !== 'number') {
     return;
@@ -25,8 +39,7 @@ window.Neos21.styles = function(index) {
   
   // フォールバック URL の定義
   var urls = [
-    'https://neos21.github.io/HatenaBlogs/dist/styles/Corredor.css',  // デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
-    'https://neos21.github.io/HatenaBlogs/dist/styles/Corredor.css'
+    'https://neos21.github.io/HatenaBlogs/dist/styles/Corredor.css'  // デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
   ];
   
   // 検証用要素
@@ -76,8 +89,7 @@ window.Neos21.scripts = function(index) {
   
   // フォールバック URL の定義
   var urls = [
-    'https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js',  // デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
-    'https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js'
+    'https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js'  // デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
   ];
   
   // 検証用プロパティが存在しているか確認する
