@@ -13,7 +13,7 @@
     template.removeAttribute('id');
     
     // 記事ごとにシェアリンクを複製して作っていく
-    Array.prototype.forEach.call(d[c](articlesClassName), function(article) {
+    [].forEach.call(d[c](articlesClassName), function(article) {
       // 記事情報を取得する。記事タイトルのみ URL 用にエンコードしておく
       var entryTitleLink = article[c]('entry-title-link')[0];
       var title = encodeURIComponent(entryTitleLink.innerText);

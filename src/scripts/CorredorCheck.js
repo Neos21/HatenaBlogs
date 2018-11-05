@@ -41,10 +41,10 @@ window.Neos21.styles = function(index) {
   var urls = [
     // GitHub Pages : デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
     'https://neos21.github.io/HatenaBlogs/dist/styles/Corredor.css',
-    // https://unpkg.com/@neos21/hatena-blogs@1.0.0/
-    'https://unpkg.com/@neos21/hatena-blogs@1.0.0/dist/styles/Corredor.css',
+    // https://unpkg.com/@neos21/hatena-blogs/
+    'https://unpkg.com/@neos21/hatena-blogs@1.0.1/dist/styles/Corredor.css',
     // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.0/dist/styles/Corredor.css',
+    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.1/dist/styles/Corredor.css',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css',
     'https://rawcdn.githack.com/Neos21/HatenaBlogs/8369a67962cb30e83825980a334316de2c193696/dist/styles/Corredor.css',
@@ -102,9 +102,9 @@ window.Neos21.scripts = function(index) {
     // GitHub Pages : デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
     'https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js',
     // https://unpkg.com/@neos21/hatena-blogs/
-    'https://unpkg.com/@neos21/hatena-blogs@1.0.0/dist/scripts/Corredor.js',
+    'https://unpkg.com/@neos21/hatena-blogs@1.0.1/dist/scripts/Corredor.js',
     // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.0/dist/scripts/Corredor.js',
+    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.1/dist/scripts/Corredor.js',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js',
     'https://rawcdn.githack.com/Neos21/HatenaBlogs/8369a67962cb30e83825980a334316de2c193696/dist/scripts/Corredor.js',
