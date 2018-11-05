@@ -7,7 +7,7 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
 - __[Corredor](http://neos21.hatenablog.com/)__
   - [Corredor.css](https://neos21.github.io/HatenaBlogs/dist/styles/Corredor.css) (Source : [Corredor.scss](https://neos21.github.io/HatenaBlogs/src/styles/Corredor.scss))
   - [Corredor.js](https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js) (Source : [Corredor.js](https://neos21.github.io/HatenaBlogs/src/scripts/Corredor.js))
-  - [CorredorCheck.js](https://neos21.github.io/HatenaBlogs/dist/scripts/CorredorCheck.js) (Source : [CorredorCheck.js](https://neos21.github.io/HatenaBlogs/src/scripts/Corredor.js"))
+  - [CorredorCheck.js](https://neos21.github.io/HatenaBlogs/dist/scripts/CorredorCheck.js) (Source : [CorredorCheck.js](https://neos21.github.io/HatenaBlogs/src/scripts/Corredor.js))
   - [Corredor.jpg](https://neos21.github.io/HatenaBlogs/src/images/Corredor.jpg)
   - [CorredorHead.html](https://neos21.github.io/HatenaBlogs/src/html/CorredorHead.html) (Included `CorredorCheck.js`)
   - [CorredorHeader.html](https://neos21.github.io/HatenaBlogs/src/html/CorredorHeader.html)
