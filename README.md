@@ -49,6 +49,9 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
 
 - [GitHub - HatenaBlogs](https://github.com/Neos21/HatenaBlogs)
 - [GitHub Pages - Hatena Blogs](https://neos21.github.io/HatenaBlogs/)
+- [npm - @neos21/hatena-blogs](https://www.npmjs.com/package/@neos21/hatena-blogs)
+  - [unpkg](https://unpkg.com/@neos21/hatena-blogs/)
+  - [jsDelivr](https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs)
 
 
 ## Links

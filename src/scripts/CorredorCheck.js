@@ -101,7 +101,7 @@ window.Neos21.scripts = function(index) {
   var urls = [
     // GitHub Pages : デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
     'https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js',
-    // https://unpkg.com/@neos21/hatena-blogs@1.0.0/
+    // https://unpkg.com/@neos21/hatena-blogs/
     'https://unpkg.com/@neos21/hatena-blogs@1.0.0/dist/scripts/Corredor.js',
     // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
     'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.0/dist/scripts/Corredor.js',
