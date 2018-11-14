@@ -42,9 +42,9 @@ window.Neos21.styles = function(index) {
     // GitHub Pages : デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
     'https://neos21.github.io/HatenaBlogs/dist/styles/Corredor.css',
     // https://unpkg.com/@neos21/hatena-blogs/
-    'https://unpkg.com/@neos21/hatena-blogs@1.0.2/dist/styles/Corredor.css',
+    'https://unpkg.com/@neos21/hatena-blogs@1.0.3/dist/styles/Corredor.css',
     // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.2/dist/styles/Corredor.css',
+    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.3/dist/styles/Corredor.css',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css',
     'https://rawcdn.githack.com/Neos21/HatenaBlogs/cb2fb40656c4f7584009e67be99d19b4c0bdc5e6/dist/styles/Corredor.css',
@@ -55,7 +55,7 @@ window.Neos21.styles = function(index) {
   // 検証用要素
   var check = document.getElementById('n-check');
   if(!check) {
-    console.log('検証用要素なし・中止');
+    // console.log('検証用要素なし・中止');
     return;
   }
   
@@ -73,7 +73,7 @@ window.Neos21.styles = function(index) {
   
   // フォールバック用 URL がなかったら対応不可・終了
   if(nextIndex >= urls.length) {
-    console.log('CSS フォールバック不可');
+    // console.log('CSS フォールバック不可');
     return;
   }
   
@@ -102,9 +102,9 @@ window.Neos21.scripts = function(index) {
     // GitHub Pages : デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
     'https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js',
     // https://unpkg.com/@neos21/hatena-blogs/
-    'https://unpkg.com/@neos21/hatena-blogs@1.0.2/dist/scripts/Corredor.js',
+    'https://unpkg.com/@neos21/hatena-blogs@1.0.3/dist/scripts/Corredor.js',
     // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.2/dist/scripts/Corredor.js',
+    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.3/dist/scripts/Corredor.js',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js',
     'https://rawcdn.githack.com/Neos21/HatenaBlogs/cb2fb40656c4f7584009e67be99d19b4c0bdc5e6/dist/scripts/Corredor.js',
@@ -125,7 +125,7 @@ window.Neos21.scripts = function(index) {
   
   // フォールバック用 URL がなかったら対応不可・終了
   if(nextIndex >= urls.length) {
-    console.log('JS フォールバック不可');
+    // console.log('JS フォールバック不可');
     return;
   }
   
