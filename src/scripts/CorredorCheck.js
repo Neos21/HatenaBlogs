@@ -47,7 +47,7 @@ window.Neos21.styles = function(index) {
     'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.3/dist/styles/Corredor.css',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css',
-    'https://rawcdn.githack.com/Neos21/HatenaBlogs/cb2fb40656c4f7584009e67be99d19b4c0bdc5e6/dist/styles/Corredor.css',
+    'https://rawcdn.githack.com/Neos21/HatenaBlogs/71df26164a7de06637739a984a549f895cdc9e16/dist/styles/Corredor.css',
     // Raw GitHub
     'https://raw.githubusercontent.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css'
   ];
@@ -107,7 +107,7 @@ window.Neos21.scripts = function(index) {
     'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.3/dist/scripts/Corredor.js',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js',
-    'https://rawcdn.githack.com/Neos21/HatenaBlogs/cb2fb40656c4f7584009e67be99d19b4c0bdc5e6/dist/scripts/Corredor.js',
+    'https://rawcdn.githack.com/Neos21/HatenaBlogs/71df26164a7de06637739a984a549f895cdc9e16/dist/scripts/Corredor.js',
     // Raw GitHub
     'https://raw.githubusercontent.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js'
   ];
