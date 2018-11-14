@@ -126,6 +126,10 @@ body {
   color: $colour-white;
   font-size: 17px;  // レスポンシブフォントサイズの最小サイズに合わせる
   background: $colour-black;
+  
+  @media (max-width: $breakpoint-xs) {
+    word-break: break-all;
+  }
 }
 
 a {
@@ -459,6 +463,8 @@ a {
   $header-height-max: 190px;
   
   position: relative;
+  word-break: keep-all;
+  word-wrap: normal;
   
   #blog-title-inner {
     height: $header-height-min;  // $breakpoint-md 未満時の高さ・背景位置にする
@@ -1173,22 +1179,17 @@ a {
   }
   
   // プロフィールに置くリンク
-  .n-pl {  // ul
-    li {
-      margin-left: 1.5em;
-      list-style-type: disc;
+  .n-pl {
+    strong a {
+      color: $colour-pink;
+    }
+    
+    em a {
+      color: $colour-green;
+    }
       
-      strong a {
-        color: $colour-pink;
-      }
-      
-      em a {
-        color: $colour-green;
-      }
-      
-      a i {
-        color: $colour-skyblue;
-      }
+    a i {
+      color: $colour-skyblue;
     }
   }
 }

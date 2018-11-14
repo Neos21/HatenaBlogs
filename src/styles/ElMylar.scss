@@ -128,6 +128,10 @@ body {
   color: $colour-black;
   font-size: 17px;  // レスポンシブフォントサイズの最小サイズに合わせる
   background: $colour-white;
+  
+  @media (max-width: $breakpoint-xs) {
+    word-break: break-all;
+  }
 }
 
 a {
@@ -463,6 +467,10 @@ ins.adsbygoogle {
   // 背景画像の位置調整用のオフセット
   $header-height-min: 100px;
   $header-height-max: 200px;
+  
+  overflow: hidden;
+  word-break: keep-all;
+  word-wrap: normal;
   
   #blog-title-inner {
     height: $header-height-min !important;  // $breakpoint-md 未満時の高さ・背景位置にする
@@ -1167,22 +1175,17 @@ ins.adsbygoogle {
   }
   
   // プロフィールに置くリンク
-  .n-pl {  // ul
-    li {
-      margin-left: 1.5em;
-      list-style-type: disc;
-      
-      strong a {
-        color: #f03;
-      }
-      
-      em a {
-        color: #296;
-      }
-      
-      a i {
-        color: $colour-blue;
-      }
+  .n-pl {
+    strong a {
+      color: #f03;
+    }
+    
+    em a {
+      color: #296;
+    }
+    
+    a i {
+      color: $colour-blue;
     }
   }
 }

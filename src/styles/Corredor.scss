@@ -127,6 +127,10 @@ body {
   color: $colour-black;
   font-size: 17px;  // レスポンシブフォントサイズの最小サイズに合わせる
   background: $colour-white;
+  
+  @media (max-width: $breakpoint-xs) {
+    word-break: break-all;
+  }
 }
 
 a {
@@ -470,6 +474,8 @@ ins.adsbygoogle {
   
   position: relative;
   overflow: hidden;  // 黒いボカシによる横スクロール発生をなくす
+  word-break: keep-all;
+  word-wrap: normal;
   
   #blog-title-inner {
     margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する
@@ -1198,22 +1204,17 @@ ins.adsbygoogle {
   }
   
   // プロフィールに置くリンク
-  .n-pl {  // ul
-    li {
-      margin-left: 1.5em;
-      list-style-type: disc;
-      
-      strong a {
-        color: #f03;
-      }
-      
-      em a {
-        color: #296;
-      }
-      
-      a i {
-        color: $colour-pink;
-      }
+  .n-pl {
+    strong a {
+      color: #f03;
+    }
+    
+    em a {
+      color: #296;
+    }
+    
+    a i {
+      color: $colour-pink;
     }
   }
 }

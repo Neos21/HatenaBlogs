@@ -134,6 +134,10 @@ body {
   color: $colour-black;
   font-size: 17px;  // レスポンシブフォントサイズの最小サイズに合わせる
   background: $colour-grey-bg;
+  
+  @media (max-width: $breakpoint-xs) {
+    word-break: break-all;
+  }
 }
 
 a {
@@ -470,6 +474,8 @@ ins.adsbygoogle {
   
   position: relative;
   overflow: hidden;  // ボカシによる横スクロール発生をなくす
+  word-break: keep-all;
+  word-wrap: normal;
   
   #blog-title-inner {
     position: relative;
@@ -1183,22 +1189,17 @@ ins.adsbygoogle {
   }
   
   // プロフィールに置くリンク
-  .n-pl {  // ul
-    li {
-      margin-left: 1.5em;
-      list-style-type: disc;
-      
-      strong a {
-        color: #f03;
-      }
-      
-      em a {
-        color: #296;
-      }
-      
-      a i {
-        color: $colour-red-darken;
-      }
+  .n-pl {
+    strong a {
+      color: #f03;
+    }
+    
+    em a {
+      color: #296;
+    }
+    
+    a i {
+      color: $colour-red-darken;
     }
   }
 }
