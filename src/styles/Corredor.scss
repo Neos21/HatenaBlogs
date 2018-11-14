@@ -476,6 +476,7 @@ ins.adsbygoogle {
   overflow: hidden;  // 黒いボカシによる横スクロール発生をなくす
   word-break: keep-all;
   word-wrap: normal;
+  white-space: nowrap;
   
   #blog-title-inner {
     margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する

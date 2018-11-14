@@ -476,6 +476,7 @@ ins.adsbygoogle {
   overflow: hidden;  // ボカシによる横スクロール発生をなくす
   word-break: keep-all;
   word-wrap: normal;
+  white-space: nowrap;
   
   #blog-title-inner {
     position: relative;

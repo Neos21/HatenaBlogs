@@ -465,6 +465,7 @@ a {
   position: relative;
   word-break: keep-all;
   word-wrap: normal;
+  white-space: nowrap;
   
   #blog-title-inner {
     height: $header-height-min;  // $breakpoint-md 未満時の高さ・背景位置にする

@@ -471,6 +471,7 @@ ins.adsbygoogle {
   overflow: hidden;
   word-break: keep-all;
   word-wrap: normal;
+  white-space: nowrap;
   
   #blog-title-inner {
     height: $header-height-min !important;  // $breakpoint-md 未満時の高さ・背景位置にする
