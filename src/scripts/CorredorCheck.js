@@ -42,12 +42,12 @@ window.Neos21.styles = function(index) {
     // GitHub Pages : デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
     'https://neos21.github.io/HatenaBlogs/dist/styles/Corredor.css',
     // https://unpkg.com/@neos21/hatena-blogs/
-    'https://unpkg.com/@neos21/hatena-blogs@1.0.3/dist/styles/Corredor.css',
+    'https://unpkg.com/@neos21/hatena-blogs@1.0.4/dist/styles/Corredor.css',
     // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.3/dist/styles/Corredor.css',
+    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.4/dist/styles/Corredor.css',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css',
-    'https://rawcdn.githack.com/Neos21/HatenaBlogs/71df26164a7de06637739a984a549f895cdc9e16/dist/styles/Corredor.css',
+    'https://rawcdn.githack.com/Neos21/HatenaBlogs/a9a8c7d78b940f1d90a8b07e40f04418f407c469/dist/styles/Corredor.css',
     // Raw GitHub
     'https://raw.githubusercontent.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css'
   ];
@@ -102,12 +102,12 @@ window.Neos21.scripts = function(index) {
     // GitHub Pages : デフォルト・指定済みのため使わない (配列の添字確保のためのみ)
     'https://neos21.github.io/HatenaBlogs/dist/scripts/Corredor.js',
     // https://unpkg.com/@neos21/hatena-blogs/
-    'https://unpkg.com/@neos21/hatena-blogs@1.0.3/dist/scripts/Corredor.js',
+    'https://unpkg.com/@neos21/hatena-blogs@1.0.4/dist/scripts/Corredor.js',
     // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.3/dist/scripts/Corredor.js',
+    'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.4/dist/scripts/Corredor.js',
     // http://raw.githack.com/
     'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js',
-    'https://rawcdn.githack.com/Neos21/HatenaBlogs/71df26164a7de06637739a984a549f895cdc9e16/dist/scripts/Corredor.js',
+    'https://rawcdn.githack.com/Neos21/HatenaBlogs/a9a8c7d78b940f1d90a8b07e40f04418f407c469/dist/scripts/Corredor.js',
     // Raw GitHub
     'https://raw.githubusercontent.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js'
   ];
