@@ -1,6 +1,6 @@
 {
   "name": "@neos21/hatena-blogs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Neo's Hatena Blogs",
   "scripts": {
     "gulp": "gulp",
@@ -10,7 +10,7 @@
     "css-murga": "gulp build-css-murga && npm run css-strip-murga",
     "css-elmylar": "gulp build-css-elmylar && npm run css-strip-elmylar",
     "css-bitarcher": "gulp build-css-bitarcher && npm run css-strip-bitarcher",
-    "css-strip": "node strip-bom.js *",
+    "css-strip": "node strip-bom.js ALL",
     "css-strip-corredor": "node strip-bom.js Corredor",
     "css-strip-murga": "node strip-bom.js Murga",
     "css-strip-elmylar": "node strip-bom.js ElMylar",

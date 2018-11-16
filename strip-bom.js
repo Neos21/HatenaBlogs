@@ -13,7 +13,7 @@ const param = process.argv[2];
 // 対象のファイルが存在するディレクトリを指定する
 const dirPath = './dist/styles/';
 
-if(param === '*') {
+if(param === 'ALL') {
   // 拡張子付きのファイル名を全取得してそれぞれ変換する
   const files = fs.readdirSync(dirPath);
   files.forEach((fileName) => {
