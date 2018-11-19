@@ -1,5 +1,5 @@
 /*! Corredor : Neo (@Neos21) http://neos21.hatenablog.com/ */
-(function(w, d, c, i, s) {
+(function(d, c, i, s) {
   // Body 要素に任意のクラス名が存在するか確認する
   var hasClass = function(className) {
     return ~(s + d.body.className + s).replace(/[\n\t]/g, s).indexOf(s + className + s);
@@ -74,22 +74,19 @@
   };
   
   // フォールバック読み込み時は実行タイミングが変わるので調整する
-  if(!document.readyState || document.readyState === 'interactive') {
+  if(!d.readyState || d.readyState === 'interactive') {
     window.addEventListener('load', exec);
   }
-  else if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', exec);
+  else if(d.readyState === 'loading') {
+    d.addEventListener('DOMContentLoaded', exec);
   }
   else {
     exec();
   }
   
   // 検証用オブジェクト・プロパティを定義しておく
-  if(!window.Neos21) {
-    window.Neos21 = {};
+  if(!Neos21) {
+    Neos21 = {};
   }
-  if(!window.Neos21.scriptLoaded) {
-    window.Neos21.scriptLoaded = true;
-  }
-  
-})(window, document, 'getElementsByClassName', 'getElementById', ' ');
+  Neos21.scriptLoaded = true;
+})(document, 'getElementsByClassName', 'getElementById', ' ');
