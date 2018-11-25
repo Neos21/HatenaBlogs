@@ -19,18 +19,18 @@ Neos21 = {
    * @param nextUrl 読み込むファイル URL
    */
   append: function(isLink, nextIndex, nextUrl) {
-    var d = document;
-    var s = 'setAttribute';
+    var doc = document;
+    var setAttribute = 'setAttribute';
     var eventValue = 'Neos21.' + (isLink ? 'styles' : 'scripts') + '(' + nextIndex + ');';
     
-    var elem = d.createElement(isLink ? 'link' : 'script');
+    var elem = doc.createElement(isLink ? 'link' : 'script');
     if(isLink) {
-      elem[s]('rel', 'stylesheet');
+      elem[setAttribute]('rel', 'stylesheet');
     }
-    elem[s](isLink ? 'href' : 'src', nextUrl);
-    elem[s]('onload' , eventValue);
-    elem[s]('onerror', eventValue);
-    d.querySelector('head').appendChild(elem);
+    elem[setAttribute](isLink ? 'href' : 'src', nextUrl);
+    elem[setAttribute]('onload' , eventValue);
+    elem[setAttribute]('onerror', eventValue);
+    doc.querySelector('head').appendChild(elem);
   },
   
   /**
@@ -44,18 +44,18 @@ Neos21 = {
       return;
     }
     
-    var w = window;
-    var d = document;
+    var win = window;
+    var doc = document;
     
     // 検証用要素の読み込みを待つため再呼び出しして終了する
-    if(!d.readyState || d.readyState === 'interactive') {
-      w.addEventListener('load', function() {
+    if(!doc.readyState || doc.readyState === 'interactive') {
+      win.addEventListener('load', function() {
         Neos21.styles(index);
       });
       return;
     }
-    else if(d.readyState === 'loading') {
-      d.addEventListener('DOMContentLoaded', function() {
+    else if(doc.readyState === 'loading') {
+      doc.addEventListener('DOMContentLoaded', function() {
         Neos21.styles(index);
       });
       return;
@@ -65,24 +65,25 @@ Neos21 = {
     var urls = [
       // https://unpkg.com/@neos21/hatena-blogs/
       'https://unpkg.com/@neos21/hatena-blogs@1.0.4/dist/styles/Corredor.css',
+      // jsDelivr Raw GitHub
+      'https://cdn.jsdelivr.net/gh/Neos21/HatenaBlogs@latest/dist/styles/Corredor.css',
       // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
       'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.4/dist/styles/Corredor.css',
       // http://raw.githack.com/
       'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css',
-      'https://rawcdn.githack.com/Neos21/HatenaBlogs/a9a8c7d78b940f1d90a8b07e40f04418f407c469/dist/styles/Corredor.css',
       // Raw GitHub
       'https://raw.githubusercontent.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css'
     ];
     
     // 検証用要素
-    var check = d.getElementById('n-check');
+    var check = doc.getElementById('n-check');
     if(!check) {
       // 検証用要素なし・中止
       return;
     }
     
     // 検証用要素にスタイルが適用されているか確認する
-    var checkStyle = parseInt(w.getComputedStyle(check).fontSize);
+    var checkStyle = parseInt(win.getComputedStyle(check).fontSize);
     if(checkStyle === 0) {
       // スタイル適用済なら正常・何もしない
       return;
@@ -117,11 +118,12 @@ Neos21 = {
     var urls = [
       // https://unpkg.com/@neos21/hatena-blogs/
       'https://unpkg.com/@neos21/hatena-blogs@1.0.4/dist/scripts/Corredor.js',
+      // jsDelivr Raw GitHub
+      'https://cdn.jsdelivr.net/gh/Neos21/HatenaBlogs@latest/dist/scripts/Corredor.js',
       // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
       'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.4/dist/scripts/Corredor.js',
       // http://raw.githack.com/
       'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js',
-      'https://rawcdn.githack.com/Neos21/HatenaBlogs/a9a8c7d78b940f1d90a8b07e40f04418f407c469/dist/scripts/Corredor.js',
       // Raw GitHub
       'https://raw.githubusercontent.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js'
     ];
