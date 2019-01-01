@@ -1045,7 +1045,7 @@ ins.adsbygoogle {
 
 // アーカイブタイトル
 .archive-header-category,  // header
-.page-archive .archive-heading {  // h2
+.page-archive #main-inner > .archive-heading {  // h2
   @include white-box();
   
   margin: 0 0 1rem;
