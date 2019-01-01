@@ -52,7 +52,7 @@ $colour-purple     : #ae81ff;
 
 // 英文のみの要素用のフォント指定
 @mixin english-font-family() {
-  font-family: Verdana, "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 // li 要素をリセットする
@@ -89,7 +89,7 @@ $colour-purple     : #ae81ff;
  *          ex. 100 * (18px - 17px) / (1200px - 992px) = 100 * 1px / 208px = 0.4808...
  * - 参考 : https://websemantics.uk/tools/responsive-font-calculator/
  */
- @mixin responsive-font-size() {
+@mixin responsive-font-size() {
   // 最小サイズ (基準)
   font-size: 17px;
   
@@ -1134,7 +1134,7 @@ a {
       cursor: pointer;
       
       &:hover {
-       opacity: .85;
+        opacity: .85;
       }
     }
   }
@@ -1218,7 +1218,7 @@ a {
       cursor: pointer;
       
       &:hover {
-       opacity: .85;
+        opacity: .85;
       }
     }
   }

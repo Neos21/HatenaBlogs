@@ -51,7 +51,7 @@ $colour-red-lighten           : #fcf4f4;  // 見出しの背景色など
 
 // 英文のみの要素用のフォント指定
 @mixin english-font-family() {
-  font-family: Verdana, "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 // li 要素をリセットする
@@ -88,7 +88,7 @@ $colour-red-lighten           : #fcf4f4;  // 見出しの背景色など
  *          ex. 100 * (18px - 17px) / (1200px - 992px) = 100 * 1px / 208px = 0.4808...
  * - 参考 : https://websemantics.uk/tools/responsive-font-calculator/
  */
- @mixin responsive-font-size() {
+@mixin responsive-font-size() {
   // 最小サイズ (基準)
   font-size: 17px;
   
@@ -1044,7 +1044,8 @@ ins.adsbygoogle {
  * ================================================== */
 
 // アーカイブタイトル
-.archive-header-category {  // header
+.archive-header-category,  // header
+.page-archive .archive-heading {  // h2
   @include white-box();
   
   margin: 0 0 1rem;
@@ -1108,7 +1109,7 @@ ins.adsbygoogle {
  * #main-inner 直下・.search-form と同じにしておく
  * ================================================== */
 
- .search-result {
+.search-result {
   @include white-box();
   
   margin-bottom: 1rem !important;
@@ -1144,10 +1145,15 @@ ins.adsbygoogle {
       cursor: pointer;
       
       &:hover {
-       opacity: .85;
+        opacity: .85;
       }
     }
   }
+}
+
+// 検索結果がない場合の p 要素
+.page-archive #main-inner > p {
+  @include white-box();
 }
 
 
@@ -1227,7 +1233,7 @@ ins.adsbygoogle {
       cursor: pointer;
       
       &:hover {
-       opacity: .85;
+        opacity: .85;
       }
     }
   }
