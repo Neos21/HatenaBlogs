@@ -64,11 +64,11 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // https://unpkg.com/@neos21/hatena-blogs/
-      'https://unpkg.com/@neos21/hatena-blogs@1.0.5/dist/styles/Corredor.css',
+      'https://unpkg.com/@neos21/hatena-blogs@1.0.6/dist/styles/Corredor.css',
       // jsDelivr Raw GitHub
       'https://cdn.jsdelivr.net/gh/Neos21/HatenaBlogs@latest/dist/styles/Corredor.css',
       // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.5/dist/styles/Corredor.css',
+      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.6/dist/styles/Corredor.css',
       // http://raw.githack.com/
       'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/styles/Corredor.css',
       // Raw GitHub
@@ -117,11 +117,11 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // https://unpkg.com/@neos21/hatena-blogs/
-      'https://unpkg.com/@neos21/hatena-blogs@1.0.5/dist/scripts/Corredor.js',
+      'https://unpkg.com/@neos21/hatena-blogs@1.0.6/dist/scripts/Corredor.js',
       // jsDelivr Raw GitHub
       'https://cdn.jsdelivr.net/gh/Neos21/HatenaBlogs@latest/dist/scripts/Corredor.js',
       // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.5/dist/scripts/Corredor.js',
+      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.6/dist/scripts/Corredor.js',
       // http://raw.githack.com/
       'https://raw.githack.com/Neos21/HatenaBlogs/master/dist/scripts/Corredor.js',
       // Raw GitHub
