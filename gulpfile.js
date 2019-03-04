@@ -89,15 +89,6 @@ gulp.task('build-css-elmylar', () => {
 });
 
 /**
- * CSS ビルド … Bit-Archer
- * 
- * @return {Stream}
- */
-gulp.task('build-css-bitarcher', () => {
-  return buildCss('BitArcher');
-});
-
-/**
  * JavaScript ビルド … 全ファイル
  * 
  * @return {Stream}
@@ -140,13 +131,4 @@ gulp.task('build-js-murga', () => {
  */
 gulp.task('build-js-elmylar', () => {
   return buildJs('ElMylar');
-});
-
-/**
- * JavaScript ビルド … Bit-Archer
- * 
- * @return {Stream}
- */
-gulp.task('build-js-bitarcher', () => {
-  return buildJs('BitArcher');
 });

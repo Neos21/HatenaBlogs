@@ -1,4 +1,4 @@
-# Hatena Blogs
+# Hatena Blogs : @neos21/hatena-blogs
 
 自分が運営しているはてなブログのテーマやカスタム HTML などを保存しておくリポジトリです。
 
@@ -35,12 +35,6 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
   - [ElMylarSidebarProfile.html](https://neos21.github.io/HatenaBlogs/src/html/ElMylarSidebarProfile.html)
   - [ElMylarSidebarSponsoredLink.html](https://neos21.github.io/HatenaBlogs/src/html/ElMylarSidebarSponsoredLink.html)
   - [ElMylarFooter.html](https://neos21.github.io/HatenaBlogs/src/html/ElMylarFooter.html)
-- __[Bit-Archer](http://bit-archer.hatenablog.com/)__
-  - [BitArcher.css](https://neos21.github.io/HatenaBlogs/dist/styles/BitArcher.css) (Source : [BitArcher.scss](https://neos21.github.io/HatenaBlogs/src/styles/BitArcher.scss))
-  - [BitArcher.js](https://neos21.github.io/HatenaBlogs/dist/scripts/BitArcher.js) (Source : [BitArcher.js](https://neos21.github.io/HatenaBlogs/src/scripts/BitArcher.js))
-  - [BitArcherEntryFooter.html](https://neos21.github.io/HatenaBlogs/src/html/BitArcherEntryFooter.html)
-  - [BitArcherSidebarProfile.html](https://neos21.github.io/HatenaBlogs/src/html/BitArcherSidebarProfile.html)
-  - [BitArcherFooter.html](https://neos21.github.io/HatenaBlogs/src/html/BitArcherFooter.html)
 
 
 ## Author
@@ -60,5 +54,5 @@ __[Go To GitHub Pages](https://neos21.github.io/HatenaBlogs/)__
 - [Corredor](http://neos21.hatenablog.com/)
 - [Murga](http://neos21.hatenablog.jp/)
 - [El Mylar](http://neos21.hateblo.jp/)
-- [Bit-Archer](http://bit-archer.hatenablog.com/)
+- [Neo's GitHub Pages](http://neos21.github.io/)
 - [GitHub - Neos21](https://github.com/Neos21/)
