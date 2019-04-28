@@ -1,10 +1,10 @@
 /**
  * CSS・JS ファイルのフォールバック用処理
  * 
- * - 本ファイルをビルドしたコードを CorredorHead.html の link・script 要素手前にインラインで記述する
- * - CorredorFooter.html に #n-check 要素を配置しておく (CSS 検証用要素)
- * - Corredor.scss に #n-check { display: none; font-size: 0; } と定義しておく
- * - Corredor.js にて Neos21.scriptLoaded = true と記述しておく
+ * - 本ファイルをビルドしたコードを ElMylarHead.html の link・script 要素手前にインラインで記述する
+ * - ElMylarFooter.html に #n-check 要素を配置しておく (CSS 検証用要素)
+ * - ElMylar.scss に #n-check { display: none; font-size: 0; } と定義しておく
+ * - ElMylar.js にて Neos21.scriptLoaded = true と記述しておく
  */
 
 /**
@@ -64,15 +64,15 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // https://unpkg.com/@neos21/hatena-blogs/
-      'https://unpkg.com/@neos21/hatena-blogs@1.0.7/dist/styles/Corredor.css',
+      'https://unpkg.com/@neos21/hatena-blogs@1.0.7/dist/styles/ElMylar.css',
       // jsDelivr Raw GitHub
-      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/styles/Corredor.css',
+      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/styles/ElMylar.css',
       // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.7/dist/styles/Corredor.css',
+      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.7/dist/styles/ElMylar.css',
       // http://raw.githack.com/
-      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/styles/Corredor.css',
+      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/styles/ElMylar.css',
       // Raw GitHub
-      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/styles/Corredor.css'
+      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/styles/ElMylar.css'
     ];
     
     // 検証用要素
@@ -117,15 +117,15 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // https://unpkg.com/@neos21/hatena-blogs/
-      'https://unpkg.com/@neos21/hatena-blogs@1.0.7/dist/scripts/Corredor.js',
+      'https://unpkg.com/@neos21/hatena-blogs@1.0.7/dist/scripts/ElMylar.js',
       // jsDelivr Raw GitHub
-      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/scripts/Corredor.js',
+      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/scripts/ElMylar.js',
       // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.7/dist/scripts/Corredor.js',
+      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.7/dist/scripts/ElMylar.js',
       // http://raw.githack.com/
-      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/scripts/Corredor.js',
+      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/scripts/ElMylar.js',
       // Raw GitHub
-      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/scripts/Corredor.js'
+      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/scripts/ElMylar.js'
     ];
     
     // 検証用プロパティが存在しているか確認する

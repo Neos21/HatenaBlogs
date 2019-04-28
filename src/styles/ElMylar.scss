@@ -1302,3 +1302,9 @@ ins.adsbygoogle {
 #n-stw {
   display: none;
 }
+
+// check : CSS 読込が正常に行えているか確認するための検証用要素
+#n-check {
+  display: none;
+  font-size: 0;
+}

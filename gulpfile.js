@@ -125,10 +125,28 @@ gulp.task('build-js-murga', () => {
 });
 
 /**
+ * JavaScript ビルド … Murga Check
+ * 
+ * @return {Stream}
+ */
+gulp.task('build-js-murga-check', () => {
+  return buildJs('MurgaCheck');
+});
+
+/**
  * JavaScript ビルド … El Mylar
  * 
  * @return {Stream}
  */
 gulp.task('build-js-elmylar', () => {
   return buildJs('ElMylar');
+});
+
+/**
+ * JavaScript ビルド … El Mylar Check
+ * 
+ * @return {Stream}
+ */
+gulp.task('build-js-elmylar-check', () => {
+  return buildJs('ElMylarCheck');
 });

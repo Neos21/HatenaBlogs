@@ -53,7 +53,7 @@
   };
   
   // Body 要素のクラス名に応じて記事と挿入先のクラス名が異なるので判定する
-  d.addEventListener('DOMContentLoaded', function() {
+  var exec = function() {
     if(hasClass('page-index')) {
       // トップページの場合
       appendShareLinks('hentry', 'customized-footer');
@@ -68,9 +68,25 @@
       // 記事ページはフッタ AdSense の移動のみ
       replaceFooterAdSense('hentry');
     }
-  });
+    
+    // タッチ時の反応をさせるため空の関数を設定する
+    d.addEventListener('touchstart', function() { });
+  };
   
-  // タッチ時の反応をさせるため空の関数を設定する
-  d.addEventListener('touchstart', function() { });
+  // フォールバック読み込み時は実行タイミングが変わるので調整する
+  if(!d.readyState || d.readyState === 'interactive') {
+    window.addEventListener('load', exec);
+  }
+  else if(d.readyState === 'loading') {
+    d.addEventListener('DOMContentLoaded', exec);
+  }
+  else {
+    exec();
+  }
   
+  // 検証用オブジェクト・プロパティを定義しておく
+  if(!Neos21) {
+    Neos21 = {};
+  }
+  Neos21.scriptLoaded = true;
 })(document, 'getElementsByClassName', 'getElementById', ' ');

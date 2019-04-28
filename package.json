@@ -1,7 +1,7 @@
 {
   "name": "@neos21/hatena-blogs",
-  "version": "1.0.6",
-  "description": "Neo's Hatena Blogs",
+  "version": "1.0.7",
+  "description": "Hatena Blogs",
   "scripts": {
     "gulp": "gulp",
     "strip-bom": "strip-bom",
@@ -17,20 +17,22 @@
     "js-corredor": "gulp build-js-corredor",
     "js-corredor-check": "gulp build-js-corredor-check",
     "js-murga": "gulp build-js-murga",
+    "js-murga-check": "gulp build-js-murga-check",
     "js-elmylar": "gulp build-js-elmylar",
+    "js-elmylar-check": "gulp build-js-elmylar-check"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neos21/HatenaBlogs.git"
+    "url": "git+https://github.com/Neos21/hatena-blogs.git"
   },
   "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Neos21/HatenaBlogs/issues"
+    "url": "https://github.com/Neos21/hatena-blogs/issues"
   },
-  "homepage": "https://github.com/Neos21/HatenaBlogs#readme",
+  "homepage": "https://github.com/Neos21/hatena-blogs#readme",
   "devDependencies": {
-    "@neos21/neos-normalize": "1.0.11",
+    "@neos21/neos-normalize": "1.0.12",
     "gulp": "3.9.1",
     "gulp-load-plugins": "1.5.0",
     "gulp-plumber": "1.2.0",
