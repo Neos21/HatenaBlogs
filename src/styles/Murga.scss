@@ -985,6 +985,9 @@ $header-height-max: 200px;
   @media all and (-ms-high-contrast: none) {
     display: -ms-grid;
     -ms-grid-columns: 1fr 1fr;
+    
+    ul:first-child { -ms-grid-column: 1; }
+    ul:last-child  { -ms-grid-column: 2; }
   }
   
   li {
@@ -1093,7 +1096,12 @@ $header-height-max: 200px;
 // 検索 : 検索結果ページ兼用 (検索結果は #main-inner 直下・.search-form と同じにする)
 // --------------------------------------------------
 
-// .search-result
+.search-result {
+  @include white-box();
+  
+  margin-bottom: 1rem !important;
+}
+
 // .search-result h2.archive-heading
 
 // .hatena-module-search-box
