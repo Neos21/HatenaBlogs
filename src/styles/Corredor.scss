@@ -1044,7 +1044,7 @@ $header-height-max: calc(175px + #{$header-margin-top});
   margin-bottom: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-size: .8rem;
+  font-size: .9rem;
   
   // IE11
   @media all and (-ms-high-contrast: none) {
