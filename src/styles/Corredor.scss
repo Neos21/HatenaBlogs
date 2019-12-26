@@ -1040,10 +1040,22 @@ $header-height-max: calc(175px + #{$header-margin-top});
 }
 
 // profile : プロフィール欄のリスト
-/* .hatena-module-profile .profile-description */ .n-pl {  // ul
-  margin: 0 0 .5rem 1.5rem;
+/* .hatena-module-profile .profile-description */ .n-pl {
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   font-size: .8rem;
-  list-style: disc;
+  
+  // IE11
+  @media all and (-ms-high-contrast: none) {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+  }
+  
+  li {
+    margin-left: 1.5rem;
+    list-style: disc;
+  }
 }
 
 // follow : フォローリンク
