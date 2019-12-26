@@ -89,7 +89,7 @@ html {
 body {
   padding: 0 !important;  // Google AdSense 自動広告の「アンカー広告」がページを押し下げるのを回避する
   color: $colour-black;
-  font-size: 17px;  // レスポンシブフォントサイズの最小サイズに合わせる
+  font-size: 17px;
   background: $colour-white;
   
   @media (max-width: $breakpoint-xs) {
@@ -322,6 +322,7 @@ a {
 .google-auto-placed {
   overflow: hidden;
 }
+
 
 /* ==================================================
  * 非表示にする要素
@@ -771,7 +772,6 @@ $header-height-max: calc(175px + #{$header-margin-top});
   }
 }
 
-
 // エントリ フッタ : footer.entry-footer
 // --------------------------------------------------
 
@@ -972,50 +972,6 @@ $header-height-max: calc(175px + #{$header-margin-top});
 
 
 /* ==================================================
- * 検索結果
- * 
- * #main-inner 直下・.search-form と同じにしておく
- * ================================================== */
-
-// .search-result
-// .search-result h2.archive-heading
-
-/* .search-result */ .search-result-form {  // form
-  position: relative;
-  border: 1px solid $colour-grey-hatena;
-  border-radius: 4px;
-  padding-right: calc(20px + 1rem);  // .search-result-button 分の余白を右に開けておく
-}
-
-/* .search-result .search-result-form */ .search-result-input {  // input[type="text"]
-  width: 100%;
-  height: auto;  // blog.css の指定を解除しておく
-  padding: .5rem 0 .5rem .5rem;  // .search-result-button と隣接する余白をなくしておく
-  border: 0;
-  background: transparent;
-  outline: 0;
-}
-
-/* .search-result .search-result-form */ .search-result-button {  // input[type="submit"]
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
-  width: calc(20px + 1rem);  // アイコン 20px + 左右余白
-  height: 100%;
-  text-indent: -9999px;
-  background: url("http://blog.hatena.ne.jp/images/theme/search.png") no-repeat center center;
-  outline: 0;
-  opacity: .5;
-  cursor: pointer;
-  
-  &:hover {
-    opacity: .85;
-  }
-}
-
-
-/* ==================================================
  * サイドバー
  * ================================================== */
 
@@ -1023,6 +979,8 @@ $header-height-max: calc(175px + #{$header-margin-top});
 
 // プロフィール
 // --------------------------------------------------
+
+// .hatena-module-profile
 
 /* .hatena-module-profile */ .profile-icon {
   float: left;
@@ -1154,26 +1112,33 @@ $header-height-max: calc(175px + #{$header-margin-top});
   }
 }
 
-// 検索
+// 検索 : 検索結果ページ兼用 (検索結果は #main-inner 直下・.search-form と同じにする)
 // --------------------------------------------------
+
+// .search-result
+// .search-result h2.archive-heading
 
 // .hatena-module-search-box
 
+/* .search-result */ .search-result-form,  // form
 /* .hatena-module-search-box */ .search-form {  // form
   position: relative;
   border: 1px solid $colour-grey-hatena;
   border-radius: 4px;
-  padding-right: calc(20px + 1rem);  // .search-module-button 分の余白を右に開けておく
+  padding-right: calc(20px + 1rem);  // .search-result-button・.search-module-button 分の余白を右に開けておく
 }
 
+/* .search-result */ .search-result-form .search-result-input,  // input[type="text"]
 /* .hatena-module-search-box .search-form */ .search-module-input {  // input[type="text"]
   width: 100%;
-  padding: .5rem 0 .5rem .5rem;  // .search-module-button と隣接する余白をなくしておく
+  height: auto;  // .search-result-input の blog.css の指定を解除しておく・.search-module-input の方は影響なし
+  padding: .5rem 0 .5rem .5rem;  // .search-result-button・.search-module-button と隣接する余白をなくしておく
   border: 0;
   background: transparent;
   outline: 0;
 }
 
+/* .search-result */ .search-result-form .search-result-button,  // input[type="submit"]
 /* .hatena-module-search-box .search-form */ .search-module-button {  // input[type="submit"]
   position: absolute;
   top: 0;
