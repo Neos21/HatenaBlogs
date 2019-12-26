@@ -1099,7 +1099,7 @@ $header-height-max: 200px;
 .search-result {
   @include white-box();
   
-  margin-bottom: 1rem !important;
+  margin-bottom: 4rem !important;  // .entry・.archive-entry と同じ
 }
 
 // .search-result h2.archive-heading
