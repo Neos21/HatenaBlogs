@@ -63,12 +63,8 @@ Neos21 = {
     
     // フォールバック URL の定義
     var urls = [
-      // https://unpkg.com/@neos21/hatena-blogs/
-      'https://unpkg.com/@neos21/hatena-blogs@1.0.8/dist/styles/Corredor.css',
       // jsDelivr Raw GitHub
       'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/styles/Corredor.css',
-      // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.8/dist/styles/Corredor.css',
       // http://raw.githack.com/
       'https://raw.githack.com/Neos21/hatena-blogs/master/dist/styles/Corredor.css',
       // Raw GitHub
@@ -116,12 +112,8 @@ Neos21 = {
     
     // フォールバック URL の定義
     var urls = [
-      // https://unpkg.com/@neos21/hatena-blogs/
-      'https://unpkg.com/@neos21/hatena-blogs@1.0.8/dist/scripts/Corredor.js',
       // jsDelivr Raw GitHub
       'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/scripts/Corredor.js',
-      // https://www.jsdelivr.com/package/npm/@neos21/hatena-blogs
-      'https://cdn.jsdelivr.net/npm/@neos21/hatena-blogs@1.0.8/dist/scripts/Corredor.js',
       // http://raw.githack.com/
       'https://raw.githack.com/Neos21/hatena-blogs/master/dist/scripts/Corredor.js',
       // Raw GitHub
