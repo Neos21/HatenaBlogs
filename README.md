@@ -41,7 +41,7 @@ __[Go To GitHub Pages](https://neos21.github.io/hatena-blogs/)__
 
 ## Author
 
-[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/Neos21))
+[Neo](http://neo.s21.xrea.com/)
 
 - [GitHub - hatena-blogs](https://github.com/Neos21/hatena-blogs)
 - [GitHub Pages - Hatena Blogs](https://neos21.github.io/hatena-blogs/)
