@@ -65,7 +65,7 @@ Neos21 = {
     var urls = [
       // jsDelivr Raw GitHub
       'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/styles/Corredor.css',
-      // http://raw.githack.com/
+      // https://raw.githack.com/
       'https://raw.githack.com/Neos21/hatena-blogs/master/dist/styles/Corredor.css',
       // Raw GitHub
       'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/styles/Corredor.css'
@@ -114,7 +114,7 @@ Neos21 = {
     var urls = [
       // jsDelivr Raw GitHub
       'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/scripts/Corredor.js',
-      // http://raw.githack.com/
+      // https://raw.githack.com/
       'https://raw.githack.com/Neos21/hatena-blogs/master/dist/scripts/Corredor.js',
       // Raw GitHub
       'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/scripts/Corredor.js'
