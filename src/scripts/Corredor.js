@@ -1,4 +1,4 @@
-/*! Corredor : Neo (@Neos21) http://neos21.hatenablog.com/ */
+/*! Corredor : Neo (@Neos21) https://neos21.hatenablog.com/ */
 (function(d, c, i, s) {
   // Body 要素に任意のクラス名が存在するか確認する
   var hasClass = function(className) {
@@ -27,14 +27,14 @@
         clone[c]('n-s-' + snsName + '-l')[0].setAttribute('href', url);
       }
       
-      // はてブ用リンク：http://b.hatena.ne.jp/entry/{Permalink}
-      setLink('ha', 'http://b.hatena.ne.jp/entry/' + permalink);
+      // はてブ用リンク：https://b.hatena.ne.jp/entry/{Permalink}
+      setLink('ha', 'https://b.hatena.ne.jp/entry/' + permalink);
       // Twitter 用リンク：https://twitter.com/share?url={Permalink}&amp;text={Title}
       setLink('tw', 'https://twitter.com/share?url=' + permalink + '&amp;text=' + title);
-      // Facebook 用リンク：http://www.facebook.com/share.php?u={Permalink}
-      setLink('fb', 'http://www.facebook.com/share.php?u=' + permalink);
-      // Pocket 用リンク：http://getpocket.com/edit?url={Permalink}&amp;title={Title}
-      setLink('po', 'http://getpocket.com/edit?url=' + permalink + '&amp;title=' + title);
+      // Facebook 用リンク：https://www.facebook.com/share.php?u={Permalink}
+      setLink('fb', 'https://www.facebook.com/share.php?u=' + permalink);
+      // Pocket 用リンク：https://getpocket.com/edit?url={Permalink}&amp;title={Title}
+      setLink('po', 'https://getpocket.com/edit?url=' + permalink + '&amp;title=' + title);
       
       // 記事下部に挿入する
       article[c](destClassName)[0].appendChild(clone);

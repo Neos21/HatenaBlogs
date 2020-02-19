@@ -1,10 +1,8 @@
-/*! Corredor : Neo (@Neos21) http://neos21.hatenablog.com/ */
+/*! Corredor : Neo (@Neos21) https://neos21.hatenablog.com/ */
 /*! Responsive: yes */
 
 // Neo's Normalize
 @import '../../node_modules/@neos21/neos-normalize/neos-normalize.scss';
-
-/*! Corredor [Styles] : Neo (@Neos21) http://neos21.hatenablog.com/ */
 
 
 /* ==================================================
@@ -328,10 +326,10 @@ a {
  * 非表示にする要素
  * ================================================== */
 
-.hatena-asin-detail a[href^="http://d.hatena.ne.jp/asin/"],  // 「この商品を含むブログ」リンク
-.hatena-citation                                          ,  // 「embed:cite」で貼り付けたサイトのドメイン
-/* .hatena-module-profile */ .id                          ,  // プロフィール欄・デフォルトの ID
-#n-stw                                                    {  // フッタ・share-template-wrapper : JavaScript で Clone して記事下にシェアリンクを配置するための雛形
+.hatena-asin-detail a[href*="d.hatena.ne.jp/asin/"],  // 「この商品を含むブログ」リンク
+.hatena-citation                                   ,  // 「embed:cite」で貼り付けたサイトのドメイン
+/* .hatena-module-profile */ .id                   ,  // プロフィール欄・デフォルトの ID
+#n-stw                                             {  // フッタ・share-template-wrapper : JavaScript で Clone して記事下にシェアリンクを配置するための雛形
   display: none;
 }
 
@@ -356,7 +354,7 @@ $header-height-max: calc(175px + #{$header-margin-top});
 /* #blog-title */ #blog-title-inner {
   margin-top: -$header-margin-top;  // 背景画像の表示位置をネガティブマージンで調整する
   height: $header-height-min !important;  // $breakpoint-md 未満時の高さ・背景位置にする
-  background: url("http://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black !important;
+  background: url("https://cdn-ak.f.st-hatena.com/images/fotolife/n/neos21/20160117/20160117154623.jpg") no-repeat center -10px / auto $header-height-max $colour-black !important;
   transition: height .2s, background-position .2s;
   
   // $breakpoint-md 以上の高さ設定
@@ -1145,7 +1143,7 @@ $header-height-max: calc(175px + #{$header-margin-top});
   width: calc(20px + 1rem);  // アイコン 20px + 左右余白
   height: 100%;
   text-indent: -9999px;
-  background: url("http://blog.hatena.ne.jp/images/theme/search.png") no-repeat center center;
+  background: url("https://blog.hatena.ne.jp/images/theme/search.png") no-repeat center center;
   outline: 0;
   opacity: .5;
   cursor: pointer;
