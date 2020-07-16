@@ -1,4 +1,4 @@
-  /*! El Mylar : Neo (@Neos21) https://neos21.hateblo.jp/ */
+/*! El Mylar : Neo (@Neos21) https://neos21.hateblo.jp/ */
 /*! Responsive: yes */
 
 // Neo's Normalize
@@ -687,7 +687,7 @@ $header-height-max: 200px;
   &:not(.hatena-rakuten-detail)::before {
     content: "\f034";
     color: transparent;
-    background: radial-gradient(ellipse farthest-corner at 50% 20px, rgba(0, 0, 0, .5) 50%, rgba(255, 153, 0, .5) 50%) 50% 50% / 60px 50px no-repeat;
+    background: radial-gradient(ellipse farthest-corner at 50% 0, rgba(0, 0, 0, .5) 50%, rgba(255, 153, 0, .5) 50%) 50% 50% / 60px 60px no-repeat;
             background-clip: text;
     -webkit-background-clip: text;
   }
