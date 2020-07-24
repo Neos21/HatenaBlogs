@@ -1,6 +1,6 @@
 {
   "name": "@neos21/hatena-blogs",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Hatena Blogs",
   "scripts": {
     "gulp" : "gulp",
