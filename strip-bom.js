@@ -1,10 +1,8 @@
 const fs = require('fs');
-const stripBom = require('strip-bom');
 
 // 引数がなければ中止する
 if(process.argv.length < 3) {
-  console.log('Invalid Arguments, abort.');
-  return;
+  return console.log('Invalid Arguments, abort.');
 }
 
 // 引数で指定されたファイル名を取得する
@@ -30,6 +28,6 @@ else {
 function stripBomFile(fileName) {
   const filePath = `${dirPath}${fileName}`;
   const originalText = fs.readFileSync(filePath, 'utf-8');
-  const strippedText = stripBom(originalText);
+  const strippedText = (originalText.charCodeAt(0) === 0xFEFF) ? originalText.slice(1) : originalText;  // Strip BOM
   fs.writeFileSync(filePath, strippedText);
 }

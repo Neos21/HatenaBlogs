@@ -1,10 +1,10 @@
 {
   "name": "@neos21/hatena-blogs",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Hatena Blogs",
   "scripts": {
     "gulp": "gulp",
-    "strip-bom": "strip-bom",
+    "build": "npm run css && npm run js",
     "css": "gulp build-css && npm run css-strip",
     "css-corredor": "gulp build-css-corredor && npm run css-strip-corredor",
     "css-murga": "gulp build-css-murga && npm run css-strip-murga",
@@ -37,11 +37,10 @@
   },
   "devDependencies": {
     "@neos21/neos-normalize": "1.0.15",
-    "gulp": "3.9.1",
-    "gulp-load-plugins": "1.5.0",
-    "gulp-plumber": "1.2.0",
-    "gulp-sass": "4.0.2",
-    "gulp-uglify": "3.0.1",
-    "strip-bom": "3.0.0"
+    "gulp": "4.0.2",
+    "gulp-load-plugins": "2.0.3",
+    "gulp-plumber": "1.2.1",
+    "gulp-sass": "4.1.0",
+    "gulp-uglify": "3.0.2"
   }
 }

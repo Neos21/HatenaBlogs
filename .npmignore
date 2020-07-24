@@ -1,8 +1,12 @@
-# Directories
-node_modules/
-**/html/
-
-# Files
 .DS_Store
 Thumbs.db
-*.html
+
+*.log
+
+act/
+node_modules/
+
+dist/
+
+# for .npmignore
+.github/workflows/
