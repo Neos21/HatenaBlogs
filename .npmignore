@@ -6,7 +6,7 @@ Thumbs.db
 act/
 node_modules/
 
-dist/
+# dist/ は npm Publish 対象
 
 # for .npmignore
 .github/workflows/

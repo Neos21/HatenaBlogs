@@ -6,4 +6,4 @@ Thumbs.db
 act/
 node_modules/
 
-dist/
+# dist/ は master ブランチには不要だが、除外すると gh-pages で投稿されなくなるため手動管理とする
