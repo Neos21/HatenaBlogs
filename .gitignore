@@ -1,6 +1,9 @@
-# Directories
-node_modules/
-
-# Files
 .DS_Store
 Thumbs.db
+
+*.log
+
+act/
+node_modules/
+
+dist/

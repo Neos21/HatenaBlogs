@@ -25,6 +25,10 @@ jobs:
           npx can-npm-publish --verbose
         env :
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: Install
+        run : npm install
+      - name: Build To dist/ Directory
+        run : npm run build
       - name: Publish
         run : npm publish --access=public
         env :

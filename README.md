@@ -1,5 +1,7 @@
 # Hatena Blogs : @neos21/hatena-blogs
 
+[![NPM Version](https://img.shields.io/npm/v/@neos21/hatena-blogs.svg)](https://www.npmjs.com/package/@neos21/hatena-blogs) [![GPR Version](https://img.shields.io/github/package-json/v/neos21/hatena-blogs?label=github)](https://github.com/Neos21/hatena-blogs/packages/327523)
+
 自分が運営しているはてなブログのテーマやカスタム HTML などを保存しておくリポジトリです。
 
 __[Go To GitHub Pages](https://neos21.github.io/hatena-blogs/)__
