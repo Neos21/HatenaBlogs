@@ -1,0 +1,8 @@
+# Directories
+node_modules/
+**/html/
+
+# Files
+.DS_Store
+Thumbs.db
+*.html

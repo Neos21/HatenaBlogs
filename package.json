@@ -1,0 +1,47 @@
+{
+  "name": "@neos21/hatena-blogs",
+  "version": "1.0.11",
+  "description": "Hatena Blogs",
+  "scripts": {
+    "gulp": "gulp",
+    "strip-bom": "strip-bom",
+    "css": "gulp build-css && npm run css-strip",
+    "css-corredor": "gulp build-css-corredor && npm run css-strip-corredor",
+    "css-murga": "gulp build-css-murga && npm run css-strip-murga",
+    "css-elmylar": "gulp build-css-elmylar && npm run css-strip-elmylar",
+    "css-strip": "node strip-bom.js ALL",
+    "css-strip-corredor": "node strip-bom.js Corredor",
+    "css-strip-murga": "node strip-bom.js Murga",
+    "css-strip-elmylar": "node strip-bom.js ElMylar",
+    "js": "gulp build-js",
+    "js-corredor": "gulp build-js-corredor",
+    "js-corredor-check": "gulp build-js-corredor-check",
+    "js-murga": "gulp build-js-murga",
+    "js-murga-check": "gulp build-js-murga-check",
+    "js-elmylar": "gulp build-js-elmylar",
+    "js-elmylar-check": "gulp build-js-elmylar-check"
+  },
+  "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
+  "license": "MIT",
+  "homepage": "https://github.com/Neos21/hatena-blogs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neos21/hatena-blogs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Neos21/hatena-blogs/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Neos21"
+  },
+  "devDependencies": {
+    "@neos21/neos-normalize": "1.0.15",
+    "gulp": "3.9.1",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-plumber": "1.2.0",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "3.0.1",
+    "strip-bom": "3.0.0"
+  }
+}
