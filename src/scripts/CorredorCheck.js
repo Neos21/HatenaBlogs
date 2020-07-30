@@ -64,11 +64,11 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // jsDelivr Raw GitHub
-      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/styles/Corredor.css',
+      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@gh-pages/dist/styles/Corredor.css',
       // https://raw.githack.com/
-      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/styles/Corredor.css',
+      'https://raw.githack.com/Neos21/hatena-blogs/gh-pages/dist/styles/Corredor.css',
       // Raw GitHub
-      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/styles/Corredor.css'
+      'https://raw.githubusercontent.com/Neos21/hatena-blogs/gh-pages/dist/styles/Corredor.css'
     ];
     
     // 検証用要素
@@ -113,11 +113,11 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // jsDelivr Raw GitHub
-      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/scripts/Corredor.js',
+      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@gh-pages/dist/scripts/Corredor.js',
       // https://raw.githack.com/
-      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/scripts/Corredor.js',
+      'https://raw.githack.com/Neos21/hatena-blogs/gh-pages/dist/scripts/Corredor.js',
       // Raw GitHub
-      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/scripts/Corredor.js'
+      'https://raw.githubusercontent.com/Neos21/hatena-blogs/gh-pages/dist/scripts/Corredor.js'
     ];
     
     // 検証用プロパティが存在しているか確認する
