@@ -64,11 +64,11 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // jsDelivr Raw GitHub
-      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/styles/Murga.css',
+      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@gh-pages/dist/styles/Murga.css',
       // https://raw.githack.com/
-      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/styles/Murga.css',
+      'https://raw.githack.com/Neos21/hatena-blogs/gh-pages/dist/styles/Murga.css',
       // Raw GitHub
-      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/styles/Murga.css'
+      'https://raw.githubusercontent.com/Neos21/hatena-blogs/gh-pages/dist/styles/Murga.css'
     ];
     
     // 検証用要素
@@ -113,11 +113,11 @@ Neos21 = {
     // フォールバック URL の定義
     var urls = [
       // jsDelivr Raw GitHub
-      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@latest/dist/scripts/Murga.js',
+      'https://cdn.jsdelivr.net/gh/Neos21/hatena-blogs@gh-pages/dist/scripts/Murga.js',
       // https://raw.githack.com/
-      'https://raw.githack.com/Neos21/hatena-blogs/master/dist/scripts/Murga.js',
+      'https://raw.githack.com/Neos21/hatena-blogs/gh-pages/dist/scripts/Murga.js',
       // Raw GitHub
-      'https://raw.githubusercontent.com/Neos21/hatena-blogs/master/dist/scripts/Murga.js'
+      'https://raw.githubusercontent.com/Neos21/hatena-blogs/gh-pages/dist/scripts/Murga.js'
     ];
     
     // 検証用プロパティが存在しているか確認する
