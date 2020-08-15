@@ -980,7 +980,7 @@ $header-height-max: calc(175px + #{$header-margin-top});
 
 // .hatena-module-profile
 
-/* .hatena-module-profile */ .profile-icon {
+.hatena-module-profile .profile-icon {  // .page-about にも .profile-icon があるので親クラスで制御する
   float: left;
   margin: 0 .5rem .5rem 0;
   border-radius: 4px;
