@@ -27,12 +27,12 @@
   --space-indent: 2em;  /* ul・ol のスペースを確保する */
   
   --colour-base        : #343b38;
-  --colour-background  : #fdfffe;
+  --colour-background  : #fefffb;
   --colour-grey        : #949b98;
   --colour-light-grey  : #e5e7e6;
   --colour-lighter-grey: #f7f9f8;
-  --colour-link        : #093;
-  --colour-link-hover  : #06f;
+  --colour-link        : #06f;
+  --colour-link-hover  : #39f;
   
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, YuGothic, "Yu Gothic", "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: MeiryoKe_Gothic, "Noto Sans Mono CJK JP", Osaka-mono, "MS Gothic", "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -216,7 +216,6 @@ a {
 
 a:hover,
 /* 色を打ち消している要素 */
-#title a:hover,
 .entry-title a:hover,
 .hatena-module-archive .hatena-module-title a:hover,
 #footer-links-about a[href*="neos21.hateblo.jp"]:hover {  /* 自サイトの色 */
@@ -271,6 +270,7 @@ strong {
 
 /* 非表示 */
 #blog-description,  /* ブログヘッダの説明文 */
+.archive-entry .entry-thumb-link,  /* アーカイブ画面の記事サムネイル */
 .hatena-asin-detail a[href*="d.hatena.ne.jp/asin/"],  /* 「この商品を含むブログ」リンク */
 .hatena-citation,  /* embed:cite で貼り付けたサイトのドメイン部分 */
 .requote-button,  /* 引用ブロック末尾に追加される要素 */
@@ -303,7 +303,6 @@ strong {
 }
 
 /* リンク色打ち消し */
-#title a,
 .entry-title a,
 .hatena-module-archive .hatena-module-title a,
 #footer-links-about a[href*="neos21.hateblo.jp"] {  /* 自サイトの色を変える */

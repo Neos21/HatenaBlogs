@@ -27,7 +27,7 @@
   --space-indent: 2em;  /* ul・ol のスペースを確保する */
   
   --colour-base        : #3b3834;
-  --colour-background  : #fffefd;
+  --colour-background  : #fffdfa;
   --colour-grey        : #9b9894;
   --colour-light-grey  : #e7e6e5;
   --colour-lighter-grey: #f9f8f7;
@@ -216,7 +216,6 @@ a {
 
 a:hover,
 /* 色を打ち消している要素 */
-#title a:hover,
 .entry-title a:hover,
 .hatena-module-archive .hatena-module-title a:hover,
 #footer-links-about a[href*="neos21.hatenablog.jp"]:hover {  /* 自サイトの色 */
@@ -271,6 +270,7 @@ strong {
 
 /* 非表示 */
 #blog-description,  /* ブログヘッダの説明文 */
+.archive-entry .entry-thumb-link,  /* アーカイブ画面の記事サムネイル */
 .hatena-asin-detail a[href*="d.hatena.ne.jp/asin/"],  /* 「この商品を含むブログ」リンク */
 .hatena-citation,  /* embed:cite で貼り付けたサイトのドメイン部分 */
 .requote-button,  /* 引用ブロック末尾に追加される要素 */
@@ -303,7 +303,6 @@ strong {
 }
 
 /* リンク色打ち消し */
-#title a,
 .entry-title a,
 .hatena-module-archive .hatena-module-title a,
 #footer-links-about a[href*="neos21.hatenablog.jp"] {  /* 自サイトの色を変える */
