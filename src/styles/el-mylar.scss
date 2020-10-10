@@ -26,13 +26,13 @@
   --space-xl: calc(var(--space-md) * 4);
   --space-indent: 2em;  /* ul・ol のスペースを確保する */
   
-  --colour-base        : #3b3834;
-  --colour-background  : #fffefd;
-  --colour-grey        : #9b9894;
-  --colour-light-grey  : #e7e6e5;
-  --colour-lighter-grey: #f9f8f7;
-  --colour-link        : #b10;
-  --colour-link-hover  : #e10;
+  --colour-base        : #343b38;
+  --colour-background  : #fdfffe;
+  --colour-grey        : #949b98;
+  --colour-light-grey  : #e5e7e6;
+  --colour-lighter-grey: #f7f9f8;
+  --colour-link        : #093;
+  --colour-link-hover  : #06f;
   
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, YuGothic, "Yu Gothic", "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: MeiryoKe_Gothic, "Noto Sans Mono CJK JP", Osaka-mono, "MS Gothic", "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -219,7 +219,7 @@ a:hover,
 #title a:hover,
 .entry-title a:hover,
 .hatena-module-archive .hatena-module-title a:hover,
-#footer-links-about a[href*="neos21.hatenablog.jp"]:hover {  /* 自サイトの色 */
+#footer-links-about a[href*="neos21.hateblo.jp"]:hover {  /* 自サイトの色 */
   color: var(--colour-link-hover);
 }
 
@@ -306,7 +306,7 @@ strong {
 #title a,
 .entry-title a,
 .hatena-module-archive .hatena-module-title a,
-#footer-links-about a[href*="neos21.hatenablog.jp"] {  /* 自サイトの色を変える */
+#footer-links-about a[href*="neos21.hateblo.jp"] {  /* 自サイトの色を変える */
   color: inherit;
 }
 
