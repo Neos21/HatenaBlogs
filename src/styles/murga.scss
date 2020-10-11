@@ -26,13 +26,13 @@
   --space-xl: calc(var(--space-md) * 4);
   --space-indent: 2em;  /* ul・ol のスペースを確保する */
   
-  --colour-base        : #34383b;
-  --colour-background  : #fdfeff;
-  --colour-grey        : #94989b;
-  --colour-light-grey  : #e5e6e7;
-  --colour-lighter-grey: #f7f8f9;
-  --colour-link        : #f08;
-  --colour-link-hover  : #06f;
+  --colour-base        : #3b3834;
+  --colour-background  : #fffdfa;
+  --colour-grey        : #9b9894;
+  --colour-light-grey  : #e7e6e5;
+  --colour-lighter-grey: #f9f8f7;
+  --colour-link        : #b10;
+  --colour-link-hover  : #e10;
   
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, YuGothic, "Yu Gothic", "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: MeiryoKe_Gothic, "Noto Sans Mono CJK JP", Osaka-mono, "MS Gothic", "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -81,6 +81,10 @@ html {
   }
 }
 
+body {
+  padding: 0 !important;  /* Google AdSense 自動広告の「アンカー広告」がページを押し下げるのを回避する */
+}
+
 /* 等幅フォント */
 pre,
 code,
@@ -123,8 +127,7 @@ p,
 ul,
 ol,
 dl {
-  margin-top: var(--space-md);
-  margin-bottom: var(--space-md);
+  margin: var(--space-md) 0;
 }
 
 /* 標準的な余白より若干広めにする */
@@ -132,8 +135,7 @@ table,
 pre,
 blockquote,
 .table-of-contents {  /* ul */
-  margin-top: calc(var(--space-md) * 1.5);
-  margin-bottom: calc(var(--space-md) * 1.5);
+  margin: calc(var(--space-md) * 1.5) 0;
 }
 
 /* 左インデント */
@@ -150,35 +152,37 @@ ol ul,
 ol ol,
 dd ul,
 dd ol {
-  margin-top: 0;
-  margin-bottom: var(--space-xs);
+  margin: 0 0 var(--space-xs);
   padding-left: calc(var(--space-indent) - var(--space-xs));
 }
 
 pre {
-  overflow-x: scroll;
+  overflow-x: auto;
   border-radius: 4px;
   padding: var(--space-sm);
   color: #f2f8f8;  /* Monokai 風 */
   word-wrap: normal;  /* iPhone で折り返しが発生するため指定する */
   background: #222728;
+  scrollbar-color: rgba(255, 255, 255, .2) transparent;
+}
+
+pre:hover {
+  scrollbar-color: rgba(255, 255, 255, .3) transparent;
 }
 
 pre::-webkit-scrollbar,
 pre::-webkit-scrollbar-thumb {
   height: 12px;
   border-radius: 4px;
-  background: rgba(235, 245, 255, .2);
+  background: rgba(255, 255, 255, .2);
 }
 
 pre::-webkit-scrollbar:hover,
 pre::-webkit-scrollbar-thumb:hover {
-  background: rgba(235, 245, 255, .3);
+  background: rgba(255, 255, 255, .3);
 }
 
 blockquote {
-  margin-right: 0;
-  margin-left: 0;
   border-left: calc(var(--space-indent) / 2) solid #99f0c9;
   border-radius: 4px;
   padding: .1em calc(var(--space-indent) / 2);
@@ -217,7 +221,7 @@ a:hover,
 /* 色を打ち消している要素 */
 .entry-title a:hover,
 .hatena-module-archive .hatena-module-title a:hover,
-#footer-links-about a[href*="neos21.hatenablog.com"]:hover {  /* 自サイトの色 */
+#footer-links-about a[href*="neos21.hatenablog.jp"]:hover {  /* 自サイトの色 */
   color: var(--colour-link-hover);
 }
 
@@ -246,8 +250,7 @@ strong {
 /* Google AdSense 用 */
 .adsense {
   overflow: hidden;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -304,7 +307,7 @@ strong {
 /* リンク色打ち消し */
 .entry-title a,
 .hatena-module-archive .hatena-module-title a,
-#footer-links-about a[href*="neos21.hatenablog.com"] {  /* 自サイトの色を変える */
+#footer-links-about a[href*="neos21.hatenablog.jp"] {  /* 自サイトの色を変える */
   color: inherit;
 }
 
@@ -320,12 +323,20 @@ strong {
   font-size: var(--font-size-sm);
 }
 
-/* 灰色小文字のリンク */
+/* 灰色小文字のリンク・フッタリンク */
 .entry-date a:hover,
 .archive-date a:hover,
 .entry-categories a:hover,
-.categories a:hover {
+.categories a:hover,
+#footer-links a {
   text-decoration: underline;
+}
+
+/* フォントサイズを変えない箇所 */
+#title,
+.hatena-module,
+#footer-links {
+  font-size: var(--font-size-base);
 }
 
 
@@ -347,10 +358,6 @@ strong {
 /* ================================================================================
  * ヘッダ
  * ================================================================================ */
-
-#title {
-  font-size: var(--font-size-base);
-}
 
 
 /* 独自ヘッダ
@@ -610,10 +617,8 @@ strong {
                        "archive category";
   grid-template-columns: 1fr 1fr;
   gap: var(--space-lg) var(--space-md);
-}
-
-.hatena-module {
-  font-size: var(--font-size-base);
+  border-bottom: 1px solid var(--colour-light-grey);
+  padding-bottom: var(--space-md);
 }
 
 .hatena-module-html {
@@ -665,7 +670,7 @@ strong {
   height: 20px;
   outline: none;
   border: none;
-  background: transparent url("/images/theme/search.png?version=5ce19ab982799e9f1225e7acae034e9d43b6e6b6") no-repeat 100%;
+  background: transparent url("https://cdn.blog.st-hatena.com/images/theme/search.png") no-repeat 100%;
   text-indent: -9999px;
   opacity: .5;
   cursor: pointer;
@@ -690,6 +695,12 @@ strong {
   overflow-y: auto;
   height: 60vh;
   min-height: 15em;
+  scrollbar-color: rgba(0, 0, 0, .07) transparent;  /* For Firefox */
+}
+
+.hatena-module-archive .hatena-module-body:hover,
+.hatena-module-category .hatena-module-body:hover {
+  scrollbar-color: rgba(0, 0, 0, .15) transparent;
 }
 
 .hatena-module-archive .hatena-module-body::-webkit-scrollbar,
@@ -733,10 +744,6 @@ strong {
 /* 独自フッタ
  * -------------------------------------------------------------------------------- */
 
-#footer-links {
-  font-size: var(--font-size-base);
-}
-
 #footer-links ul {
   padding-left: 0;
   list-style: none;
@@ -744,10 +751,6 @@ strong {
 
 #footer-links li {
   display: inline;
-}
-
-#footer-links a {
-  text-decoration: underline;
 }
 
 #footer-links li:not(:last-child) {
