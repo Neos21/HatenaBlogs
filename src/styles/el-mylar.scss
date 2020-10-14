@@ -19,9 +19,10 @@
 }
 
 :root {
+  --space-fixed-base: var(--font-size-base);
   --space-xs: calc(var(--space-sm) / 3);
   --space-sm: calc(var(--space-md) / 2);
-  --space-md: 1.6em;
+  --space-md: 1.7em;
   --space-lg: calc(var(--space-md) * 2);
   --space-xl: calc(var(--space-md) * 4);
   --space-indent: 2em;  /* ul・ol のスペースを確保する */
@@ -37,7 +38,7 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, YuGothic, "Yu Gothic", "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: MeiryoKe_Gothic, "Noto Sans Mono CJK JP", Osaka-mono, "MS Gothic", "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   
-  --font-size-base: 16px;
+  --font-size-base: 17px;
   --font-size-sm: .85em;
   
   --comment-icon-size: 50px;
@@ -55,7 +56,7 @@ html {
   overflow-y: scroll;
   overflow-wrap: break-word;
   color: var(--colour-base);
-  font-size: var(--font-size-base);
+  font-size: clamp(var(--font-size-base), 1.7vw, 20px);
   font-family: var(--font-family-sans-serif);
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: objects;
@@ -66,18 +67,6 @@ html {
 @media (max-width: 600px) {
   html {
     word-break: break-all;
-  }
-}
-
-@media (min-width: 1000px) {
-  html {
-    font-size: 1.6vw;
-  }
-}
-
-@media (min-width: 1200px) {
-  html {
-    font-size: 19.2px;
   }
 }
 
@@ -177,7 +166,7 @@ pre::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, .2);
 }
 
-pre::-webkit-scrollbar:hover,
+pre:hover::-webkit-scrollbar,
 pre::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, .3);
 }
@@ -228,17 +217,21 @@ a:hover,
 code,
 .entry-content code {  /* blog.css より優先させる */
   border-color: var(--colour-light-grey);
-  color: #f08;
+  color: #f07;
   background: var(--colour-lighter-grey);
 }
 
-em {
+em,
+.entry-content em *,
+.entry-content em code {  /* .entry-content code より優先させる */
   color: #296;
   font-style: normal;
   font-weight: bold;
 }
 
-strong {
+strong,
+.entry-content strong *,
+.entry-content strong code {
   color: #f03;
 }
 
@@ -346,12 +339,12 @@ strong {
 
 #container {
   margin: var(--space-lg) auto;
-  max-width: 40em;
+  max-width: 42em;
 }
 
 #container-inner {
   position: relative;  /* #header-icons 用 */
-  margin: 0 var(--space-sm);
+  margin: 0 var(--space-fixed-base);
 }
 
 
@@ -366,7 +359,7 @@ strong {
 #header-icons {
   position: absolute;
   top: 0;
-  right: var(--space-sm);
+  right: var(--space-xs);
 }
 
 #header-icons a:not(:last-child) {
@@ -464,14 +457,14 @@ strong {
 .table-of-contents {  /* ul */
   border-left: calc(var(--space-indent) / 2) solid var(--colour-light-grey);
   border-radius: 4px;
-  padding: var(--space-sm) calc(var(--space-indent) / 2) var(--space-sm) calc(var(--space-indent) + var(--space-xs));
+  padding: var(--space-md) calc(var(--space-indent) / 2) var(--space-md) calc(var(--space-indent) + var(--space-xs));
   background: var(--colour-lighter-grey);
 }
 
 .table-of-contents::before {
   content: "目次";
   display: block;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
   margin-left: calc(var(--space-indent) * -1 - 5px + calc(var(--space-indent) / 2));  /* 謎に 5px 分くらいの余白ができているので詰めてから blockquote などと同じだけスペースを開ける */
   font-weight: bold;
 }
@@ -613,7 +606,7 @@ strong {
 #box2-inner {
   display: grid;
   grid-template-areas: "box2-html box2-html"
-                       "search-box ."
+                       "search-box search-box"
                        "archive category";
   grid-template-columns: 1fr 1fr;
   gap: var(--space-lg) var(--space-md);
@@ -712,8 +705,8 @@ strong {
   background: rgba(0, 0, 0, .07);
 }
 
-.hatena-module-archive .hatena-module-body::-webkit-scrollbar:hover,
-.hatena-module-category .hatena-module-body::-webkit-scrollbar:hover,
+.hatena-module-archive .hatena-module-body:hover::-webkit-scrollbar,
+.hatena-module-category .hatena-module-body:hover::-webkit-scrollbar,
 .hatena-module-archive .hatena-module-body::-webkit-scrollbar-thumb:hover,
 .hatena-module-category .hatena-module-body::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, .15);
@@ -722,11 +715,16 @@ strong {
 .hatena-module-archive .hatena-urllist,
 .hatena-module-category .hatena-urllist {
   margin: 0;
+  font-size: calc(var(--font-size-base) * .95);
 }
 
 .hatena-module-archive .hatena-module-body .archive-module-button {  /* blog.css より優先させる */
   display: inline-block;
   width: .9em;
+}
+
+.hatena-module-archive .hatena-urllist .archive-module-year .archive-module-month {
+  margin-left: var(--space-indent);
 }
 
 .hatena-module-category .hatena-urllist {
