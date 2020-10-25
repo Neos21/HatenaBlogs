@@ -1,25 +1,13 @@
 {
   "name": "@neos21/hatena-blogs",
-  "version": "1.0.17",
+  "version": "1.1.0",
   "description": "Hatena Blogs",
   "scripts": {
-    "gulp": "gulp",
-    "build": "npm run css && npm run js",
-    "css": "gulp build-css && npm run css-strip",
-    "css-corredor": "gulp build-css-corredor && npm run css-strip-corredor",
-    "css-murga": "gulp build-css-murga && npm run css-strip-murga",
-    "css-elmylar": "gulp build-css-elmylar && npm run css-strip-elmylar",
-    "css-strip": "node strip-bom.js ALL",
-    "css-strip-corredor": "node strip-bom.js Corredor",
-    "css-strip-murga": "node strip-bom.js Murga",
-    "css-strip-elmylar": "node strip-bom.js ElMylar",
-    "js": "gulp build-js",
-    "js-corredor": "gulp build-js-corredor",
-    "js-corredor-check": "gulp build-js-corredor-check",
-    "js-murga": "gulp build-js-murga",
-    "js-murga-check": "gulp build-js-murga-check",
-    "js-elmylar": "gulp build-js-elmylar",
-    "js-elmylar-check": "gulp build-js-elmylar-check"
+    "prebuild": "node -e \"require('fs').mkdirSync('./dist/styles/', { recursive: true });\"",
+    "build": "npm run build-css-corredor && npm run build-css-murga && npm run build-css-el-mylar",
+    "build-css-corredor": "cleancss -o ./dist/styles/corredor.css ./src/styles/corredor.css",
+    "build-css-murga": "cleancss -o ./dist/styles/murga.css ./src/styles/murga.css",
+    "build-css-el-mylar": "cleancss -o ./dist/styles/el-mylar.css ./src/styles/el-mylar.css"
   },
   "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
   "license": "MIT",
@@ -36,11 +24,7 @@
     "url": "https://github.com/sponsors/Neos21"
   },
   "devDependencies": {
-    "@neos21/neos-normalize": "1.0.15",
-    "gulp": "4.0.2",
-    "gulp-load-plugins": "2.0.3",
-    "gulp-plumber": "1.2.1",
-    "gulp-sass": "4.1.0",
-    "gulp-uglify": "3.0.2"
+    "@neos21/neos-normalize": "2.0.0",
+    "clean-css-cli": "4.3.0"
   }
 }
