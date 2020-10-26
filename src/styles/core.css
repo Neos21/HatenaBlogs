@@ -192,7 +192,7 @@ a code,
  * ================================================================================ */
 
 #container {
-  max-width: 52rem;
+  max-width: 42rem;
   margin: var(--nn-space-large) auto;
   padding: 0 1rem;
 }
