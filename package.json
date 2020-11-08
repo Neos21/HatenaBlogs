@@ -3,13 +3,13 @@
   "version": "1.1.1",
   "description": "Hatena Blogs",
   "scripts": {
-    "prebuild": "node -e \"require('fs').mkdirSync('./dist/styles/', { recursive: true });\"",
+    "prebuild": "node ./prebuild.js",
     "build": "npm run build-css-corredor && npm run build-css-murga && npm run build-css-el-mylar",
     "build-css-corredor": "cleancss -o ./dist/styles/corredor.css ./src/styles/corredor.css",
     "build-css-murga": "cleancss -o ./dist/styles/murga.css ./src/styles/murga.css",
     "build-css-el-mylar": "cleancss -o ./dist/styles/el-mylar.css ./src/styles/el-mylar.css"
   },
-  "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
+  "author": "Neo <neos21@gmail.com> (https://neos21.net/)",
   "license": "MIT",
   "homepage": "https://github.com/Neos21/hatena-blogs#readme",
   "repository": {
