@@ -1,4 +1,6 @@
-(() => {
+console.log('Murga : Load Start');
+const exec = () => {
+  console.log('Murga : Exec Start');
   const pairs = [
     ['2016/10/15/233845', '2016/10/15-01'],
     ['2016/10/15/233452', '2016/10/15-02'],
@@ -362,21 +364,35 @@
     ['2020/11/01/135459', '2020/11/01-01']
   ];
   
-  document.addEventListener('DOMContntLoaded', () => {
-    document.querySelectorAll('h1.entry-title > a.entry-title-link').forEach(link => {
-      try {
-        const pair = pairs.find(pair => link.href.includes(pair[0]));
-        if(!pair) return console.log('一致なし', link.href);
-        
-        const body = link.parentElement.parentElement.parentElement.querySelectorAll('.entry-content, .archive-entry-body');
-        if(!body || !body.length) return console.log('挿入先なし', link);
-        
-        const url = `https://neos21.net/blog/${pair[1]}.html`;
-        body[0].insertAdjacentHTML('afterbegin', `<div style="margin: var(--nn-space-default) 0; padding: var(--nn-space-default); border: 1px solid #fc0; background: #ffffe0;">この記事は以下の URL に移転しました：<br><a href="${url}">${url}</a></div>`);
-      }
-      catch(error) {
-        console.warn('エラー', error, link);
-      }
-    });
+  const links = document.querySelectorAll('h1.entry-title > a.entry-title-link');
+  console.log('Murga : Links : ', links.length);
+  links.forEach(link => {
+    try {
+      const pair = pairs.find(pair => link.href.includes(pair[0]));
+      if(!pair) return console.log('Murga : Pairs Not Found', link.href);
+      
+      const body = link.parentElement.parentElement.parentElement.querySelectorAll('.entry-content, .archive-entry-body');
+      if(!body || !body.length) return console.log('Murga : Target Not Found', link.href);
+      
+      const url = `https://neos21.net/blog/${pair[1]}.html`;
+      body[0].insertAdjacentHTML('afterbegin', `<div style="margin: var(--nn-space-default) 0; padding: var(--nn-space-default); border: 1px solid #fc0; background: #ffffe0;">この記事は以下の URL に移転しました：<br><a href="${url}">${url}</a></div>`);
+      console.log('Murga : Inserted', link.href);
+    }
+    catch(error) {
+      console.warn('Murga : Exec : Error', error, link);
+    }
   });
-})();
+};
+if(!document.readyState || document.readyState === 'interactive') {
+  console.log('Murga : Interactive (onload)');
+  window.addEventListener('load', exec);
+}
+else if(document.readyState === 'loading') {
+  console.log('Murga : Loading (DOMContentLoaded)');
+  document.addEventListener('DOMContentLoaded', exec);
+}
+else {
+  console.log('Murga : Immediately');
+  exec();
+}
+console.log('Murga : Loaded');
