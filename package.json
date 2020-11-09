@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "Hatena Blogs",
   "scripts": {
-    "prebuild": "node ./prebuild.js",
+    "prebuild": "node -e \"require('fs').mkdirSync('./dist/styles/', { recursive: true });\"",
     "build": "npm run build-css-corredor && npm run build-css-murga && npm run build-css-el-mylar",
     "build-css-corredor": "cleancss -o ./dist/styles/corredor.css ./src/styles/corredor.css",
     "build-css-murga": "cleancss -o ./dist/styles/murga.css ./src/styles/murga.css",

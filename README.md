@@ -28,7 +28,7 @@ __[Go To GitHub Pages](https://neos21.github.io/hatena-blogs/)__
 
 ## Author
 
-[Neo](http://neo.s21.xrea.com/)
+[Neo](https://neos21.net/)
 
 - [GitHub - hatena-blogs](https://github.com/Neos21/hatena-blogs)
 - [GitHub Pages - Hatena Blogs](https://neos21.github.io/hatena-blogs/)
@@ -39,7 +39,7 @@ __[Go To GitHub Pages](https://neos21.github.io/hatena-blogs/)__
 
 ## Links
 
-- [Neo's World](http://neo.s21.xrea.com/)
+- [Neo's World](https://neos21.net/)
 - [Corredor](https://neos21.hatenablog.com/)
 - [Murga](https://neos21.hatenablog.jp/)
 - [El Mylar](https://neos21.hateblo.jp/)
