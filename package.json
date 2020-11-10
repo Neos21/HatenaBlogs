@@ -1,6 +1,6 @@
 {
   "name": "@neos21/hatena-blogs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Hatena Blogs",
   "scripts": {
     "prebuild": "node -e \"require('fs').mkdirSync('./dist/styles/', { recursive: true });\"",
@@ -24,7 +24,7 @@
     "url": "https://github.com/sponsors/Neos21"
   },
   "devDependencies": {
-    "@neos21/neos-normalize": "2.0.0",
+    "@neos21/neos-normalize": "2.0.1",
     "clean-css-cli": "4.3.0"
   }
 }
