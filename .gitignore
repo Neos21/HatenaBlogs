@@ -6,4 +6,5 @@ Thumbs.db
 act/
 node_modules/
 
-# dist/ は master ブランチには不要だが、除外すると gh-pages で投稿されなくなるため手動管理とする
+# dist/ は master ブランチにコミットしなくて良いが、.gitignore で除外すると gh-pages で投稿されなくなるため手動管理とする
+# GitHub Workflows にてビルド後に GitHub Pages にデプロイしている
